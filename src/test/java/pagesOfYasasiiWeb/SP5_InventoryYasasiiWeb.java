@@ -415,11 +415,11 @@ public class SP5_InventoryYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		Detailed.click();
 		Thread.sleep(3000);
-		print.click();
-		Thread.sleep(3000);
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_ESCAPE);
-		robot.keyRelease(KeyEvent.VK_ESCAPE);
+//		print.click();
+//		Thread.sleep(3000);
+//		Robot robot = new Robot();
+//		robot.keyPress(KeyEvent.VK_ESCAPE);
+//		robot.keyRelease(KeyEvent.VK_ESCAPE);
 
 		Thread.sleep(3000);
 	}
