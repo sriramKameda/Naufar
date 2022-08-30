@@ -777,7 +777,7 @@ public class SP5_InventoryYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Add.click();
 		Thread.sleep(1000);
 		Saveindent.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		Status.click();
 		Thread.sleep(1000);
@@ -886,7 +886,7 @@ public class SP5_InventoryYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 	    String ACTindno =driver.findElement(By.xpath("(//*[contains(text(),'"+indNo+"')])")).getText();
 	    System.out.println(ACTindno);
-	    Thread.sleep(1000);
+	    Thread.sleep(2000);
 	    
 	    
 	    File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
