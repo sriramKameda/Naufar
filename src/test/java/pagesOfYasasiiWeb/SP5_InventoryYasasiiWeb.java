@@ -1276,8 +1276,8 @@ public void closedIndent(String PatcloseNo , String invCloseNo) throws Interrupt
 	driver.findElement(By.xpath("//*[contains(text(),'Closed')]")).click();
 	Thread.sleep(1000);
 	Search.click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//*[contains(text(),'"+PatcloseNo+"')])[1]")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("(//*[contains(text(),'"+PatcloseNo+"')])")).click();
 	Thread.sleep(3000);
 	
 	
@@ -1295,7 +1295,7 @@ public void closedIndent(String PatcloseNo , String invCloseNo) throws Interrupt
 	driver.findElement(By.xpath("//*[contains(text(),'Closed')]")).click();
 	Thread.sleep(1000);
 	Search.click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
    driver.findElement(By.xpath("(//*[contains(text(),'"+invCloseNo+"')])[1]")).click();
 	Thread.sleep(3000);
 	
