@@ -1348,7 +1348,7 @@ public void supplierCreation(String SuppName ,String supplierCode  ) throws Inte
 	driver.findElement(By.xpath("//button[@id='btnsaveSupplier']")).click();
 	Thread.sleep(1000);
 	supplierSearch.sendKeys(SuppName);
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 	Search.click();
 	Thread.sleep(1000);
 	Edit.click();
