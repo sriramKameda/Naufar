@@ -43,11 +43,24 @@ public class SP5_InventoryTestCase  extends TestBaseYasasiiWeb{
 		INV.indentClosed(IndGrpName);
 		INV.patientIndent( MRNo ,  MRNo1);
 		INV.patientIndentClosed( MRNo ,  MRNo1);
+		
+		
+		
+		
 		INV.closedIndent(PatcloseNo ,invCloseNo);
 		INV.supplierCreation( SuppName ,supplierCode);
 	}
 
+	@Test(dataProvider = "getData")
+	public void inventoryFlow1(String Subloc ,String refCode , String BAtchno,String IndGrpName, String MRNo , String MRNo1, String PatcloseNo, String invCloseNo, String supplierCode, String SuppName) throws InterruptedException, IOException, AWTException {
 
+		SP5_InventoryYasasiiWeb INV = new  SP5_InventoryYasasiiWeb(driver);
+	
+		INV.closedIndent(PatcloseNo ,invCloseNo);
+		INV.supplierCreation( SuppName ,supplierCode);
+	}
+	
+	
 
 	@AfterClass
 	public void logout() throws Exception
