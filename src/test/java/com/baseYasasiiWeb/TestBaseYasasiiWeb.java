@@ -54,7 +54,7 @@ public class TestBaseYasasiiWeb {
 	public static ExtentTest test; //C:\Users\sriram\eclipse-workspace\HHCYasasiiWeb24090\src\test\resources\excelYasasiiWeb\24090testData.xls
 	public static Fillo fillo=new Fillo();
 	public String browserType;
-	public String chromeversion =" 97.0.4692.99";
+	public String chromeversion =" 104.0.5112.102";
 	public static String screenshotPath;
 
 	public static String testname;

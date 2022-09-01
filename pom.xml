@@ -103,12 +103,21 @@
 </dependency>
 		
 
-            <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>1.6.2</version>
-            </dependency>
-      
+          <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>javax.mail-api</artifactId>
+    <version>1.6.2</version>
+</dependency>
+
+<!-- postman 
+<dependency>
+    <groupId>ch.fortysix</groupId>
+    <artifactId>maven-postman-plugin</artifactId>
+    <version>0.1.6</version>
+</dependency> -->
+
+
 		</dependencies>
 
 	<build>
@@ -131,8 +140,66 @@
           <suiteXmlFiles>
             <suiteXmlFile>Sprint5.xml</suiteXmlFile>
           </suiteXmlFiles>
+    <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
+
+
+	<!-- Post-Man plugin -->
+         <plugin>
+            <groupId>ch.fortysix</groupId>
+            <artifactId>maven-postman-plugin</artifactId>
+            <version>0.1.6</version>
+                <executions>
+                   <execution>
+                       <id>Report Generation</id>
+                       <phase>test</phase>
+                       <goals>
+                           <goal>send-mail</goal>
+                       </goals>
+                       <inherited>true</inherited>
+                       <configuration>
+                          <!-- From Email address -->
+                          <from>sriramkameda@outlook.com</from>
+                          <!-- Email subject -->
+                          <subject>Cucumber Test Automation Report</subject>
+                          <!-- Fail the build if the mail doesn't reach -->
+                          <failonerror>false</failonerror>
+                          <!-- Email Body Content -->
+                          <htmlMessage>
+                                    <![CDATA[
+                                    <p>New test build triggered!</p>
+                                    <p>Attached html file contains the test result status</p> 
+                                    ]]>
+                          </htmlMessage>
+                          <!-- host -->
+                          <mailhost>smtp.office365.com</mailhost>
+                          <!-- port of the host 465 -->
+                          <mailport>587</mailport>
+                          <mailssl>true</mailssl>
+                          <mailAltConfig>true</mailAltConfig>
+                          <!-- Email Authentication(Username and Password) -->
+                          <mailuser>sriramkameda@outlook.com</mailuser>
+                          <mailpassword>265484sri@</mailpassword>
+                          <receivers>
+                               <!-- To Email address -->
+                               <receiver>sriramlakshmanan@outlook.com</receiver>
+                               
+                          </receivers>
+                          <fileSets>
+                             <fileSet>
+                                  <!-- Report directory Path -->
+                                  <directory>C:Users//sriram//eclipse-workspace//HHCYasasiiWeb24090//test-output//suite</directory>
+                                       <includes>
+                                          <!-- Report file name -->
+                                          <include>extentReport.html</include>
+                                       </includes>
+                             </fileSet>
+                          </fileSets>
+                       </configuration>
+                   </execution>
+                </executions>
+         </plugin>
       </plugins>
     </pluginManagement>
 	</build>

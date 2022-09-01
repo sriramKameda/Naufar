@@ -35,23 +35,18 @@ public class SP5_InventoryTestCase  extends TestBaseYasasiiWeb{
 		SP5_InventoryYasasiiWeb INV = new  SP5_InventoryYasasiiWeb(driver);
 
 		INV.InventoryHome();
-		INV.subLocation( Subloc, refCode ); 
-		INV.Stockview();
-		INV.StockMovement(BAtchno);
-		INV.indentGroup(IndGrpName);
-		INV.InventoryIndednt(IndGrpName);
-		INV.indentClosed(IndGrpName);
-		INV.patientIndent( MRNo ,  MRNo1);
-		INV.patientIndentClosed( MRNo ,  MRNo1);
+//		INV.subLocation( Subloc, refCode ); 
+//		INV.Stockview();
+//		INV.StockMovement(BAtchno);
+//		INV.indentGroup(IndGrpName);
+//		INV.InventoryIndednt(IndGrpName);
+//		INV.indentClosed(IndGrpName);
+//		INV.patientIndent( MRNo ,  MRNo1);
+//		INV.patientIndentClosed( MRNo ,  MRNo1);
 		
-		
-		
-		
-		INV.closedIndent(PatcloseNo ,invCloseNo);
-		INV.supplierCreation( SuppName ,supplierCode);
 	}
 
-	@Test(dataProvider = "getData")
+//	@Test(dataProvider = "getData")
 	public void inventoryFlow1(String Subloc ,String refCode , String BAtchno,String IndGrpName, String MRNo , String MRNo1, String PatcloseNo, String invCloseNo, String supplierCode, String SuppName) throws InterruptedException, IOException, AWTException {
 
 		SP5_InventoryYasasiiWeb INV = new  SP5_InventoryYasasiiWeb(driver);
@@ -65,6 +60,8 @@ public class SP5_InventoryTestCase  extends TestBaseYasasiiWeb{
 	@AfterClass
 	public void logout() throws Exception
 	{
+		
+		
 		this.hm.clickLogout();
 
 	}
