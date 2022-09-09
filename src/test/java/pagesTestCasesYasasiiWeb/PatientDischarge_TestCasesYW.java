@@ -25,7 +25,7 @@ public class PatientDischarge_TestCasesYW  extends TestBaseYasasiiWeb{
 	public void navigateFOPage(  ) throws InterruptedException {
 
 		this.login =new LoginPageYasasiiWeb(driver) ;
-		this.hm = login.enterloginDetails("km999", "Kameda321", "Kameda Medical Center");
+		this.hm = login.enterloginDetails("3", "KAmeda123$", "Kameda Medical Center");
 		Thread.sleep(2000); 
 	}
 	

@@ -26,7 +26,7 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//input[@id='searchtext']")
 	public WebElement sEARCHfield;
 
-	@FindBy(xpath = "//i[@class='ki ki-search']")
+	@FindBy(xpath = "//span[@class='search-icon']//i[@class='ki ki-search']")
 	public WebElement sEARCHicon;
 
 
@@ -80,8 +80,7 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//span[normalize-space()='Adjustment Approval']")
 	public WebElement AdjApprove;
 
-
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+    @FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement checkrequest;
 
 	@FindBy(xpath = "//button[normalize-space()='Approve']")

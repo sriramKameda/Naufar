@@ -93,9 +93,9 @@ public class FO_queueDisplayYasassiweb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(2000);
 		ENCprvdrName.click();
 		Thread.sleep(1000);
-		ENCprvdrName.sendKeys("anto");
+		ENCprvdrName.sendKeys("rohit");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//li[normalize-space()='Antonio Banderas']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='Rohit Sharma']")).click();
 		
 		//driver.findElement(By.xpath("//li[normalize-space()='"+ PROVIDER +"']")).click();
 		Thread.sleep(1000);
@@ -141,11 +141,11 @@ public class FO_queueDisplayYasassiweb extends PageFactoryInitYasasiiWeb {
 		 
 		userid.click();
 		Thread.sleep(1000);
-		userid.sendKeys("KM999");
+		userid.sendKeys("3");
 		Thread.sleep(1000);
 		password.click();
 		Thread.sleep(1000);
-		password.sendKeys("Kameda321");
+		password.sendKeys("KAmeda123$");
 		Thread.sleep(1000);
 		site.click();
 		Thread.sleep(1000);

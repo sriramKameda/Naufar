@@ -145,12 +145,19 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 	}
 
 	
-	public void  opencounter() throws InterruptedException {
+	public void  opencounter(String PROVIDER) throws InterruptedException {
 		
 		SubMode.click();
 		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
 		Thread.sleep(1000);
+     	ENCprvdrName.click();
+		Thread.sleep(1000);
+		ENCprvdrName.sendKeys(PROVIDER);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+PROVIDER+"')])")).click();
+		Thread.sleep(1000);
 		EncounterAdd.click();
+		//driver.findElement(By.xpath("//li[normalize-space()='"+ PROVIDER +"']")).click();
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(2000);

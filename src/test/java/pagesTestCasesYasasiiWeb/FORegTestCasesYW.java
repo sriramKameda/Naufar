@@ -35,7 +35,6 @@ public class FORegTestCasesYW extends TestBaseYasasiiWeb{
 	public void addFOReg(String firstname,String lastname ,String gender,String age,String phoneno,String homeadd1,String homeadd2,String docnumber,String provencounter,String altphoneno,String expcondition,String testtype) throws InterruptedException, IOException {
 		FORegistrationYasasiiWeb foReg = new FORegistrationYasasiiWeb(driver) ;
 		FOEncounterYasasiiWeb foenc = foReg.enterFORegDetails(firstname,lastname, gender, age,phoneno,homeadd1,homeadd2,docnumber);
-		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		FORegEditYasasiiWeb foedit =foenc.Foencounter(provencounter);
 		foedit.FOEditYasasiiWeb(altphoneno);
 		

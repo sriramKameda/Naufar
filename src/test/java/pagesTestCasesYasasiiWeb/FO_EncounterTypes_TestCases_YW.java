@@ -39,7 +39,7 @@ public class FO_EncounterTypes_TestCases_YW extends TestBaseYasasiiWeb{
 		FO_EncounterTypes_YasassiWeb ET = new FO_EncounterTypes_YasassiWeb(driver);
 		ET.ERpatientReg(TITLE, NAME, AGE, MBLNO);
 		ET.ERencounter(PROVIDER);
-		ET.opencounter();
+		ET.opencounter(PROVIDER);
 		
 	
 	}

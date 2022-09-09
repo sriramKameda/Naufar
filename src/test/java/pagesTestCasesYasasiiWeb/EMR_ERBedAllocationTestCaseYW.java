@@ -23,7 +23,7 @@ public static HomePageYasasiiWeb hm;
 public void navigateemradt() throws InterruptedException {
 	 
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", " Kameda Medical Center ");
+	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
 	Thread.sleep(3000);
 	
 }

@@ -15,60 +15,60 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 	public bedCreation(WebDriver driver) {
 		super(driver);
-		
+
 	}
-	
+
 	@FindBy(xpath = "//header/nav[1]/div[2]/ul[1]/li[1]/a[1]/label[1]/div[1]")
 	public WebElement Menutoggle;
-	
+
 	@FindBy(xpath = "//i[@class='ki ki-cog']")
 	public WebElement mastericon; 
-	
-	
+
+
 	@FindBy(xpath = "//body/app-root/app-layout/main[@class='page-body']/app-asideleftbar/aside[@class='left-sidebar open']/div[@class='menu-container']/div[@class='child bottom module-list in-down']/ul[@class='sidebarnav ng-star-inserted']/li[6]/a[1]")
 	public WebElement resource; 
-	
+
 	@FindBy(xpath = "//span[normalize-space()='Resource Master']")
 	public WebElement resourceMaster; 
-	
+
 	@FindBy(xpath = "//input[@id='resourcecategory']")
 	public WebElement category; 
-	
+
 	@FindBy(xpath = "//input[@id='roomid']")
 	public WebElement ROOMcategory;
-	
+
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
 	public WebElement  deluxRoom;
-	
+
 	@FindBy(xpath = "//i[@class='ki ki-pencil']")
 	public WebElement Edit;
-	
+
 	@FindBy(xpath = "//input[@id='bedtype']")
 	public WebElement BedType;
-	
+
 	@FindBy(xpath = "//input[@id='nursingstation']")
 	public WebElement nurestation;
-	
+
 	@FindBy(xpath = "//input[@id='bedname']")
 	public WebElement bedname;
-	
+
 	@FindBy(xpath = "//span[@class='icon-btn btn-dark-green inline']")
 	public WebElement bedAdd;
-	
-	
+
+
 	@FindBy(xpath = "//button[@id='resourcemasterupdate']")
 	public WebElement update;
-	
-	
-	
-	
-	
+
+
+
+
+
 	public void bed() throws InterruptedException {
-		
-		int a=5;
-		char b=66;
-		
-		
+
+		int a=11;
+		char b=72;
+
+
 		Thread.sleep(2000);
 		Menutoggle.click();
 		Thread.sleep(1000);
@@ -85,7 +85,11 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Bed']")).click();
 		Thread.sleep(1000);
-	//	ROOMcategory.click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[1]/lib-searchbarlist[1]/div[1]/div[2]/form[1]/div[3]/div[1]/ki-select-control[1]/div[1]/input[1]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='A7 Block']")).click();
+		
+		//	ROOMcategory.click();
 		Thread.sleep(1000);
 	//	driver.findElement(By.xpath("//li[normalize-space()='Super-Delux']")).click();
 		Thread.sleep(1000);
@@ -163,7 +167,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-	//	bedname.sendKeys("ans-40");
+		//	bedname.sendKeys("ans-40");
 		Thread.sleep(1000);
 		bedAdd.click();
 		Thread.sleep(1000);
@@ -197,10 +201,9 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		update.click();
 		Thread.sleep(2000);
-		
-		
-	////////////////////Emergency beds
-		
+
+
+		////////////////////Emergency beds
 		ROOMcategory.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Room-ER']")).click();
@@ -213,7 +216,7 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Normal']")).click();
 		Thread.sleep(1000);
-		nurestation.click();
+		nurestation.click();	
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
 		Thread.sleep(1000);
@@ -222,35 +225,35 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 		bedname.sendKeys("er-1"+b+"");
 		Thread.sleep(1000);
-		bedAdd.click();
+		bedAdd.click();	
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-		bedname.sendKeys("er-1"+b+"");
-		Thread.sleep(1000);
-		bedAdd.click();
-		Thread.sleep(1000);
-		bedname.click();
-		Thread.sleep(1000);
-		bedname.sendKeys("er-1"+b+"");
+		bedname.sendKeys("er-2"+b+"");
 		Thread.sleep(1000);
 		bedAdd.click();
 		Thread.sleep(1000);
 		bedname.click();
 		Thread.sleep(1000);
-		bedname.sendKeys("er-1"+b+"");
+		bedname.sendKeys("er-3"+b+"");
+		Thread.sleep(1000);		
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys("er-4"+b+"");
 		Thread.sleep(1000);
 		bedAdd.click();
 		//input[@id='bedname']
 		Thread.sleep(1000);	
 		update.click();
 		Thread.sleep(2000);
-		
-		
-		
-		
-		
-}
-	
+
+
+
+
+
+	}
+
 
 }

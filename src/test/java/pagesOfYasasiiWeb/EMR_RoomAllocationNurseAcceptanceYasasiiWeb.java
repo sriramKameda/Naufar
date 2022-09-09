@@ -202,16 +202,16 @@ System.out.println("sri");
 		RegSave.click();
 		
 		Thread.sleep(3000);
-        String mrno= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]")).getText();
+        String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
     	System.out.println(mrno);
 		
-    	String word[]=mrno.split("[ :] ");
-		System.out.println("number of words: "+word.length);
-		for(int i=0;i<word.length;i++)
-		{
-			System.out.println("word["+i+"]="+word[i]);
-		}
-		System.out.println(word[1]);
+//    	String word[]=mrno.split("[ :] ");
+//		System.out.println("number of words: "+word.length);
+//		for(int i=0;i<word.length;i++)
+//		{
+//			System.out.println("word["+i+"]="+word[i]);
+//		}
+//		System.out.println(word[1]);
 		
 		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
 		FileInputStream fis=new FileInputStream(src);
@@ -219,7 +219,7 @@ System.out.println("sri");
 		HSSFSheet FOFullRegTest=wb.getSheetAt(58);	
 		int i=FOFullRegTest.getLastRowNum();
 		System.out.println("Number of rows: " + i);		
-		FOFullRegTest.getRow(i).createCell(0).setCellValue(word[1]);	
+		FOFullRegTest.getRow(i).createCell(0).setCellValue(mrno);	
     	FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
 		SaveSuccess.click();
