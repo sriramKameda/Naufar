@@ -57,8 +57,7 @@ public class FO_OPadvpay_Testcase_YW extends TestBaseYasasiiWeb{
 	public void logout() throws Exception
 	{
 		this.hm.clickLogout();
-		//Thread.sleep(2000);
-		//this.hm.clickLogout();
+		
 	}
 	
 	

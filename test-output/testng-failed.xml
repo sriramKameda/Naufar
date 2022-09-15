@@ -1,146 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW">
+      <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW">
         <methods>
-          <include name="logout"/>
           <include name="setup"/>
+          <include name="patreg" invocation-numbers="0"/>
           <include name="startTest"/>
-          <include name="OPEMR"/>
+          <include name="logout"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="patientReg"/>
-          <include name="navigateOPfullPage"/>
           <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.FO_ServiceBilling_TestCaseYW">
-        <methods>
           <include name="navigateFOPage"/>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="logout"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="billing" invocation-numbers="0"/>
-          <include name="extentReportEnd"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.FO_ServiceBilling_TestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.FO_dietitian_appoinment_encounter_TestCaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="logout"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="extentReportEnd"/>
-          <include name="foREg"/>
-          <include name="foReg"/>
-          <include name="getResult"/>
-          <include name="navigateFOPage"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.FO_dietitian_appoinment_encounter_TestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.FO_ADT_AdmissionEditTestcaseYW">
-        <methods>
-          <include name="foReg"/>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="navigateFOPage"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-          <include name="logout"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.FO_ADT_AdmissionEditTestcaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.FO_OPnewReservation_TestCaseYW">
-        <methods>
-          <include name="reservation"/>
-          <include name="navigateFOPage"/>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="logout"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.FO_OPnewReservation_TestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.EMRJuniorSeniorDoctorVerificationTestCasesYW">
-        <methods>
-          <include name="setup"/>
-          <include name="navigateemradt"/>
-          <include name="startTest"/>
-          <include name="NurseNote"/>
-          <include name="logout"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMRJuniorSeniorDoctorVerificationTestCasesYW -->
-      <class name="pagesTestCasesYasasiiWeb.FO_Copay_TestCaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="logout"/>
-          <include name="startTest"/>
-          <include name="copay"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="navigateemradt"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.FO_Copay_TestCaseYW -->
-      <class name="pagesTestCasesYasasiiWeb.EMRNurseNotTestCasesYasasiiWeb">
-        <methods>
-          <include name="logout"/>
-          <include name="navigateemradt"/>
-          <include name="setup"/>
-          <include name="NurseNote"/>
-          <include name="startTest"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMRNurseNotTestCasesYasasiiWeb -->
-      <class name="pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW">
-        <methods>
-          <include name="MOMdischarge"/>
-          <include name="setup"/>
-          <include name="BirthReg"/>
-          <include name="teardown"/>
-          <include name="navigateemradt"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-          <include name="Doctornote"/>
-          <include name="startTest"/>
-          <include name="babynote"/>
-          <include name="logout"/>
-          <include name="Babydischarge"/>
-          <include name="getTestMethodProperties"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW -->
-      <class name="pagesTestCasesYasasiiWeb.EMR_VisitSummaryTestCaseYW">
-        <methods>
-          <include name="setup"/>
-          <include name="startTest"/>
-          <include name="logout"/>
-          <include name="navigateFOPage"/>
-          <include name="patREg"/>
-          <include name="teardown"/>
-          <include name="getTestMethodProperties"/>
-          <include name="foReg"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-          <include name="visitsmary"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMR_VisitSummaryTestCaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

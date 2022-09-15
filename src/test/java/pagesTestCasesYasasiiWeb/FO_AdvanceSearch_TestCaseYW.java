@@ -14,7 +14,7 @@ import pagesOfYasasiiWeb.FO_MandatoryFieldValidationYasasiiWeb;
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
 
-public class FO_AdvanceSearchTestCaseYW extends TestBaseYasasiiWeb{
+public class FO_AdvanceSearch_TestCaseYW extends TestBaseYasasiiWeb{
 	public static LoginPageYasasiiWeb login;
 	public static HomePageYasasiiWeb hm;
 	

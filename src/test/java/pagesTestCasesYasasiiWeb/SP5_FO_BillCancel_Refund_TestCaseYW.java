@@ -15,9 +15,10 @@ import pagesOfYasasiiWeb.FO_EncounterCreationScreenYasasiiWeb;
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
 import pagesOfYasasiiWeb.LogingOutAndLogingIn_YasasiiWeb;
+import pagesOfYasasiiWeb.SP5_FO_BillCancel_Refund_YasassiWeb;
 
 
-public class FO_AdvanceRefund_TestCaseYW extends TestBaseYasasiiWeb {
+public class SP5_FO_BillCancel_Refund_TestCaseYW extends TestBaseYasasiiWeb {
 	
 	
 	public static LoginPageYasasiiWeb login;
@@ -28,28 +29,33 @@ public class FO_AdvanceRefund_TestCaseYW extends TestBaseYasasiiWeb {
 	public void navigateFOPage() throws InterruptedException {
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", "KIMSHEALTH TVM");
+	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
 	Thread.sleep(2000); 
 	}
 
 	
 
 	@Test (dataProvider = "getData")
-	public void pharmacy(String MRNo , String PROVIDER , String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String password,String Site) throws InterruptedException, IOException {
+	public void patreg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ,String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ,String URL, String User , String Password , String site ) throws InterruptedException, IOException {
 		
-		FO_EncounterCreationScreenYasasiiWeb enc = new FO_EncounterCreationScreenYasasiiWeb(driver);
-		//enc.takingEncounter( MRNo, doctor);
 		
-		LogingOutAndLogingIn_YasasiiWeb login= new LogingOutAndLogingIn_YasasiiWeb(driver);
-		//login.action( id,  password, Site);
-				
-				
+		SP5_FO_BillCancel_Refund_YasassiWeb bill=new SP5_FO_BillCancel_Refund_YasassiWeb(driver);
 		
-	}
+		bill.patReg(NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR);
+		
+		bill.BillCancelReq(MRNO, PROVIDER, SERVICE1, AMOUNT, SERVICE2);
+		
+		bill.AuthorisingRequest(URL, User, Password, site);
+		
+		bill.checkRestored(PROVIDER);
+		
+		}
 	
 	@AfterClass
 	public void logout() throws Exception
 	{
+		
+		Thread.sleep(2000);
 		this.hm.clickLogout();
 		
 	}
@@ -58,30 +64,9 @@ public class FO_AdvanceRefund_TestCaseYW extends TestBaseYasasiiWeb {
 	@DataProvider
 	public Object[][] getData() throws Exception{
 
-		Object[][] data =readExcel("pharmacyBill");
+		Object[][] data =readExcel("BillCancel");
 		return data;
 		}
-	
-
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

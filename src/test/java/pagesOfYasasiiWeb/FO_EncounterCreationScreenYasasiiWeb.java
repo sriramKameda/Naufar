@@ -37,16 +37,16 @@ public class FO_EncounterCreationScreenYasasiiWeb extends PageFactoryInitYasasii
 	public void takingEncounter(String MRNo,String doctor) throws InterruptedException {
 ///////////////Create encounter for the patient
 	   Thread.sleep(2000);
-	   EnterMRNo.clear();
-	   Thread.sleep(800);
-	    EnterMRNo.click();
-	    Thread.sleep(800);
-	    EnterMRNo.sendKeys(MRNo);
-        Thread.sleep(2000);
-	    SearchButton.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
-		//PatientSelect.click();
+//	   EnterMRNo.clear();
+//	   Thread.sleep(800);
+//	    EnterMRNo.click();
+//	    Thread.sleep(800);
+//	    EnterMRNo.sendKeys(MRNo);
+//        Thread.sleep(2000);
+//	    SearchButton.click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
+//		//PatientSelect.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[normalize-space()='Clear']")).click();
 		Thread.sleep(1000);

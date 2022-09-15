@@ -317,7 +317,8 @@ public class FO_OPadvpay_yasassiWeb extends PageFactoryInitYasasiiWeb{
 				
 		
 		public void opAdvpay(String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ) throws InterruptedException
-	{
+	   
+		{
 		//////Encounter
 			
 			clear.click();
@@ -360,16 +361,20 @@ public class FO_OPadvpay_yasassiWeb extends PageFactoryInitYasasiiWeb{
 		 Thread.sleep(1000);
 		Save.click();
 		Thread.sleep(1000);
-		 SaveOk.click();
-		 
+	     SaveOk.click();
+		Thread.sleep(1000);
+		
+		
 		 //ServiceAdd
+		 driver.findElement(By.xpath("//div[contains(text(),'Patient Info')]")).click();
 		 Thread.sleep(2000);
-		 js.executeScript("arguments[0].scrollIntoView();",  Service);
-		//driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.HOME);
-		 Thread.sleep(2000);
-		 //Service.click();	
-		// Thread.sleep(1000);
-		// AddnewService.click();
+		 driver.findElement(By.xpath("//div[contains(text(),'Billing')]")).click();
+		 Thread.sleep(1000);
+		// js.executeScript("arguments[0].scrollIntoView();",  Service);
+	     Thread.sleep(2000);
+		 Service.click();	
+		 Thread.sleep(1000);
+		 AddnewService.click();
 		 Thread.sleep(2000);
 		servicename.click();
 		Thread.sleep(2000);
@@ -477,6 +482,7 @@ public class FO_OPadvpay_yasassiWeb extends PageFactoryInitYasasiiWeb{
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
 		 Thread.sleep(1000);
+		 
 		 ((JavascriptExecutor)driver).executeScript("window.open()");
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs.get(1));
