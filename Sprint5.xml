@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase"/>
+      <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
