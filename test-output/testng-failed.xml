@@ -3,19 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW">
+      <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase">
         <methods>
           <include name="setup"/>
-          <include name="patreg" invocation-numbers="0"/>
           <include name="startTest"/>
-          <include name="logout"/>
+          <include name="inventoryFlow1" invocation-numbers="0"/>
+          <include name="navigateFOPage"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
+          <include name="inventoryFlow" invocation-numbers="0"/>
           <include name="extentReportEnd"/>
-          <include name="navigateFOPage"/>
           <include name="getResult"/>
+          <include name="logout"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.SP5_InventoryTestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -357,7 +357,7 @@ public class SP5_InventoryYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Add.click();
 		Thread.sleep(1000);
 		subLocSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 	}
 
@@ -955,7 +955,7 @@ public void patientIndent(String MRNo , String MRNo1) throws InterruptedExceptio
 	Add.click();
 	Thread.sleep(1000);
 	patIndentSave.click();
-	Thread.sleep(1000);
+	Thread.sleep(2000);
 
 	Status.click();
 	Thread.sleep(1000);
