@@ -1,193 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-15T15:14:39 IST" name="Default suite" finished-at="2022-09-15T15:24:07 IST" duration-ms="568448">
+  <suite started-at="2022-09-16T18:18:47 IST" name="Default suite" finished-at="2022-09-16T18:21:09 IST" duration-ms="141654">
     <groups>
     </groups>
-    <test started-at="2022-09-15T15:14:39 IST" name="Default test" finished-at="2022-09-15T15:24:07 IST" duration-ms="568448">
-      <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase">
-        <test-method is-config="true" signature="setup()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:14:32 IST" name="setup" finished-at="2022-09-15T15:14:39 IST" duration-ms="6799" status="PASS">
+    <test started-at="2022-09-16T18:18:47 IST" name="Default test" finished-at="2022-09-16T18:21:09 IST" duration-ms="141654">
+      <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase">
+        <test-method is-config="true" signature="setup()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:18:39 IST" name="setup" finished-at="2022-09-16T18:18:47 IST" duration-ms="7830" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="startTest()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:14:39 IST" name="startTest" finished-at="2022-09-15T15:14:39 IST" duration-ms="158" status="PASS">
+        <test-method is-config="true" signature="startTest()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:18:47 IST" name="startTest" finished-at="2022-09-16T18:18:47 IST" duration-ms="162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method is-config="true" signature="navigateFOPage()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:14:39 IST" name="navigateFOPage" finished-at="2022-09-15T15:14:51 IST" duration-ms="12189" status="PASS">
+        <test-method is-config="true" signature="navigateFOPage()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:18:47 IST" name="navigateFOPage" finished-at="2022-09-16T18:19:00 IST" duration-ms="12230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateFOPage -->
-        <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:14:51 IST" name="getTestMethodProperties" finished-at="2022-09-15T15:14:51 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:19:00 IST" name="getTestMethodProperties" finished-at="2022-09-16T18:19:00 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void pagesTestCasesYasasiiWeb.SP5_InventoryTestCase.inventoryFlow(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
+                <![CDATA[public void pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase.ADTreport() throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTestMethodProperties -->
-        <test-method signature="inventoryFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:14:51 IST" name="inventoryFlow" data-provider="getData" finished-at="2022-09-15T15:23:06 IST" duration-ms="494423" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[z-BasePharm 23]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ref021]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[91001A]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[IGN-25]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[HHC00158522]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[raaji 12]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[IND_000026122]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[IND_000028122]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[var-0013]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[vari med.pvt.ltd]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="ADTreport()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:19:00 IST" name="ADTreport" finished-at="2022-09-16T18:21:03 IST" duration-ms="123651" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='module-icon-wrap ng-star-inserted']//i[@class='ki ki-file']"}
+  (Session info: chrome=105.0.5195.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '4.0.0-alpha-3', revision: '8c567de6dc'
+System info: host: 'KI54', ip: '192.168.0.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\sriram\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:60259}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d7b1fcb999f7d0c6a437a778937dd3de
+*** Element info: {Using=xpath, value=//div[@class='module-icon-wrap ng-star-inserted']//i[@class='ki ki-file']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='module-icon-wrap ng-star-inserted']//i[@class='ki ki-file']"}
+  (Session info: chrome=105.0.5195.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '4.0.0-alpha-3', revision: '8c567de6dc'
+System info: host: 'KI54', ip: '192.168.0.54', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\sriram\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:60259}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d7b1fcb999f7d0c6a437a778937dd3de
+*** Element info: {Using=xpath, value=//div[@class='module-icon-wrap ng-star-inserted']//i[@class='ki ki-file']}
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:396)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
+at pagesOfYasasiiWeb.SP5_MISReport_AdmissionDischarge_Yasassiweb.dischargeReport(SP5_MISReport_AdmissionDischarge_Yasassiweb.java:255)
+at pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase.ADTreport(SP5_MISReport_AdmissionDischarge_TestCase.java:43)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- inventoryFlow -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:23:06 IST" name="getResult" finished-at="2022-09-15T15:23:06 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- ADTreport -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:21:03 IST" name="getResult" finished-at="2022-09-16T18:21:03 IST" duration-ms="164" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=inventoryFlow status=SUCCESS method=SP5_InventoryTestCase.inventoryFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="getTestMethodProperties(java.lang.reflect.Method)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:23:06 IST" name="getTestMethodProperties" finished-at="2022-09-15T15:23:06 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void pagesTestCasesYasasiiWeb.SP5_InventoryTestCase.inventoryFlow1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException,java.io.IOException,java.awt.AWTException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getTestMethodProperties -->
-        <test-method signature="inventoryFlow1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:23:06 IST" name="inventoryFlow1" data-provider="getData" finished-at="2022-09-15T15:24:04 IST" duration-ms="58022" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[z-BasePharm 23]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ref021]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[91001A]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[IGN-25]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[HHC00158522]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[raaji 12]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[IND_000028622]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[IND_000028422]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[var-0013]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[vari med.pvt.ltd]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- inventoryFlow1 -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:24:04 IST" name="getResult" finished-at="2022-09-15T15:24:04 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=inventoryFlow1 status=SUCCESS method=SP5_InventoryTestCase.inventoryFlow1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e] output={null}]]]>
+                <![CDATA[[TestResult name=ADTreport status=FAILURE method=SP5_MISReport_AdmissionDischarge_TestCase.ADTreport()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:24:04 IST" name="logout" finished-at="2022-09-15T15:24:07 IST" duration-ms="3396" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:21:03 IST" name="logout" finished-at="2022-09-16T18:21:09 IST" duration-ms="5401" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="extentReportEnd()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:24:07 IST" name="extentReportEnd" finished-at="2022-09-15T15:24:08 IST" duration-ms="510" status="PASS">
+        <test-method is-config="true" signature="extentReportEnd()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:21:09 IST" name="extentReportEnd" finished-at="2022-09-16T18:21:09 IST" duration-ms="428" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentReportEnd -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_InventoryTestCase@531c311e]" started-at="2022-09-15T15:24:08 IST" name="teardown" finished-at="2022-09-15T15:24:10 IST" duration-ms="2630" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase@75d0911a]" started-at="2022-09-16T18:21:09 IST" name="teardown" finished-at="2022-09-16T18:21:12 IST" duration-ms="2539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- pagesTestCasesYasasiiWeb.SP5_InventoryTestCase -->
+      </class> <!-- pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

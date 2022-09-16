@@ -3,20 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase">
+      <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase">
         <methods>
           <include name="setup"/>
           <include name="startTest"/>
-          <include name="inventoryFlow1" invocation-numbers="0"/>
-          <include name="navigateFOPage"/>
+          <include name="ADTreport"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="inventoryFlow" invocation-numbers="0"/>
+          <include name="logout"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
-          <include name="logout"/>
+          <include name="navigateFOPage"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.SP5_InventoryTestCase -->
+      </class> <!-- pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

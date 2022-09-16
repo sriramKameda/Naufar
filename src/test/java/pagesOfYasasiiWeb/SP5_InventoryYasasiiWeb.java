@@ -306,7 +306,7 @@ public class SP5_InventoryYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Hamberger.click();
 		Thread.sleep(1000);
 		inventory.click(); 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		location.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Main Pharmacy']")).click();
