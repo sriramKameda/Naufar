@@ -21,7 +21,7 @@ public class SP5_InventoryTestCase  extends TestBaseYasasiiWeb{
 	public static HomePageYasasiiWeb hm;
 
 
-	@BeforeClass()
+	@BeforeClass() 
 	public void navigateFOPage() throws InterruptedException {
 
 		this.login =new LoginPageYasasiiWeb(driver) ;

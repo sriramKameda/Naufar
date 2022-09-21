@@ -3,19 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase">
+      <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW">
         <methods>
+          <include name="navigateOPfullPage"/>
+          <include name="logout"/>
           <include name="setup"/>
           <include name="startTest"/>
-          <include name="ADTreport"/>
+          <include name="OPEMR" invocation-numbers="0"/>
           <include name="teardown"/>
           <include name="getTestMethodProperties"/>
-          <include name="logout"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
-          <include name="navigateFOPage"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase -->
+      </class> <!-- pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,7 +2,9 @@ package pagesTestCasesYasasiiWeb;
 import java.awt.AWTException;
 import java.io.IOException;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.baseYasasiiWeb.TestBaseYasasiiWeb;
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
@@ -19,20 +21,35 @@ public class BlockandFreezeTestCasesYW  extends TestBaseYasasiiWeb{
 		
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin","kameda321", "KIMSHEALTH TVM");
+	this.hm = login.enterloginDetails("admin","kameda321", "Kameda Medical Center");
 	Thread.sleep(1000);
 		
 	}    
 //	
-	@Test
-	public void OPEMR() throws InterruptedException, IOException, AWTException {
+	@Test(dataProvider="getData")
+	public void OPEMR(String User , String Password ,String cite , String MRNO) throws InterruptedException, IOException, AWTException {
 		BlockandFreezeYasasiiWeb OP = new BlockandFreezeYasasiiWeb(driver) ;
-		OP.BlockandFreeze();
+		OP.BlockandFreeze(User, Password , cite , MRNO);
+		OP.freeze();
 	}
 		
 	
 	@AfterClass public void logout() throws Exception { 
 		  this.hm.clickLogout(); 
 	}
+	
+	
+	@AfterSuite
+	public void close() {
+		
+		driver.close();
+	}
+	
+	@DataProvider
+	public Object[][] getData() throws Exception{
+
+		Object[][] data =readExcel("block");
+		return data;
+		}
 }
 

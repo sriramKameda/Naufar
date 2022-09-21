@@ -6,7 +6,7 @@
       <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase"/>
-
+ <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
