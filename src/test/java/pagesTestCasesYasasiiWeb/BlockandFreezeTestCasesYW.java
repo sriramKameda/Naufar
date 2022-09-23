@@ -27,10 +27,10 @@ public class BlockandFreezeTestCasesYW  extends TestBaseYasasiiWeb{
 	}    
 //	
 	@Test(dataProvider="getData")
-	public void OPEMR(String User , String Password ,String cite , String MRNO) throws InterruptedException, IOException, AWTException {
+	public void OPEMR(String User , String Password ,String cite , String MRNO, String IP) throws InterruptedException, IOException, AWTException {
 		BlockandFreezeYasasiiWeb OP = new BlockandFreezeYasasiiWeb(driver) ;
 		OP.BlockandFreeze(User, Password , cite , MRNO);
-		OP.freeze();
+		OP.freeze(IP);
 	}
 		
 	
@@ -39,11 +39,6 @@ public class BlockandFreezeTestCasesYW  extends TestBaseYasasiiWeb{
 	}
 	
 	
-	@AfterSuite
-	public void close() {
-		
-		driver.close();
-	}
 	
 	@DataProvider
 	public Object[][] getData() throws Exception{

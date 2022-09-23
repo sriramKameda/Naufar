@@ -16,6 +16,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -69,7 +71,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//button[contains(@class,'btn-feedback')]")
 	public WebElement howDidYouKnow;
 
-	@FindBy(xpath = "//button[contains(@class,'btn btn-primary btn-sm sm active pull-right')]")
+	@FindBy(xpath = "//button[contains(@class,'sm active pull-right')]")
 	public WebElement OKhowDidYouKnow;
 
 	@FindBy(xpath = "//button[@id='saveregistrationbutton']")
@@ -130,7 +132,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//div[contains(@class,'page-inner-btn-group')]//button[1]")
 	public WebElement Save;
 
-	@FindBy(xpath = "//i[contains(@class,'ki ki-wallet icon-btn-billing btn-dark-green inline')]")
+	@FindBy(xpath = "//i[@class='ki ki-wallet icon-btn-billing btn-dark-green inline']")
 	public WebElement Wallet;
 
 	@FindBy(xpath = "//span[@class='checkmark']")
@@ -139,7 +141,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//input[@id='withdrawalamount0']")
 	public WebElement withdraw;
 
-	@FindBy(xpath = "//button[@class='btn btn-dark-green active'][normalize-space()='OK']")
+	@FindBy(xpath = "//button[@class='btn btn-primary sm active'][normalize-space()='OK']")
 	public WebElement withdraw0k;
 
 	@FindBy(xpath = "//button[normalize-space()='Clear']")
@@ -160,7 +162,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//textarea[@id='undefined']")
 	public WebElement remark;
 
-	@FindBy(xpath = "//td[@class='icon-info ng-star-inserted']//i[@title='Cancel Request']")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/label[3]/span[2]/i[2]")
 	public WebElement cancel;
 
 	@FindBy(xpath = "//div[@class='form-group min-clear-bottom billing ki-dropdown']//input[@id='undefined']")
@@ -238,20 +240,31 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 		Thread.sleep(2000);
 		Title.click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Miss']")).click();
+		Thread.sleep(1000);
 		FirstName.click();
+		Thread.sleep(1000);
 		FirstName.sendKeys(NAME);
+		Thread.sleep(1000);
 		age.click();
+		Thread.sleep(1000);
 		age.sendKeys(AGE);
+		Thread.sleep(1000);
 		mobileNo.click();
+		Thread.sleep(1000);
 		mobileNo.sendKeys(MBLNO);
 		Thread.sleep(1000);
 		Organisation.click();
+		Thread.sleep(1000);
 		Organisation.sendKeys(ORGANISATION);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='KIMS']")).click();
+		Thread.sleep(1000);
 		ContactInformation.click();
 		Thread.sleep(1000);
 		address.click();
+		Thread.sleep(1000);
 		address.sendKeys(ADDRESS);
 		Thread.sleep(1000);
 		DocID.click();
@@ -261,6 +274,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		}
 		//aadharNo.click();
 		aadharNo.sendKeys(Keys.HOME + AADHAAR);
+		Thread.sleep(1000);
 		docAdd.click();
 		Thread.sleep(1000);
 
@@ -284,18 +298,18 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		OKhowDidYouKnow.click();
 		Thread.sleep(1000);
 		RegSave.click();
-
-		Thread.sleep(3000);
-		String mrno= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]")).getText();
+        Thread.sleep(3000);
+		SaveSuccess.click();
+		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
-
-		String word[]=mrno.split("[ :] ");
-		System.out.println("number of words: "+word.length);
-		for(int i=0;i<word.length;i++)
-		{
-			System.out.println("word["+i+"]="+word[i]);
-		}
-		System.out.println(word[1]);
+		Thread.sleep(2000);
+//		String word[]=mrno.split("[ :] ");
+//		System.out.println("number of words: "+word.length);
+//		for(int i=0;i<word.length;i++)
+//		{
+//			System.out.println("word["+i+"]="+word[i]);
+//		}
+//		System.out.println(word[1]);
 
 		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
 		FileInputStream fis=new FileInputStream(src);
@@ -303,11 +317,10 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		HSSFSheet FOFullRegTest=wb.getSheetAt(78);	
 		int i=FOFullRegTest.getLastRowNum();
 		System.out.println("Number of rows: " + i);		
-		FOFullRegTest.getRow(i).createCell(6).setCellValue(word[1]);	
+		FOFullRegTest.getRow(i).createCell(6).setCellValue(mrno);	
 		FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
-		Thread.sleep(2000);
-		SaveSuccess.click();
+		
 		Thread.sleep(2000);
 
 
@@ -319,11 +332,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 	{
 		//////Encounter
-		//Hamberger.click();
+//		Hamberger.click();
 //		Thread.sleep(1000);
 //      	EnterMRNo.clear();
-//		Thread.sleep(800);
-//		EnterMRNo.click();
+//		Thread.sleep(100);
+//	//	EnterMRNo.click();
 //		Thread.sleep(800); 
 //		EnterMRNo.sendKeys(MRNO);
 //		Thread.sleep(2000);
@@ -407,12 +420,16 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int i = k-1;
 		System.out.println(i);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[2]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		// Checkbox.click();
 		Thread.sleep(1000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[2]/span[2]/label[1]/span[1]/i[1]")).click();
-		// request.click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
+		// request.click();                                                                                                                                                                                                                                                                                    //tbody/tr[2]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]                                                                                                                                                                                                                                                                       
 		Thread.sleep(1000);
 		auth.click();
 		Thread.sleep(1000);
@@ -446,13 +463,16 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//i[@class='ki ki-user-referral']")).click();
 		AvailedService.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[2]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		// Checkbox.click();
 		Thread.sleep(1000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[2]/span[2]/label[1]/span[1]/i[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[\"+i+\"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
 		// request.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		auth.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[@title='Administrator(admin)']")).click();
@@ -618,7 +638,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		Wallet.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class='dialog-content Error']//button[@type='button'][normalize-space()='OK']")).click();
+		//driver.findElement(By.xpath("//div[@class='dialog-content Error']//button[@type='button'][normalize-space()='OK']")).click();
 
 		Thread.sleep(1000);
 		AdvCheck.click();

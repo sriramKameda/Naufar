@@ -3,10 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase"/>
+   <!--    <class name="pagesTestCasesYasasiiWeb.SP5_InventoryTestCase"/> -->
       <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase"/>
- <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- Test-->
 </suite> <!-- Suite -->

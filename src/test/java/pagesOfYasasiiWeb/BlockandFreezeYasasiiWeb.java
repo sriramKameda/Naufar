@@ -136,14 +136,31 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="//div[@class='form-group clear-bottom ki-dropdown']//input[@id='undefined']")
 	public WebElement DeleteReason;
 
-
-	@FindBy(xpath="//button[normalize-space()='Cancel Appointment']")
+     @FindBy(xpath="//button[normalize-space()='Cancel Appointment']")
 	public WebElement cancelApp;
 
-
-	@FindBy(xpath="//ki-select-control[@placeholder='Reason/Reporting Status']//input[@id='undefined']")
+    @FindBy(xpath="//ki-select-control[@placeholder='Reason/Reporting Status']//input[@id='undefined']")
 	public WebElement ReasonREporting;
 
+	@FindBy(xpath="//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-close']")
+	public WebElement cLOSEiPApp;
+	
+	@FindBy(xpath="//label[@class='check-container m0']//span[@class='checkmark']")
+	public WebElement FREESLOT;
+	
+
+	@FindBy(xpath="//i[@class='ki ki-telephone-fill']")
+	public WebElement AppSelect;
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
 	public void BlockandFreeze(String User , String Password , String cite , String MRNO) throws InterruptedException, AWTException {
 
 
@@ -365,6 +382,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		r.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(800);
 		r.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(800);
 		Thread.sleep(1000);
@@ -489,7 +507,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	}
 
-	public void freeze() throws InterruptedException, AWTException {
+	public void freeze(String IP ) throws InterruptedException, AWTException {
 
 		//////////////////Freezing
 
@@ -506,7 +524,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 //
 //		blockandfreeze.click();
 
-
+         ///masters
 		Thread.sleep(1000);
 		freeeze.click();
 		Thread.sleep(1000);
@@ -562,7 +580,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		totime.sendKeys(Keys.HOME + "08 30");
 		reason.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='IP']")).click();
 		Thread.sleep(1000);
 		remarks.click();
 		Thread.sleep(1000);
@@ -584,11 +602,22 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		System.out.println("next window."+ p);
 
 		driver.switchTo().window(tabs.get(p));
-
+		
+		/////FO
+		Thread.sleep(2000);
+		Maincategory.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='IP']")).click();
+		Thread.sleep(1000);
+		Search.clear();
+		Thread.sleep(1000);
+		Search.sendKeys(IP);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+IP+"')])[1]")).click();
+		Thread.sleep(1000);
 		Appointment.click();
 		Thread.sleep(2000);
-
-		WebDriverWait wait = new WebDriverWait(driver,30);
+        WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[1]/div[1]")));
 		Thread.sleep(1000);
 		DoctorSearch.clear();
@@ -601,14 +630,36 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']")).click();
 		Thread.sleep(1000);
-
-
+		AppReason.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Others']")).click();
+		Thread.sleep(1000);
+		AppSave.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
+		Thread.sleep(2000);
+		FREESLOT.click();
+		Thread.sleep(1000);
+		act.moveToElement(AppSelect).click().perform();
+		//AppSelect.click();
+		Thread.sleep(1000);
+		cLOSEiPApp.click();
+		Thread.sleep(1000);
+		DeleteReason.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='docter on leave']")).click();
+		Thread.sleep(1000);
+		cancelApp.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
+		Thread.sleep(1000);
+		
+		
 		driver.switchTo().window(tabs.get(m));
 		Thread.sleep(1000);
 
-
-
-		SelectCategory.click();
+		////masters
+        SelectCategory.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Doctor']")).click();
 		Thread.sleep(1000);
