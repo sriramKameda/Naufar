@@ -186,7 +186,7 @@ public class SP5_MISReport_AdmissionDischarge_Yasassiweb  extends PageFactoryIni
 			t.keyPress(KeyEvent.VK_ESCAPE);
 			Thread.sleep(800);	
 			t.keyRelease(KeyEvent.VK_ESCAPE);
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		}
 		FullScreen.click();
 		Thread.sleep(3000);
@@ -220,7 +220,7 @@ public class SP5_MISReport_AdmissionDischarge_Yasassiweb  extends PageFactoryIni
 			t.keyPress(KeyEvent.VK_ESCAPE);
 			Thread.sleep(800);	
 			t.keyRelease(KeyEvent.VK_ESCAPE);
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		}
 		DisFrom.click();
 		Thread.sleep(1000);

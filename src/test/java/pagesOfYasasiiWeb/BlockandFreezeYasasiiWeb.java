@@ -130,7 +130,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath="/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[1]/lib-patientlist[1]/form[1]/div[3]/div[2]/div[1]/div[1]/ki-calender-time-range[1]/div[1]/input[1]")
 	public WebElement reschedulecalender;
 
-	@FindBy(xpath="//div[@class='searchbar-list date-range list-open']//div[2]//div[1]//div[5]//i[1]")
+	@FindBy(xpath="//div[@title='Cancel Appointment']//i[@class='ki ki-close']")
 	public WebElement DeleteApp;
 
 	@FindBy(xpath="//div[@class='form-group clear-bottom ki-dropdown']//input[@id='undefined']")
@@ -434,7 +434,7 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 
 		AppSave.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		Thread.sleep(1000);
 		//// refreshing the tab
@@ -467,10 +467,13 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		set.click();
 		Thread.sleep(1000);
 		Search.clear();
+		Thread.sleep(1000);
+		Search.sendKeys(MRNO);
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Cancel Appointment']//i[@class='ki ki-close']")));
 		DeleteApp.click();
 		Thread.sleep(1000);
 		DeleteReason.click();

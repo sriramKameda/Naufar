@@ -426,7 +426,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		// Checkbox.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
 		// request.click();                                                                                                                                                                                                                                                                                    //tbody/tr[2]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]                                                                                                                                                                                                                                                                       
@@ -468,7 +468,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
 		// Checkbox.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[\"+i+\"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
 		// request.click();
