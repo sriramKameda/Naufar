@@ -33,7 +33,7 @@ public class SP5_MISReport_AdmissionDischarge_TestCase extends TestBaseYasasiiWe
 
 	
 
-	@Test //(dataProvider = "getData")
+	@Test 
 	public void ADTreport() throws InterruptedException, IOException, AWTException {
 		
 		
@@ -56,12 +56,6 @@ public class SP5_MISReport_AdmissionDischarge_TestCase extends TestBaseYasasiiWe
 	}
 	
 	
-	@DataProvider
-	public Object[][] getData() throws Exception{
-
-		Object[][] data =readExcel("BillCancel");
-		return data;
-		}
 	
 
 }

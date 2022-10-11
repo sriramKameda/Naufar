@@ -12,6 +12,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -112,11 +114,16 @@ public class PatientDischarge_YasassiWeb  extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//button[normalize-space()='Department Clearance']")//button[normalize-space()='Department Clearance']
 	public WebElement Depclearance;
 
-	@FindBy(xpath = "//td[@class='ta-c']//span[@class='checkmark']")
+
+	@FindBy(xpath = "//tbody/tr[1]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement laboratoryCheckbox;
-	
-	@FindBy(xpath = "//td[@class='ta-c']//span[@class='checkmark']")
+
+	@FindBy(xpath = "//tbody/tr[2]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement radiologyCheckbox;
+
+	
+	@FindBy(xpath = "//tbody/tr[3]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement medicalclrnceCheckbox;
 	
 	@FindBy(xpath = "//button[normalize-space()='Pharmacy Clearance']")
 	public WebElement pharmacyClearance;
@@ -197,7 +204,7 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		
 		//openNewTab
 
-				Thread.sleep(3000);
+		/*		Thread.sleep(3000);
 				((JavascriptExecutor)driver).executeScript("window.open()");
 				ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 				driver.switchTo().window(tabs.get(1));
@@ -216,13 +223,43 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 				 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-				Thread.sleep(5000);
+				Thread.sleep(5000);    */
 
 		
 	}
 
 	public void dischargeApproval(String MRNO , String nurseUser , String  Password , String depUser ,String URL ,String Site) throws InterruptedException, AWTException {
 		
+		
+		//openNewTab
+
+		Thread.sleep(3000);
+		((JavascriptExecutor)driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.switchTo().window(tabs.get(1));
+		Thread.sleep(5000);
+		driver.get(URL);
+		Thread.sleep(3000);
+
+		//login
+		userid.click();
+		Thread.sleep(1000);
+		userid.sendKeys(nurseUser);
+		Thread.sleep(1000);
+		password.click();
+		password.sendKeys(Password); 
+		Thread.sleep(1000);
+		site.click();
+		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+		Thread.sleep(5000);
+
+
 	///	driver.navigate().refresh();
 		Thread.sleep(2000);
 		Hamberger.click();
@@ -234,7 +271,7 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		WhiteBoard.click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNO);
 		Thread.sleep(1000);
@@ -242,7 +279,7 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
 	   js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
 		Thread.sleep(3000);
 		//act.moveToElement(element).click().build().perform();
@@ -305,7 +342,7 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
-		
+		Thread.sleep(2000);
 		
 		
 		
@@ -316,7 +353,7 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs1.get(2));
@@ -335,13 +372,13 @@ public void dischargeRecommendation(String MRNO , String nurseUser , String  Pas
 		 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000); */
 
 }
 
 public void laboratoryClearance(String MRNO , String  Password , String depUser , String RADuser ,String URL ,String Site) throws InterruptedException {
 	
-	Hamberger.click();
+/*	Hamberger.click();
 	Thread.sleep(1000);
 	EmrIcon.click();
 	Thread.sleep(1000);
@@ -349,9 +386,14 @@ public void laboratoryClearance(String MRNO , String  Password , String depUser 
 	Thread.sleep(1000);
 	driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 	Thread.sleep(2000);
-	WhiteBoard.click();
+	WhiteBoard.click();  */
+	
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+	
+	
 	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);
@@ -367,6 +409,11 @@ public void laboratoryClearance(String MRNO , String  Password , String depUser 
 	Thread.sleep(1000);
 	laboratoryCheckbox.click();
 	Thread.sleep(1000);
+	radiologyCheckbox.click();
+	Thread.sleep(1000);
+	medicalclrnceCheckbox.click();
+	Thread.sleep(1000);
+	Thread.sleep(1000);
 	verifiedBy.click();
 	Thread.sleep(1000);
 	verifiedBy.sendKeys(depUser);
@@ -377,11 +424,11 @@ public void laboratoryClearance(String MRNO , String  Password , String depUser 
 	verifyPassword.sendKeys(Password);
 	Thread.sleep(1000);
 	verifySave.click();
-	
+	Thread.sleep(3000);
 	
 	//openNewTab
 
-	Thread.sleep(3000);
+/*	Thread.sleep(3000);
 	((JavascriptExecutor)driver).executeScript("window.open()");
 	ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 	driver.switchTo().window(tabs.get(3));
@@ -400,7 +447,7 @@ public void laboratoryClearance(String MRNO , String  Password , String depUser 
 	 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-	Thread.sleep(5000);
+	Thread.sleep(5000);    */
 	
 }
 	
@@ -416,7 +463,7 @@ public void radiologyClearance(String MRNO ,  String RADuser , String  Password 
 	Thread.sleep(1000);
 	WhiteBoard.click();
 	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);
@@ -486,7 +533,7 @@ public void medicalClearance(String MRNO  , String  Password , String meduser , 
 	Thread.sleep(2500);
 	WhiteBoard.click();//span[normalize-space()='White Board']
 	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);
@@ -541,7 +588,7 @@ public void medicalClearance(String MRNO  , String  Password , String meduser , 
 
 public void PharmacyClearance(String MRNO, String nurseUser,String Password , String AdminUser , String AdminPassword,String URL , String Site) throws InterruptedException {
 	
-	Thread.sleep(1000);
+/*	Thread.sleep(1000);
 	Hamberger.click();
 	Thread.sleep(1000);
 	EMR.click();
@@ -549,9 +596,12 @@ public void PharmacyClearance(String MRNO, String nurseUser,String Password , St
 	driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 	Thread.sleep(2000);
 	WhiteBoard.click();
+	Thread.sleep(1000);  */
+	
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 	Thread.sleep(1000);
-	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);
@@ -583,8 +633,8 @@ public void PharmacyClearance(String MRNO, String nurseUser,String Password , St
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(6));
-		driver.switchTo().window(tabs.get(6));
+		driver.switchTo().window(tabs.get(2));
+		driver.switchTo().window(tabs.get(2));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -596,6 +646,10 @@ public void PharmacyClearance(String MRNO, String nurseUser,String Password , St
 		password.sendKeys(AdminPassword);
 		Thread.sleep(1000);
 		site.click();
+		Thread.sleep(1000);
+		
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		Thread.sleep(1000);
 		 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -604,7 +658,7 @@ public void PharmacyClearance(String MRNO, String nurseUser,String Password , St
 }
 
 public void ADTAppoval(String MRNO , String nurseUser,String Password,String URL , String Site ) throws InterruptedException {
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	FOSearchField.click();
 	Thread.sleep(1000);
 	Thread.sleep(1000);
@@ -636,8 +690,8 @@ public void ADTAppoval(String MRNO , String nurseUser,String Password,String URL
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(7));
-		driver.switchTo().window(tabs.get(7));//7
+		driver.switchTo().window(tabs.get(3));
+		driver.switchTo().window(tabs.get(3));//7
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -649,7 +703,9 @@ public void ADTAppoval(String MRNO , String nurseUser,String Password,String URL
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		 driver.findElement(By.xpath("//*[contains(text(),'" +Site+ "')]")).click();
+	
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		 driver.findElement(By.xpath("//*[contains(text(),'"+Site+ "')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(5000);
@@ -670,7 +726,7 @@ public void financialClearance(String MRNO , String nurseUser,String Password,St
 	WhiteBoard.click();
 	Thread.sleep(1000);
 	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);
@@ -699,7 +755,7 @@ public void financialClearance(String MRNO , String nurseUser,String Password,St
 	
 	//openNewTab
 
-			Thread.sleep(3000);
+	/*		Thread.sleep(3000);
 			((JavascriptExecutor)driver).executeScript("window.open()");
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			driver.switchTo().window(tabs.get(8));
@@ -720,7 +776,7 @@ public void financialClearance(String MRNO , String nurseUser,String Password,St
 			driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 			Thread.sleep(5000);
 	
-	
+	*/
 	
 	
 	
@@ -732,7 +788,7 @@ public void financialClearance(String MRNO , String nurseUser,String Password,St
 }
 public void physicalDischarge( String MRNO , String nurseUser,String Password) throws InterruptedException {
 	
-	Thread.sleep(1000);
+/*	Thread.sleep(1000);
 	Hamberger.click();
 	Thread.sleep(1000);
 	EMR.click();
@@ -743,8 +799,12 @@ public void physicalDischarge( String MRNO , String nurseUser,String Password) t
 	Thread.sleep(1000);
 	
 	//driver.navigate().refresh();
+	Thread.sleep(1000);   */
+	
+	WebDriverWait wait = new WebDriverWait(driver,30);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 	Thread.sleep(1000);
-	NameSearch.click();
+	NameSearch.clear();
 	Thread.sleep(1000);
 	NameSearch.sendKeys(MRNO);
 	Thread.sleep(1000);

@@ -27,7 +27,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-@Test(dataProvider="getData"  , priority=0)
+//@Test(dataProvider="getData"  , priority=0)
 public void BirthReg(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException {
 		Thread.sleep(2000);
 		
@@ -64,8 +64,8 @@ public void Babydischarge(String Name,String AadharNumber,String MRNo, String Pr
 		Schedule1.dischargeRecommendationBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.dischargeApprovalBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.LaboratoryClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
-		Schedule1.radiologyClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
-		Schedule1.medicalClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
+	//	Schedule1.radiologyClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
+	//	Schedule1.medicalClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.pharmacyClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.ADTapproval(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.financialClearance(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);

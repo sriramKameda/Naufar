@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -72,7 +75,7 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement template;
 	@FindBy(xpath = "(//li)[23]")
 	public WebElement SOAP;
-	@FindBy(xpath = "//*[@class='btn btn-dark-green active']")
+	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']//i[@class='ki ki-check']")
 	public WebElement clickOK ;
 	@FindBy(xpath="//label[contains(text(),'CPOE Service')]")
 	public WebElement CPOEServices;
@@ -101,7 +104,7 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath="//i[@class='ki ki-reset']")
 	public WebElement refresh;
-	@FindBy(xpath="//input[@id='cpoeSearchText']") 
+	@FindBy(xpath="//input[@id='cpoeSearchDb']") 
 	public WebElement CPOESearch2;
 
 	@FindBy(xpath="//i[@class='ki ki-reset']")
@@ -127,12 +130,17 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='prescriptiontypeid']//input[@class='form-control search-bar ng-valid ng-touched ng-dirty']")
 	public WebElement medicineSearch;//input[@placeholder='Search Medicines']
 
-	@FindBy(xpath = "//input[@placeholder='Search with Favorites']")
+	@FindBy(xpath = "//input[@class='form-control search-bar ng-pristine ng-valid ng-touched']")
 	public WebElement CPOEPharmacysearch;
 
 	@FindBy(xpath = "//input[@placeholder='Search Medicines']")
 	public WebElement CPOEPharmacysearch1;
 
+	@FindBy(xpath = "//input[@class='form-control search-bar ng-valid ng-touched ng-dirty']")
+	public WebElement CPOEPharmacysearch11;
+	
+	
+	
 	@FindBy(xpath = "//button[@id='updatePharmacy']")
 	public WebElement ADDMedicine;
 	@FindBy(xpath="//div[@class='order-details']//i[@class='fa fa-ellipsis-v']")
@@ -269,7 +277,7 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement closelog;
 	@FindBy(xpath="//textarea[@id='deletedreason']")
 	public WebElement deletereason;
-	@FindBy(xpath="//span[@class='btn btn-dark-green active']")
+	@FindBy(xpath="//span[@class='btn btn-primary sm active']")
 	public WebElement okdelete;
 	@FindBy(xpath="//div[@class='card card-sm left-border is-deleted mild']//i[@class='fa fa-ellipsis-v']")
 	public WebElement allergypoint2;
@@ -371,7 +379,7 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//button[contains(@class,'btn-feedback')]")
 	public WebElement howDidYouKnow;
 
-	@FindBy(xpath = "//button[contains(@class,'btn btn-primary btn-sm sm active pull-right')]")
+	@FindBy(xpath = "//button[contains(@class,'sm active pull-right')]")
 	public WebElement OKhowDidYouKnow;
 
 	@FindBy(xpath = "//button[@id='saveregistrationbutton']")
@@ -416,9 +424,13 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		DocID.click();
 		Thread.sleep(1000);
-		idDocs.click();
+		
+		for (int i = 0; i <=15; i++) {
+			aadharNo.sendKeys( Keys.BACK_SPACE);
+		}
+	//	idDocs.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//li[normalize-space()='Passport']")).click();
+	//	driver.findElement(By.xpath("//li[normalize-space()='Passport']")).click();
 		Thread.sleep(1000);
 		//aadharNo.click();
 		aadharNo.sendKeys(AADHAAR);
@@ -486,7 +498,7 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 
 
-	public void  medication(String MRNo,String allergys,String editallergys,String deletere,String otheraller,String editdep,String edp,String sd,String cpoe1,String cpoe2,String cpoe3,String red,String cpoep,String rem,String cpoep2,String rem1,String ad1,String ad,String rm2,String side,String rm3,String p3,String p4,String rr ,String re,String p5) throws InterruptedException {
+	public void  medication(String MRNo,String allergys,String editallergys,String deletere,String otheraller,String editdep,String edp,String sd,String cpoe1,String cpoe2,String cpoe3,String red,String cpoep,String rem,String cpoep2,String rem1,String ad1,String ad,String rm2,String side,String rm3,String p3,String p4,String rr ,String re,String p5) throws InterruptedException, AWTException {
 
 		Thread.sleep(1000);
 		EnterPatientName.sendKeys(MRNo);
@@ -500,13 +512,13 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000);
 		docnote.click();
 		Thread.sleep(1000);
-		//		List<WebElement> dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
-		//		
-		//		if(dynamicElement.size() !=0)
-		//		{
-		//			driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
-		//		}
-		//	  Thread.sleep(800); 
+//				List<WebElement> dynamicElement=driver.findElements(By.xpath("//button[normalize-space()='Create New Note']"));
+//				
+//				if(dynamicElement.size() !=0)
+//				{
+//					driver.findElement(By.xpath("//button[normalize-space()='Create New Note']")).click();
+//				}
+			  Thread.sleep(800); 
 		cheifComplaint.clear();
 		Thread.sleep(800); 
 		cheifComplaint.sendKeys("fever");
@@ -686,8 +698,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		//DeleteClinicalWarning
 		driver.findElement(By.xpath("//label[normalize-space()='Bleeding Disorders']//span[@class='checkmark']")).click();
-		Thread.sleep(1000);
-		yesdelete.click();
+		Thread.sleep(2000);
+		yesdelete.click();//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']
 		Thread.sleep(1000);
 		//Diagnosis&Plan
 		diagnosis.click();
@@ -711,11 +723,11 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		okdig.click();
 		Thread.sleep(1000);
 		//DeleteDiagnosis&plan
-		editdignosis.click();
+		//editdignosis.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[normalize-space()='Delete']")).click();
+		//driver.findElement(By.xpath("//div[normalize-space()='Delete']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active'][normalize-space()='Yes']")).click();
+		//driver.findElement(By.xpath("//button[@class='btn btn-dark-green active'][normalize-space()='Yes']")).click();
 		//yesdelete.click();
 		Thread.sleep(1000);
 		//			 
@@ -758,28 +770,20 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		update.click();
 		Thread.sleep(1000);
 		//	driver.findElement(By.xpath("//input[@id='cpoeSearchText']")).click();
-		refresh.click();
+		//refresh.click();
 		Thread.sleep(1000);
 		////Panel Service
 		//	CPOESearch2.click();
 		Thread.sleep(1000);
 		CPOESearch2.clear();
-		//CPOESearch2.sendKeys(cpoe2);
 		Thread.sleep(1000);
-		//	CPOESearch2.sendKeys(Keys.ENTER);
+		CPOESearch2.sendKeys(cpoe2);
+		Thread.sleep(1000);
+			CPOESearch2.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='Lipid Panel']")).click();
 		Thread.sleep(1000);
-		////////Instructions
-		//	refresh1.click();
-		//				Thread.sleep(500);
-		//				CPOESearch3.click();
-		//				CPOESearch3.clear();
-		//				CPOESearch3.sendKeys(cpoe3);
-		//				CPOESearch3.sendKeys(Keys.ENTER);
-		//				Thread.sleep(1000);
-		//				driver.findElement(By.xpath("//label[normalize-space()='Check Blood Pressure']")).click();
-		//				Thread.sleep(1000);
+		
 		//Service Editing 			
 		editpoint.click();
 		Thread.sleep(1000);
@@ -835,15 +839,26 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		CPOEPharmacysearch.sendKeys(cpoep);
 		Thread.sleep(1000);
 		//	CPOEPharmacysearch.sendKeys(Keys.ENTER);
-		Thread.sleep(3000);//*[contains(text(),'Augmentin 1000Mg Duo Tab, 1 Tab(s)  by Oral')]
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[contains(text(),'Augmentin 1000Mg Duo Tab, 1 Tab(s)  by Oral')]")).click();
-		Thread.sleep(1000);//*[contains(text(),'Augmentin 1000Mg Duo Tab, 1 Tab(s)  by Oral')]
+		Thread.sleep(1000);
 		frequency.click();
-		Thread.sleep(1000);//div[@title="Augmentin 1000Mg Duo Tab, 1 Tab(s)  by Oral"]
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='BID']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//ki-calender-time-military[@formcontrolname='enddate']//input[@class='form-control ng-untouched ng-pristine ng-valid ng-star-inserted']")).click();
+		Robot r=new Robot();
+		r.keyPress(KeyEvent.VK_RIGHT);
+		r.keyRelease(KeyEvent.VK_RIGHT);
+		Thread.sleep(1000);
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(800);	
+		driver.findElement(By.xpath("//span[normalize-space()='Set']")).click();
 		Thread.sleep(1000);
 		ADDMedicine.click();
 		Thread.sleep(1000);
+		
 		//Edit_ongoing-patient own medication
 		editpharmacy.click();
 		Thread.sleep(1000);
@@ -890,13 +905,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//				durationpast.sendKeys("3");
 		Thread.sleep(1000);
 
-		////////////////Date
-		//				driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/app-cpoe-pharmacy-prescription[1]/form[1]/div[2]/div[2]/div[5]/div[1]/div[1]/div[5]/ki-calender-time-military[1]/div[1]/input[1]")).click();
-		//				Thread.sleep(1000);
-		//				driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[2]/owl-date-time-month-view[1]/table[1]/tbody[1]/tr[4]/td[6]/span[1]")).click();
-		//				Thread.sleep(1000);
-		//				driver.findElement(By.xpath("//span[normalize-space()='Set']")).click();
-		//				Thread.sleep(1000);
+	//	driver.findElement(By.xpath("//label[contains(text(),'G91.2')]//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
 		ADDMedicine.click();
 		Thread.sleep(1000);
 		//Edit-past Outside hospital			    
@@ -921,11 +931,11 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//3.Additive Medicine	
 		driver.findElement(By.xpath("//div[@class='btn-pharmacy-group cust-grp']//i[@class='ki ki-reset']")).click();
 		Thread.sleep(1000);
-		CPOEPharmacysearch.click();
+		//CPOEPharmacysearch.click();
 		Thread.sleep(1000);
-		CPOEPharmacysearch.clear();
+		CPOEPharmacysearch11.clear();
 		Thread.sleep(1000);
-		CPOEPharmacysearch.sendKeys(ad1);
+		CPOEPharmacysearch11.sendKeys(ad1);
 		//CPOEPharmacysearch.sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(@title,'by Intravenous')]")).click();
@@ -946,7 +956,9 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		Add.click();
 		Thread.sleep(500);
-		ok.click();
+		driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+		
+	//	ok.click();
 		Thread.sleep(500);
 		frequency.click();
 		driver.findElement(By.xpath("//li[normalize-space()='BID']")).click();
@@ -960,6 +972,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		idadd.click();
 		driver.findElement(By.xpath("//li[normalize-space()='ml/Hr']")).click();
 		Thread.sleep(500);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/app-cpoe-pharmacy-prescription[1]/form[1]/div[2]/div[2]/div[12]/app-cpoe-diagnosis-list[1]/div[1]/div[1]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/span[1]")).click();
+		Thread.sleep(1000);
 		ADDMedicine.click();
 		//	yesadd.click();
 		Thread.sleep(3000);			    
@@ -1015,7 +1029,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		//unitid.click();//div[@class='form-group ng-star-inserted']//input[@id='duration']
 		Thread.sleep(1000);
-		//driver.findElement(By.xpath("//li[normalize-space()='Day(s)']")).click();
+		driver.findElement(By.xpath("//label[contains(text(),'G91.2')]//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		ADDMedicine.click();
 		Thread.sleep(3000);
@@ -1054,6 +1069,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		days.click();
 		days.sendKeys("3");
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'G91.2')]//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
 		ADDMedicine.click();
 		Thread.sleep(500);
 		//////// linkedMedicine-2	
@@ -1085,6 +1102,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		justification.sendKeys("ok");
 		linkedmedicine.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'G91.2')]//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		ADDMedicine.click();
 
@@ -1168,6 +1187,8 @@ public class EMRMedicationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='TID']")).click();
 		Thread.sleep(1000);
 		tapering1.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[contains(text(),'G91.2')]//span[@class='checkmark']")).click();
 		Thread.sleep(1000);
 		ADDMedicine.click();
 		//Edit-Tapering Medicine

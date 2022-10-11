@@ -44,7 +44,7 @@ public class FO_PharmacyBilling_TestCaseYW  extends TestBaseYasasiiWeb {
 				
 				
 		FO_PharmacyBilling_YasassiWeb  bill = new   FO_PharmacyBilling_YasassiWeb (driver);
-		 bill.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword);
+		 bill.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword , Site);
 		
 	}
 	

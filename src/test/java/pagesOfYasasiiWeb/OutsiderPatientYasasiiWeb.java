@@ -14,6 +14,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -55,7 +58,7 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//label[normalize-space()='Newspaper']")
 	public WebElement checknewspaper;
 	
-	@FindBy(xpath = "//button[@class='btn btn-primary btn-sm sm active pull-right']")
+	@FindBy(xpath = "//button[contains(@class,'sm active pull-right')]")
 	public WebElement howdiduknowOk;
 	
 	@FindBy(xpath = "//button[@id='saveregistrationbutton']")
@@ -120,6 +123,11 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement idDocs;
 	
   
+	@FindBy(xpath = "//input[@id='subcategory']")
+	public WebElement subcategorySearch;
+	
+		
+	
     public Outsiderappointment Outsiderentry(String firstnme,String secondname,String Age,String phone) throws InterruptedException, IOException
 	{
     	
@@ -145,34 +153,35 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		howdiduknowOk.click();
 		Thread.sleep(2000);
 		fosave.click();
-		Thread.sleep(1000);
-		 driver.findElement(By.xpath("//div[contains(text(),'Billing')]")).click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'item-icon')]//i[contains(@class,'ki ki-reception-fill')]")));
+		 driver.findElement(By.xpath("//div[contains(@class,'item-icon')]//i[contains(@class,'ki ki-reception-fill')]")).click();
 		
-		 Thread.sleep(1000);
-		 Service.click();	
-		 Thread.sleep(1000);
-		 AddnewService.click();
-		 Thread.sleep(1000);
-		 category.click();
-		 driver.findElement(By.xpath("//li[normalize-space()='Advance']")).click();
-		 servicename.click();
-		 Thread.sleep(1000);
-		 servicename.sendKeys("General Advance");
-		 driver.findElement(By.xpath("//li[normalize-space()='General Advance']")).click();
-		 Thread.sleep(1000);
-		 Amount.clear();
-		 Amount.sendKeys("50");
-		 Amount.sendKeys(Keys.ENTER);
-		 Thread.sleep(1000);
-		 Add.click();
-		 Thread.sleep(1000);
-		 JavascriptExecutor js= (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].scrollIntoView();",  totalpay);
-		 Thread.sleep(1000);
-		Save.click();
-		Thread.sleep(1000);
-		 SaveOk.click();
-		
+//		 Thread.sleep(1000);
+//		 Service.click();	
+//		 Thread.sleep(1000);
+//		 AddnewService.click();
+//		 Thread.sleep(1000);
+//		 category.click();
+//		 driver.findElement(By.xpath("//li[normalize-space()='Advance']")).click();
+//		 servicename.click();
+//		 Thread.sleep(1000);
+//		 servicename.sendKeys("General Advance");
+//		 driver.findElement(By.xpath("//li[normalize-space()='General Advance']")).click();
+//		 Thread.sleep(1000);
+//		 Amount.clear();
+//		 Amount.sendKeys("50");
+//		 Amount.sendKeys(Keys.ENTER);
+//		 Thread.sleep(1000);
+//		 Add.click();
+//		 Thread.sleep(1000);
+//		 JavascriptExecutor js= (JavascriptExecutor) driver;
+//		 js.executeScript("arguments[0].scrollIntoView();",  totalpay);
+//		 Thread.sleep(1000);
+//		 Save.click();
+//		 Thread.sleep(1000);
+//		 SaveOk.click();
+//		
 		
 		
 		
@@ -207,7 +216,7 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		
 		Thread.sleep(3000);
-        String mrno= driver.findElement(By.xpath("/html/body/app-root/ki-dialog/div[2]/div/div/div[2]/div/div[2]")).getText();
+        String mrno= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]")).getText();
     	System.out.println(mrno);
 		
     	String word[]=mrno.split("[ :] ");
@@ -218,7 +227,7 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		}
 		System.out.println(word[1]);
 		
-		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb82190\\src\\test\\resources\\excelYasasiiWeb\\sprint4 testData82.xls");
+		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
 		FileInputStream fis=new FileInputStream(src);
 		HSSFWorkbook wb=new HSSFWorkbook(fis);
 		HSSFSheet OutsiderPatientRegistration=wb.getSheetAt(20);	
@@ -228,6 +237,21 @@ public class OutsiderPatientYasasiiWeb extends PageFactoryInitYasasiiWeb{
     	FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
 		successok.click();
+		 Thread.sleep(2000);
+		maincategorySearch.click();
+    	Thread.sleep(800);
+    	driver.findElement(By.xpath("//li[normalize-space()='Appointment']")).click();
+    	Thread.sleep(800);
+    	subcategorySearch.click();
+    	Thread.sleep(800);
+    	driver.findElement(By.xpath("//li[normalize-space()='Outsider Pending']")).click();
+    	Thread.sleep(2000);
+//    	boolean displayed =	driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).isDisplayed();
+//		System.out.println(displayed);
+//        Assert.assertFalse(displayed);
+
+		Thread.sleep(800);
+		
 		
 		
 	}

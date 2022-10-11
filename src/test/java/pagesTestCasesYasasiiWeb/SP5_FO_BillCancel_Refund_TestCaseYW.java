@@ -35,7 +35,7 @@ public class SP5_FO_BillCancel_Refund_TestCaseYW extends TestBaseYasasiiWeb {
 
 	
 
-	@Test (dataProvider = "getData")
+	@Test (dataProvider = "getData" , priority=0)
 	public void patreg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ,String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ,String URL, String User , String Password , String site ) throws InterruptedException, IOException {
 		
 		
@@ -43,13 +43,29 @@ public class SP5_FO_BillCancel_Refund_TestCaseYW extends TestBaseYasasiiWeb {
 		
 		bill.patReg(NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR);
 		
+		
+		
+		}
+	
+	
+	@Test (dataProvider = "getData" , priority=1)
+	public void RCM(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ,String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ,String URL, String User , String Password , String site ) throws InterruptedException, IOException {
+		
+		
+		SP5_FO_BillCancel_Refund_YasassiWeb bill=new SP5_FO_BillCancel_Refund_YasassiWeb(driver);
+		
+		
+		
 		bill.BillCancelReq(MRNO, PROVIDER, SERVICE1, AMOUNT, SERVICE2);
 		
-		bill.AuthorisingRequest(URL, User, Password, site);
+		bill.AuthorisingRequest(URL, User, Password, site,MRNO);
 		
 		bill.checkRestored(PROVIDER);
 		
 		}
+	
+	
+	
 	
 	@AfterClass
 	public void logout() throws Exception

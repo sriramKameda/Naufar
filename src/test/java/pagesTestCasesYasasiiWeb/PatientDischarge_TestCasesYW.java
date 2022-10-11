@@ -39,8 +39,8 @@ public class PatientDischarge_TestCasesYW  extends TestBaseYasasiiWeb{
 		dis.dischargeRecommendation(MRNO, nurseUser, Password,URL,Site);
 		dis.dischargeApproval(MRNO, nurseUser, Password, depUser,URL,Site);
 		dis.laboratoryClearance(MRNO, Password, depUser, RADuser,URL,Site);
-		dis.radiologyClearance(MRNO, RADuser, Password, meduser,URL,Site);
-		dis.medicalClearance(MRNO,Password, meduser, nurseUser,URL,Site);
+	//	dis.radiologyClearance(MRNO, RADuser, Password, meduser,URL,Site);
+	//	dis.medicalClearance(MRNO,Password, meduser, nurseUser,URL,Site);
 		dis.PharmacyClearance(MRNO, nurseUser, Password, AdminUser, AdminPassword,URL,Site);
 		dis.ADTAppoval(MRNO, nurseUser, Password,URL,Site);
 		dis.financialClearance(MRNO, nurseUser, Password,URL,Site);

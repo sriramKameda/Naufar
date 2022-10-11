@@ -36,7 +36,7 @@ public class OutsiderPatientRegTestCases extends TestBaseYasasiiWeb {
 		OutsiderPatientYasasiiWeb OSReg = new OutsiderPatientYasasiiWeb(driver) ;
 		OSReg.Outsiderentry(firstnme,secondname,Age,phone);
 		Outsiderappointment OSApp = new Outsiderappointment(driver);
-		OSApp.Outsiderappointment(doctor);
+		OSApp.Outsiderappointment(doctor,MRNo,secondname);
 		OSApp.encounterappCheckIn();
 		OSReg.OutsiderRegistration(Homeaddress,documnumber,MRNo);
 			}
@@ -45,9 +45,9 @@ public class OutsiderPatientRegTestCases extends TestBaseYasasiiWeb {
 	public void outsiderbilling(String firstnme,String secondname,String Age,String phone,String Homeaddress,String documnumber,String doctor,String MRNo,String provider,String Servicename,String cardname) throws InterruptedException, IOException {
 		Outsiderappointment OSSReg = new Outsiderappointment(driver) ;
 		OSSReg.outsiderpatientselection(secondname,MRNo);
-	 //OSSReg.outsiderbilling(provider, Servicename);
-	// OSSReg.card(cardname);
-	 //OSSReg.savebill();
+	    OSSReg.outsiderbilling(provider, Servicename);
+	    OSSReg.card(cardname);
+	    OSSReg.savebill(secondname);
 	}
 	
 	@AfterClass

@@ -290,6 +290,8 @@ public class BlockandFreezeYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Site.click();
 		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+cite+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+cite+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();

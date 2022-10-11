@@ -65,8 +65,8 @@ public class bedCreation extends PageFactoryInitYasasiiWeb{
 
 	public void bed() throws InterruptedException {
 
-		int a=11;
-		char b=72;
+		int a=12;
+		char b=73;
 
 
 		Thread.sleep(2000);

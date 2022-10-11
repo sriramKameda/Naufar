@@ -119,7 +119,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement EnterChiefComplaint;
 	@FindBy(xpath = "//input[@id='emrtemplateid']")
 	public WebElement EnterTemplate;
-	@FindBy(xpath = "//li[normalize-space()='Antenatal']")
+	@FindBy(xpath = "//li[normalize-space()='Antenatal - TEM67']")
 	public WebElement SelectTemplate;
 	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']")
 	public WebElement ClickOk;
@@ -138,7 +138,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement Conseption;
 	@FindBy(xpath = "//label[contains(text(),'CPOE Pharmacy')]")
 	public WebElement CPOEPharmacy;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]")
 	public WebElement SelectMedicine;
 	@FindBy(xpath = "//input[@id='prescriptiontypeid']")
 	public WebElement Ongoing;
@@ -199,7 +199,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement TypeOfDelivery;
 	@FindBy(xpath = "//li[contains(text(),'Normal')]")
 	public WebElement SelectNormal;
-	@FindBy(xpath = "//img[contains(@src,'../../../assets/img/icons/AddNewIcon.png')]")
+	@FindBy(xpath = "//i[@class='ki ki-note ng-star-inserted']")
 	public WebElement APGARScore;
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-scoretemplate-modal[1]/div[2]/div[1]/div[1]/tabset[1]/div[1]/tab[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement RespiratoryEffort;
@@ -383,7 +383,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")
 	public WebElement Logoutconfrm;
 
-	@FindBy(xpath = "//input[contains(@placeholder,'Search Medicines')]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[9]/div[1]/app-cpoe-container[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/app-cpoe-pharmacy-list[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]")
 	public WebElement medicineSearch;
 
 	@FindBy(xpath = "//app-cpoe-pharmacy-list//div[contains(@class,'card-header pb0')]//img[1]")
@@ -394,7 +394,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//i[contains(@class,'dashboard-lock ki ki-lock')]")
 	public WebElement lock;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/ki-select-control[1]/div[1]/input[1]")
+	@FindBy(xpath = "//div[@class='form-group ki-dropdown']//input[@id='genderid']")
 	public WebElement gender;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[2]/ki-calender-time[1]/div[1]/input[1]")
@@ -542,12 +542,17 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//button[normalize-space()='Department Clearance']")//button[normalize-space()='Department Clearance']
 	public WebElement Depclearance;
 
-	@FindBy(xpath = "//td[@class='ta-c']//span[@class='checkmark']")
+	@FindBy(xpath = "//tbody/tr[1]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement laboratoryCheckbox;
 
-	@FindBy(xpath = "//td[@class='ta-c']//span[@class='checkmark']")
+	@FindBy(xpath = "//tbody/tr[2]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement radiologyCheckbox;
 
+	
+	@FindBy(xpath = "//tbody/tr[3]/td[2]/label[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement medicalclrnceCheckbox;
+	
+	
 	@FindBy(xpath = "//button[normalize-space()='Pharmacy Clearance']")
 	public WebElement pharmacyClearance;
 
@@ -758,7 +763,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//EMR.click();
 		Thread.sleep(1000);
 		EMRHomeScreen.click();
-		Thread.sleep(500);
+		Thread.sleep(1200);
 		OP.click();
 		Thread.sleep(600);
 		SelectIP.click();
@@ -790,8 +795,12 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		EnterTemplate.sendKeys("A");
 		Thread.sleep(1000);
 		SelectTemplate.click();
+		Thread.sleep(500);
 		ClickOk.click();
 		Thread.sleep(500);
+		driver.findElement(By.xpath("//div[contains(text(),'Antenatal Assessment')]")).click();
+		
+		
 		Pregnant.click();
 		Thread.sleep(500);
 		EnterObstreticScore.sendKeys("2");
@@ -804,7 +813,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(500);
 		CPOEPharmacy.click();
 		Thread.sleep(500);
-		Star.click();
+		//Star.click();
 		Thread.sleep(500);
 		medicineSearch.click();
 		Thread.sleep(500);
@@ -1000,7 +1009,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		wb.write(fout);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 
-
+		Thread.sleep(2000);
 		billing.click();
 		Thread.sleep(2000);
 		encProvider.click();
@@ -1094,7 +1103,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		Dropdown.click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath("//li[normalize-space()='Search']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='IP']")).click();
 		Thread.sleep(1000);
 		//	NextDropdown.click();
 		Thread.sleep(1000);
@@ -1115,19 +1124,19 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		DoctorNote1.click();
 		Thread.sleep(2000);
 
-		List<WebElement> dynamicElement4=driver.findElements(By.xpath("//input[@id='inchargeproviderid']"));
-
-		if(dynamicElement4.size() !=0)
-		{
-			driver.findElement(By.xpath("//input[@id='inchargeproviderid']")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/ul[1]/app-list-item[1]/li[1]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[@class='btn btn-dark-green active']")).click();
-			Thread.sleep(2000);
-
-		}
-		Thread.sleep(800); 
+//		List<WebElement> dynamicElement4=driver.findElements(By.xpath("//input[@id='inchargeproviderid']"));
+//
+//		if(dynamicElement4.size() !=0)
+//		{
+//			driver.findElement(By.xpath("//input[@id='inchargeproviderid']")).click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("/html[1]/body[1]/modal-container[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/ul[1]/app-list-item[1]/li[1]")).click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//span[@class='btn btn-dark-green active']")).click();
+//			Thread.sleep(2000);
+//
+//		}
+//		Thread.sleep(800); 
 
 		//input[@id='inchargeproviderid']
 
@@ -1300,7 +1309,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(5));
@@ -1319,7 +1328,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);   */
 
 
 	}
@@ -1328,7 +1337,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//////////////////////////////////laboratory clearance
 
-		Hamberger.click();
+	/*	Hamberger.click();
 		Thread.sleep(1000);
 		EmrIcon.click();
 		Thread.sleep(1000);
@@ -1336,7 +1345,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(1000);
-		WhiteBoard.click();
+		WhiteBoard.click(); */
 		Thread.sleep(1000);
 		NameSearch.click();
 		Thread.sleep(1000);
@@ -1354,6 +1363,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		laboratoryCheckbox.click();
 		Thread.sleep(1000);
+		radiologyCheckbox.click();
+		Thread.sleep(1000);
+		medicalclrnceCheckbox.click();
+		Thread.sleep(1000);
+		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
 		verifiedBy.sendKeys(depUser);
@@ -1368,7 +1382,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(6));
@@ -1387,7 +1401,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);*/
 
 	}
 
@@ -1403,7 +1417,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(1000);
 		WhiteBoard.click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);   
 		NameSearch.click();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
@@ -1529,14 +1543,14 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//////////////////////////////////pharmacy clearance
 
 		Thread.sleep(1000);
-		Hamberger.click();
+	/*	Hamberger.click();
 		Thread.sleep(1000);
 		EMR.click();
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(2000);
 		WhiteBoard.click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);   */
 		Thread.sleep(1000);
 		NameSearch.click();
 		Thread.sleep(1000);
@@ -1567,7 +1581,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(9));
@@ -1586,7 +1600,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);  */
 
 	}
 
@@ -1627,8 +1641,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(10));
-		driver.switchTo().window(tabs.get(10));//7
+		driver.switchTo().window(tabs.get(5));
+		driver.switchTo().window(tabs.get(5));//7
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1695,8 +1709,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(11));
-		driver.switchTo().window(tabs.get(11));
+		driver.switchTo().window(tabs.get(6));
+		driver.switchTo().window(tabs.get(6));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1721,7 +1735,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//////////////////////////physical Discharge
 
-		Thread.sleep(1000);
+	/*	Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(1000);
 		EMR.click();
@@ -1731,7 +1745,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(1000);
 
-		//driver.navigate().refresh();
+		//driver.navigate().refresh(); */
 		Thread.sleep(1000);
 		NameSearch.click();
 		Thread.sleep(1000);
@@ -1767,8 +1781,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(12));
-		driver.switchTo().window(tabs.get(12));
+		driver.switchTo().window(tabs.get(7));
+		driver.switchTo().window(tabs.get(7));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);

@@ -1,6 +1,7 @@
 package pagesOfYasasiiWeb;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,7 +30,7 @@ public class LoginPageYasasiiWeb extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//*[@id=\"loginsite\"]/div/span/span")
 	public WebElement warningMessage;
 	
-	
+
 	
 	//public WebElement warningredMessage;
 	
@@ -56,6 +57,9 @@ public class LoginPageYasasiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		loginsite.click();
 		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//app-list-item/li[contains(text(),\""+mysite+"\")]")) );
+		
 		driver.findElement(By.xpath("//app-list-item/li[contains(text(),\""+mysite+"\")]")).click();
 		Thread.sleep(2000);
 		login.click();

@@ -234,7 +234,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//span[@class='search-icon']//i[@class='ki ki-search']")
 	public WebElement SearchButton;
 
-
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement patientSearch;
+	
+	
+	
 	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ) throws InterruptedException, IOException {
 
 
@@ -470,7 +474,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		// Checkbox.click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[\"+i+\"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+i+"]/td[1]/label[3]/span[2]/label[1]/span[1]/i[1]")).click();
 		// request.click();
 		Thread.sleep(2000);
 		auth.click();
@@ -487,7 +491,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 	}
 
-	public void AuthorisingRequest(String URL, String User , String Password , String site) throws InterruptedException {
+	public void AuthorisingRequest(String URL, String User , String Password , String site,String MRNO ) throws InterruptedException {
 
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -508,11 +512,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		Site.click();
 		Thread.sleep(1000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+site+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-
-
 		Thread.sleep(2000);
 
 
@@ -534,25 +538,18 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int a= z/4;
 
 		System.out.println("size="+a);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+a+"]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();	
+		Thread.sleep(1000);
+		patientSearch.clear();
+		Thread.sleep(1000);
+		patientSearch.sendKeys(MRNO ,Keys.ENTER);
+		Thread.sleep(1000);
+		SearchIcon.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();	
 		//CHECK.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr["+a+"]/td[6]/span[1]/i[1]")).click();	
-		// AmountEdit.click();
-		Thread.sleep(1000);
-		//Amount1.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")).click();	
 
-		Thread.sleep(1000);
-		//Amount1.sendKeys("7000");
-		Thread.sleep(1000);
-		//driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
-		Thread.sleep(1000);
-		//Amount1.sendKeys(Keys.CONTROL,"a",Keys.DELETE);
-		// Amount1.clear();
-		Thread.sleep(1000);
-		//Amount1.sendKeys("3000");
-		Thread.sleep(1000);
-		//driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();		
 		Thread.sleep(1000);
 		remark1.click();
 		Thread.sleep(1000);
@@ -590,9 +587,19 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int b= y/4;
 		System.out.println("b="+ b);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/table[1]/tbody[1]/tr["+b+"]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		
+		
+		
 		Thread.sleep(1000);
-		String Returnamount =driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/table[1]/tbody[1]/tr["+b+"]/td[9]")).getText();
+		patientSearch.clear();
+		Thread.sleep(1000);
+		patientSearch.sendKeys(MRNO ,Keys.ENTER);
+		Thread.sleep(1000);
+		SearchIcon.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+		Thread.sleep(1000);
+		String Returnamount =driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/table[1]/tbody[1]/tr[1]/td[9]")).getText();
 		Thread.sleep(1000);
 		System.out.println("returnAmount"+Returnamount);
 		Thread.sleep(1000);

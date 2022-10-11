@@ -3,6 +3,7 @@ package pagesOfYasasiiWeb;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,6 +60,8 @@ public class LogingOutAndLogingIn_YasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		site.click();
 		Thread.sleep(800);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		driver.findElement(By.xpath("//*[contains(text(),'" + Site + "')]")).click();
 		Thread.sleep(800);
 		login.click();

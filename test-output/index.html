@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\sriram\AppData\Local\Temp\testng-eclipse--1825485557\testng-customsuite.xml</span>
+                    <span>C:\Users\sriram\AppData\Local\Temp\testng-eclipse-471425767\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW" class="method navigator-link" hash-for-method="OPEMR(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allerg...)">OPEMR(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allerg...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +118,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase" class="method navigator-link" hash-for-method="ADTreport">ADTreport</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW" class="method navigator-link" hash-for-method="patientReg(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allerg...)">patientReg(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allerg...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -119,17 +133,86 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase</span>
+              <img src="failed.png"/>
+              <span class="class-name">pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ADTreport">
-                  </a> <!-- ADTreport -->
-                  <span class="method-name">ADTreport</span>
+                  <a name="OPEMR(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allerg...)">
+                  </a> <!-- OPEMR(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allerg...) -->
+                  <span class="method-name">OPEMR</span>
+                  <span class="parameters">(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allergy sometimes, Wrongly entered, Chicken, not like nonveg, sometimes, Vomiting, Potassium (ISE Indirect), Lipid Panel, , Instruction for Routine, Augmentin, Patient own medicine, Dolopar, Past outside hospital, DEXtrose + 0.45% Normal Saline 500Ml - Claris, Deriphyllin Inj, Additive medicine, Insulin, Sliding Scale, calpol, Diabeta, MEdicine, Linkedmedicine, Amoxicillin, Rohit Sharma, 3, KAmeda123$, Kameda Medical Center)</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;i _ngcontent-bhl-c96=&quot;&quot; class=&quot;fa fa-ellipsis-v&quot;&gt;&lt;/i&gt; is not clickable at point (1322, 374). Other element would receive the click: &lt;modal-container class=&quot;modal fade show&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot; style=&quot;display: block;&quot; aria-modal=&quot;true&quot;&gt;...&lt;/modal-container&gt;
+  (Session info: chrome=106.0.5249.103)
+Build info: version: &apos;4.0.0-alpha-3&apos;, revision: &apos;8c567de6dc&apos;
+System info: host: &apos;KI54&apos;, ip: &apos;192.168.0.54&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;18.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.103, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\sriram\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:50120}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 559363019ced6aba3b461cb862c5cc1b
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
+	at pagesOfYasasiiWeb.EMRMedicationYasasiiWeb.medication(EMRMedicationYasasiiWeb.java:992)
+	at pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW.OPEMR(EMRMedicationTestCaseYW.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="patientReg(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allerg...)">
+                  </a> <!-- patientReg(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allerg...) -->
+                  <span class="method-name">patientReg</span>
+                  <span class="parameters">(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allergy sometimes, Wrongly entered, Chicken, not like nonveg, sometimes, Vomiting, Potassium (ISE Indirect), Lipid Panel, , Instruction for Routine, Augmentin, Patient own medicine, Dolopar, Past outside hospital, DEXtrose + 0.45% Normal Saline 500Ml - Claris, Deriphyllin Inj, Additive medicine, Insulin, Sliding Scale, calpol, Diabeta, MEdicine, Linkedmedicine, Amoxicillin, Rohit Sharma, 3, KAmeda123$, Kameda Medical Center)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +220,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\sriram\AppData\Local\Temp\testng-eclipse--1825485557\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\sriram\AppData\Local\Temp\testng-eclipse-471425767\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +229,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase&quot;/&gt;
+      &lt;class name=&quot;pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -186,16 +269,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ADTreport')
-data.setCell(0, 2, 'pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase')
-data.setCell(0, 3, 148031);
+data.setCell(0, 1, 'OPEMR')
+data.setCell(0, 2, 'pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW')
+data.setCell(0, 3, 315111);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'patientReg')
+data.setCell(1, 2, 'pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW')
+data.setCell(1, 3, 27531);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,42 +308,56 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">startTest</span>
-                <span class="method-start">8220 ms</span>
+                <span class="method-start">6328 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">navigateFOPage</span>
-                <span class="method-start">8446 ms</span>
+                <span class="method-name">navigateOPfullPage</span>
+                <span class="method-start">6503 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">getTestMethodProperties(public void pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase.ADTreport() throws ja...)</span>
-                <span class="method-start">20716 ms</span>
+                <span class="method-name">getTestMethodProperties(public void pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW.patientReg(java.lang.String,java.lang.S...)</span>
+                <span class="method-start">19856 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ADTreport</span>
-                <span class="method-start">20724 ms</span>
+                <span class="method-name">patientReg(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327522, parathyroid, Durg allerg...)</span>
+                <span class="method-start">19861 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">getResult([TestResult name=ADTreport status=SUCCESS method=SP5_MISReport_AdmissionDischarge_TestCase.ADTreport...)</span>
-                <span class="method-start">168760 ms</span>
+                <span class="method-name">getResult([TestResult name=patientReg status=SUCCESS method=EMRMedicationTestCaseYW.patientReg(java.lang.Strin...)</span>
+                <span class="method-start">47399 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">getTestMethodProperties(public void pagesTestCasesYasasiiWeb.EMRMedicationTestCaseYW.OPEMR(java.lang.String,java.lang.String...)</span>
+                <span class="method-start">47492 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">OPEMR(madhu 61, 43, 987876565, KIMS, 1/345 nagesh nagar, 3214567821, HHC00327622, parathyroid, Durg allerg...)</span>
+                <span class="method-start">47492 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">getResult([TestResult name=OPEMR status=FAILURE method=EMRMedicationTestCaseYW.OPEMR(java.lang.String, java.la...)</span>
+                <span class="method-start">362609 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">logout</span>
-                <span class="method-start">168764 ms</span>
+                <span class="method-start">362958 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">extentReportEnd</span>
-                <span class="method-start">174197 ms</span>
+                <span class="method-start">367374 ms</span>
               </div> <!-- configuration-suite after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">174650 ms</span>
+                <span class="method-start">367871 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
