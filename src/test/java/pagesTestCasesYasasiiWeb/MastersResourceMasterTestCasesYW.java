@@ -27,10 +27,10 @@ public void navigateResMaster() throws InterruptedException {
 }
 
 @Test(dataProvider="getData")
-public void ResMaster(String BlockName,String FloorName,String RoomName,String BedName) throws InterruptedException {
+public void ResMaster(String BlockName,String FloorName,String RoomName,String BedName1,String BedName2,String BedName3,String BedName4,String BedName5,String BedName6,String BedName7,String BedName8) throws InterruptedException {
 		MastersResouceMasterYasassiiWeb resourcemast = new MastersResouceMasterYasassiiWeb(driver);
 		resourcemast.ResourceMasterSelect();
-		resourcemast.ResourceMasterBed(BlockName,FloorName,RoomName,BedName);
+		resourcemast.ResourceMasterBed(BlockName,FloorName,RoomName, BedName1, BedName2, BedName3, BedName4, BedName5, BedName6, BedName7, BedName8);
 		}
 
 

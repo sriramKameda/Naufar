@@ -2,11 +2,20 @@ package pagesOfYasasiiWeb;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,7 +80,7 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//i[@class='ki ki-reception-fill']")
 	public WebElement Fo;
 
-	@FindBy(xpath = "//li[6]//a[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/ul[1]/li[6]/a[1]/span[1]")
 	public WebElement RCM;
 
 	@FindBy(xpath = "//span[normalize-space()='Approve Request']")//span[normalize-space()='View Request']
@@ -80,13 +89,13 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//span[normalize-space()='Adjustment Approval']")
 	public WebElement AdjApprove;
 
-    @FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement checkrequest;
 
 	@FindBy(xpath = "//button[normalize-space()='Approve']")
 	public WebElement Approve;
 	//button[normalize-space()='OK']
-	@FindBy(xpath = "//textarea[@id='undefined']")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
 	public WebElement remarks;
 
 	@FindBy(xpath = "//button[normalize-space()='OK']")
@@ -110,11 +119,11 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//input[@id='apprnoPayType']")
 	public WebElement approveNO;
 
-	@FindBy(xpath = "//div[@class='col-md-2 ta-r ']//i[@class='ki ki-plus']")
+	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
 	public WebElement CardAdd;
 
 
-	@FindBy(xpath = "//button[contains(@class,'btn btn-dark-green active')][normalize-space()='OK']")
+	@FindBy(xpath = "//button[@class='btn btn-primary sm active']//i[@class='ki ki-check']")
 	public WebElement CardOK;
 
 	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-authoriser-request[1]/div[2]/div[1]/div[1]/div[1]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
@@ -129,13 +138,13 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 	@FindBy(xpath = "//div[@class='form-group ng-star-inserted']//textarea[@id='undefined']")
 	public WebElement Remarks;
 
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/ki-dialog[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/button[1]")
+	@FindBy(xpath = "//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")
 	public WebElement TransactionDone;
 
 	@FindBy(xpath = "//span[@class='pay-style']")
 	public WebElement payment;
 
-	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-authoriser-request[1]/div[3]/div[1]/div[1]/div[1]/button[1]")
+	@FindBy(xpath = "//button[@class='btn btn-dark-green active']")
 	public WebElement reqOK;
 
 	@FindBy(xpath = "//button[normalize-space()='Clear']")
@@ -155,59 +164,216 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 
 	@FindBy(xpath = "//i[@title='Collapse All']")
 	public WebElement collapse;
-	
+
+	@FindBy(xpath = "//button[@id='billingsave']")
+	public WebElement EncounterSave;
+
+	@FindBy(xpath = "//button[normalize-space()='Clear']")
+	public WebElement Clear;
+
+	@FindBy(xpath = "//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")
+	public WebElement SAvesuccess;
+
+	@FindBy(xpath = "//i[@class='ki ki-cash-transfer']")
+	public WebElement AvailedService;
+
+	@FindBy(xpath = "//td[normalize-space()='Card']")
+	public WebElement card;
+
+
+	@FindBy(xpath = "//textarea[@id='undefined']")
+	public WebElement EnterRemarks;
+
+	@FindBy(xpath = "//a[@title='Cancel & Refund Bills']")
+	public WebElement cancelRefund;
+
+	@FindBy(xpath = "//span[normalize-space()='Adjustment Apply']")
+	public WebElement Adjapply;
+
+	@FindBy(xpath = "//div[contains(@class,'col-md-3')]//div[contains(@class,'card-body')]//div[2]//div[1]//div[1]//ki-select-control[1]//div[1]//input[1]")
+	public WebElement Title;
+
+	@FindBy(xpath = "//input[@id='fo-card-reader-firstname']")
+	public WebElement FirstName;
+
+	@FindBy(xpath = "//input[@id='age']")
+	public WebElement age;
+
+	@FindBy(xpath = "//div[@class='form-group ng-star-inserted']//input[@id='mobilephone']")
+	public WebElement mobileNo;
+
+	@FindBy(xpath = "//button[@id='saveregistrationbutton']")
+	public WebElement RegSave;
+
+	@FindBy(xpath = "//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")
+	public WebElement SaveSuccess;
+
+	@FindBy(xpath = "//i[@class='ki ki-chevron-down']")
+	public WebElement modules;
+
+	@FindBy(xpath = "//i[@class='ki ki-cog']")
+	public WebElement Masters;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-asideleftbar[1]/aside[1]/div[1]/div[2]/ul[1]/li[4]/a[1]/span[1]")
+	public WebElement rcm;
+
+	@FindBy(xpath = "//span[normalize-space()='Card Master']")
+	public WebElement Cardmaster;
+
+	@FindBy(xpath = "//i[@class='ki ki-pencil']")
+	public WebElement Edit;
+
+	@FindBy(xpath = "//i[@class='ki ki-trash']")
+	public WebElement Delete;
+
+	@FindBy(xpath = "//button[normalize-space()='Update']")
+	public WebElement Update;
+
+	@FindBy(xpath = "//ki-select-control[@class='ng-untouched ng-pristine ng-star-inserted ng-valid']//input[@id='undefined']")
+	public WebElement ServiceName;
+
+	@FindBy(xpath = "//div[@class='form-group min-clear-bottom billing ki-dropdown']//input[@id='undefined']")
+	public WebElement status;
+
+	@FindBy(xpath = "//label[@class='icon-info pl-3 ng-star-inserted']//i[@title='Cancel Request']")
+	public WebElement Reqcancel;
+
+	@FindBy(xpath = "//i[@class='ki ki-pencil ng-star-inserted']")
+	public WebElement Adjustment;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-availed-services[1]/div[1]/form[1]/div[2]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/app-billing-adjustment[1]/div[1]/div[2]/div[3]/div[1]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement Adjustmentpercentage;
+
+
+	@FindBy(xpath = "//input[@id='status']")
+	public WebElement Status;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement MrnoSearch;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[9]/label[1]/button[1]")
+	public WebElement SearchIcon1;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/span[1]/i[1]")
+	public WebElement CancelReq;
+
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement firstcheckbox;
+
+	@FindBy(xpath = "//button[normalize-space()='Approve']")
+	public WebElement SaVe;
+
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	public WebElement  yes;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
+	public WebElement RemarksIcon;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement  checkbox;
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
+	public WebElement RemarksIcon1;
+
+
+	@FindBy(xpath = "//textarea[@id='undefined']")
+	public WebElement Remarks1;
+
+
+
+
+
+
+	public void PatReg(String NAME , String AGE , String MBLNO) throws InterruptedException, IOException {
+
+
+		Thread.sleep(2000);
+		Title.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Miss']")).click();
+		Thread.sleep(1000);
+		FirstName.click();
+		Thread.sleep(1000);
+		FirstName.sendKeys(NAME);
+		Thread.sleep(1000);
+		age.click();
+		Thread.sleep(1000);
+		age.sendKeys(AGE);
+		Thread.sleep(1000);
+		mobileNo.click();
+		Thread.sleep(1000);
+		mobileNo.sendKeys(MBLNO);
+
+
+		List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='required ng-star-inserted']"));
+
+		if(dynamicElement.size() !=0)
+		{
+			driver.findElement(By.xpath("//label[normalize-space()='Emergency']//span[@class='checkmark']")).click();
+		}
+
+		else
+		{
+			System.out.println("emergrncy patient");
+		}
+
+
+		Thread.sleep(1000);
+		RegSave.click();
+		Thread.sleep(3000);
+		SaveSuccess.click();
+		Thread.sleep(2000);
+		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
+		System.out.println(mrno);
+		Thread.sleep(2000);
+
+		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
+		FileInputStream fis=new FileInputStream(src);
+		HSSFWorkbook wb=new HSSFWorkbook(fis);
+		HSSFSheet FOFullRegTest=wb.getSheetAt(44);	
+		int i=FOFullRegTest.getLastRowNum();
+		System.out.println("Number of rows: " + i);		
+		FOFullRegTest.getRow(i).createCell(0).setCellValue(mrno);	
+		FileOutputStream fout=new FileOutputStream(src);	
+		wb.write(fout);
+		Thread.sleep(2000);
+
+	}
 
 	public void combpay(String MRNO , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String URL) throws InterruptedException {
-		Thread.sleep(2000);
-		sEARCHfield.click();
+
+
+
+		//////Encounter
 		Thread.sleep(1000);
-		sEARCHfield.sendKeys(MRNO);
+		clear.click();
 		Thread.sleep(1000);
-		sEARCHicon.click();  
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-
-		//driver.findElement(By.xpath("//span[text()='"+MRNO+"']")).click();
-
-		//patientSelect.click();
-
-
-		WebElement inputBox = driver.findElement(By.xpath("//input[@id='EncBillingproviders']"));
-		String textInsideInputBox = inputBox.getAttribute("value");
-
-		System.out.println(textInsideInputBox);
-		// Check whether input field is blank
-		if(textInsideInputBox.isEmpty())
-		{
-			System.out.println("Input field is empty");
-			providerName.click();
-			Thread.sleep(1000);
-			providerName.sendKeys(PROVIDER);
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//*[contains(text(),'" +PROVIDER + "')]")).click();
-		}
-		else {
-			clear.click();
-			Thread.sleep(1000);
-			providerName.click();
-			Thread.sleep(1000);
-			providerName.sendKeys(PROVIDER);
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//*[contains(text(),'" +PROVIDER + "')]")).click();
-		}
-
-		//providerName.click();
-		//providerName.sendKeys(PROVIDER);
-		//driver.findElement(By.xpath("//li[normalize-space()='Rohit Sharma']")).click();
-		//Thread.sleep(1000);
+		providerName.click();
+		Thread.sleep(1000);
+		providerName.sendKeys(PROVIDER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[contains(text(),'"+PROVIDER+"')]")).click();
+		Thread.sleep(4000);
+		// ServiceName.click();
+		Thread.sleep(1000);
+		//	driver.findElement(By.xpath("//li[normalize-space()='Follow-up Consultation']")).click();
 		Thread.sleep(2000);
 		EncounterAdd.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		Expand.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		//EncounterSave.click();
+		Thread.sleep(1000);
+		//SAvesuccess.click();
+
+		//ServiceAdd
+		Thread.sleep(1000);
 
 		JavascriptExecutor js= (JavascriptExecutor) driver;
-		
+
 		js.executeScript("arguments[0].scrollIntoView();", payment);
 
 		String netAmount= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/app-payment-details[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/label[1]")).getText();
@@ -241,9 +407,10 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 
 
 		js.executeScript("arguments[0].scrollIntoView();", collapse );
-		
+
+
 		AdjustEdit.click();
-		
+
 		Thread.sleep(1000);
 		String limit =	driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/app-billing-adjustment[1]/div[1]/div[2]/div[4]/div[1]/ki-input-control[1]/div[1]/input[1]")).getText();
 		System.out.println("Actual Allowed ajdusment limit is "+limit);
@@ -271,6 +438,10 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 		Close.click();
 		Thread.sleep(2000);
 		js.executeScript("arguments[0].scrollIntoView();", payment);	
+		String netAmount1= driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/app-payment-details[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/label[1]")).getText();
+		Thread.sleep(1000);
+		System.out.println("total payment is " + netAmount1);
+
 
 		if(percentage <= 50)
 		{
@@ -279,7 +450,7 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			debitCard.click();
 			provider.click();
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//li[normalize-space()='ICICI']")).click();
+			driver.findElement(By.xpath("//li[normalize-space()='HDFC Credit Card']")).click();
 			Amount.click();
 			Thread.sleep(1000);
 			Amount.sendKeys(CARDAMOUNT);
@@ -290,27 +461,51 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			approveNO.sendKeys(APPROVENO);
 			Thread.sleep(1000);
 			CardAdd.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			CardOK.click();
 			Thread.sleep(1000);
 			Save.click();
 			Thread.sleep(2000);
-			billsave.click();
+			//billsave.click();
 			Thread.sleep(1000);
 			billsaveOK.click();
 			Thread.sleep(2000);
+
+
+
+
+			/////////	
+			Thread.sleep(1000);
+			AvailedService.click();
+			Thread.sleep(1000);
+			List<WebElement> dynamicElement=driver.findElements(By.xpath("//i[@class='ki pointer ki-info-circle']"));
+			Thread.sleep(1000);
+			int a=dynamicElement.size();
+			System.out.println(dynamicElement);
+			int b=a-3;
+			Thread.sleep(4000);
+			driver.findElement(By.xpath("(//i[@class='ki pointer ki-info-circle'])["+b+"]")).click();
+			Thread.sleep(1000);
+			card.click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='btn btn-danger sm clear']")).click();
+			Thread.sleep(1000);
 		}
 
 		if(percentage > 50) {
-
+			Thread.sleep(1000);
 			System.out.println("Adjustment exceeds the limit ");
 			Thread.sleep(1000);
 			debitCard.click();
+			Thread.sleep(1000);
 			provider.click();
-			driver.findElement(By.xpath("//li[normalize-space()='ICICI']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='HDFC Credit Card']")).click();
+			Thread.sleep(1000);
 			Amount.click();
 			Thread.sleep(1000);
 			Amount.sendKeys(CARDAMOUNT);
+			Thread.sleep(1000);
 			cardNO.click();
 			Thread.sleep(1000);
 			cardNO.sendKeys(CARDNO);
@@ -322,16 +517,16 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			CardOK.click();
 			Thread.sleep(1000);
 			Save.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			authoriser.click();
 			Thread.sleep(1000);
 			SearchAuth.sendKeys(AUTHPERSON);
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//span[@title='Albert Sam(DOCAS)']")).click();
-			
+			driver.findElement(By.xpath("//span[@title='Administrator(admin)']")).click();
+
 			//driver.findElement(By.xpath("//*[contains(text(),'" +AUTHPERSON+ "')]")).click();
 			Thread.sleep(1000);
-			Back.click();
+			reqOK.click();
 			Thread.sleep(1000);
 			Remarks.click();
 			Remarks.sendKeys(REMARK1);
@@ -342,6 +537,76 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			Thread.sleep(5000);
 			TransactionDone.click();
 			Thread.sleep(1000);
+
+
+			/////////	
+			Thread.sleep(1000);
+			AvailedService.click();
+			Thread.sleep(1000);
+			status.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='Requested']")).click();
+			Thread.sleep(3000);
+			Reqcancel.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
+			Thread.sleep(1000);
+			status.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='All']")).click();
+			Thread.sleep(1000);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@class='icon-info pl-3 ng-star-inserted']//span[@class='checkmark']")).click();
+			Thread.sleep(1000);
+			Adjustment.click();
+			Thread.sleep(1000);
+			Adjustmentpercentage.click();
+			Thread.sleep(1000);
+			Adjustmentpercentage.sendKeys("54");
+			Thread.sleep(1000);
+			RaiseRequest.click();
+			Thread.sleep(1000);
+			authoriser.click();
+			Thread.sleep(1000);
+			SearchAuth.sendKeys(AUTHPERSON);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//span[@title='Administrator(admin)']")).click();
+
+			//driver.findElement(By.xpath("//*[contains(text(),'" +AUTHPERSON+ "')]")).click();
+			Thread.sleep(1000);
+			reqOK.click();
+			Thread.sleep(1000);
+			Remarks.click();
+			Thread.sleep(1000);
+			Remarks.sendKeys(REMARK1);
+			Thread.sleep(2000);
+			reqOK.click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
+
+
+
+			List<WebElement> dynamicElement=driver.findElements(By.xpath("//i[@class='ki ki-print']"));
+			Thread.sleep(1000);
+			int a=dynamicElement.size();
+			System.out.println("a=" +a);
+			//	int b=a-3;
+			//System.out.println("b=" +b);
+			//int c=a-2;
+			//	System.out.println("c="+c);
+			Thread.sleep(4000);
+			driver.findElement(By.xpath("//tbody/tr["+a+"]/td[21]/i[1]")).click();
+			Thread.sleep(1000);
+			card.click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='btn btn-danger sm clear']")).click();
+			Thread.sleep(1000);
+
+
+
+
 
 			//openNewTab
 
@@ -356,15 +621,20 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 
 			//login
 			userid.click();
-			userid.sendKeys("DOCAS");
+			userid.sendKeys("admin");
 			password.click();
-			password.sendKeys("Kameda321");
+			password.sendKeys("kameda321");
 			Thread.sleep(1000);
 			site.click();
-			driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+			Thread.sleep(1000);
+			js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='Kameda Medical Center']")) );
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='Kameda Medical Center']")).click();
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 			Thread.sleep(5000);
+
+
 
 			//request approval
 			Hamberger.click();
@@ -385,15 +655,134 @@ public class FO_combinationalPAY_DiscRaise_YasassiWeb extends PageFactoryInitYas
 			Thread.sleep(1000);
 			checkrequest.click();
 			Thread.sleep(1000);
-
-			remarks.click();
-			remarks.sendKeys(REMARK2);
+            remarks.click();
+			EnterRemarks.sendKeys(REMARK2);
 			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']")).click();
+			Thread.sleep(1000);
 			Approve.click();
-
 			Thread.sleep(2000);
 			ApproveSuccess.click();
 
+//////////////Approve Cancel
+			
+			
+			Thread.sleep(1000);
+			Status.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='Approved']")).click();
+			Thread.sleep(1000);
+			MrnoSearch.clear();
+			Thread.sleep(1000);
+			MrnoSearch.sendKeys(MRNO , Keys.ENTER);
+			Thread.sleep(1000);
+			SearchIcon1.click();
+			Thread.sleep(1000);
+			checkbox.click();
+			Thread.sleep(1000);
+			CancelReq.click();
+			Thread.sleep(1000);
+			yes.click();
+			Thread.sleep(3000);
+
+			Thread.sleep(3000);
+			Status.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//li[normalize-space()='Requested']")).click();
+			Thread.sleep(1000);
+			MrnoSearch.clear();
+			Thread.sleep(1000);
+			MrnoSearch.sendKeys(MRNO , Keys.ENTER);
+			Thread.sleep(1000);
+			SearchIcon.click();
+			Thread.sleep(1000);
+			checkbox.click();
+			Thread.sleep(1000);
+			RemarksIcon1.click();
+			Thread.sleep(800);
+			Remarks1.click();
+			Thread.sleep(1000);
+			Remarks1.sendKeys("ok");
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']//i[@class='ki ki-check']")).click();
+			Thread.sleep(800);
+			SaVe.click();
+			Thread.sleep(1000);
+			yes.click();
+			Thread.sleep(800);
+
+			////////////////////////////////////////////////////////		
+
+
+			///cancel refund
+			Hamberger.click();
+			Thread.sleep(2000);
+			cancelRefund.click();
+			Thread.sleep(2000);
+			Adjapply.click();
+			Thread.sleep(1000);
+			MRNOSearch.click();
+			Thread.sleep(1000);
+			MRNOSearch.sendKeys(MRNO);
+			Thread.sleep(1000);
+			SearchIcon.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+			Thread.sleep(2000);
+
+
+
+
+			ArrayList<String> tabs1 = new ArrayList<String>(driver.getWindowHandles());
+			int Y =driver.getWindowHandles().size();
+			Thread.sleep(1000);
+			System.out.println("window handles no."+ Y);
+			int Z= Y-2;
+			Thread.sleep(1000);
+			System.out.println("go to window no."+ Z);
+			Thread.sleep(2000);
+			driver.switchTo().window(tabs1.get(Z));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//tbody/tr["+a+"]/td[21]/i[2]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+			Thread.sleep(1000);
+			Hamberger.click();
+			Thread.sleep(2000);
+			//modules.click();
+			Thread.sleep(3000);
+			Masters.click();
+			Thread.sleep(1000);
+			js.executeScript("arguments[0].scrollIntoView();",rcm);
+			Thread.sleep(1000);
+			rcm.click();
+			Thread.sleep(1000);
+			Cardmaster.click();
+			Thread.sleep(1000);
+			SearchAuth.click();
+			Thread.sleep(1000);
+			SearchAuth.sendKeys("HDFC",Keys.ENTER);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-card-master[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]")).click();
+			Thread.sleep(1000);
+			Edit.click();
+			Thread.sleep(1000);
+			Delete.click();
+			Thread.sleep(2000);
+			ApproveSuccess.click();
+			Thread.sleep(1000);
+			Update.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-card-master[1]/div[1]/lib-searchbarlist[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]")).click();
+			Thread.sleep(1000);
+			Delete.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+			Thread.sleep(2000);
+			ApproveSuccess.click();
+			Thread.sleep(1000);
 
 		}
 

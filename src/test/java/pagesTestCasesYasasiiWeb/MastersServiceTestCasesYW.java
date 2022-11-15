@@ -24,16 +24,17 @@ import pagesOfYasasiiWeb.MastersServiceYasasiiWeb;
 		public void navigateMasterServicePage() throws InterruptedException {
 			
 		this.login =new LoginPageYasasiiWeb(driver) ;
-		this.hm = login.enterloginDetails("admin", "kameda321", "KIMSHEALTH TVM");
-		Thread.sleep(8000);
+		this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+		Thread.sleep(3000);
 			
 		
 		}
 		@Test(dataProvider="getData")
-		public void addservice(String Servicename)throws InterruptedException, IOException {
+		public void addservice(String BaseCategory,String SubCategory,String ServiceName,String Profile ,String POC,String Male ,String Female,String Others,String AgeFrom ,String AgeFromUnit,String AgeTo , String AgeToUnit , String DisplayInEmr , String CodeType , String CODE ,String InternalLab, String ExecutionCategory  ,String ResultType , String ResultUnit , String Specimen ,String Container,String RangeMode1 ,String RangeMode2 , String NormalAgeFrom,String NormalAgeFromUnit,String NormalAgeTo,String NormalAgeToUnit,String Comparision,String CriticalAgeFrom,String CriticalAgeFromUnit,String CriticalAgeTo,String CriticalAgeToUnit,String NormalMin ,String NormalMax, String CriticalMin ,String CiticalMax, String subtest1,String subtest2,String subtest3,String subtest4)throws InterruptedException, IOException {
 			MastersServiceYasasiiWeb servicename = new MastersServiceYasasiiWeb(driver) ;
-			servicename.ServiceMasterSelect(Servicename);
-			}
+			servicename.LaboratoryService(BaseCategory, SubCategory, ServiceName, Profile, POC, AgeFrom, AgeFromUnit, AgeTo, AgeToUnit, DisplayInEmr, CodeType, CODE, InternalLab, ExecutionCategory, ResultType, ResultUnit, Specimen, Container, RangeMode1, RangeMode2, NormalAgeFrom, NormalAgeFromUnit, NormalAgeTo, NormalAgeToUnit, Comparision, NormalMin, NormalMax, CriticalAgeFrom, CriticalAgeFromUnit, CriticalAgeTo, CriticalAgeToUnit, CriticalMin, CiticalMax, subtest1, subtest2, subtest3, subtest4);
+			
+		}
 			
 			
 		@AfterClass
@@ -46,7 +47,7 @@ import pagesOfYasasiiWeb.MastersServiceYasasiiWeb;
 		@DataProvider
 		public Object[][] getData() throws Exception{
 
-			Object[][] data =readExcel("ServiceMaster");
+			Object[][] data =readExcel("labService");
 			return data;	
 		}
 

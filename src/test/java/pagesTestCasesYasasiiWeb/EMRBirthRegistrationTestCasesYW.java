@@ -1,4 +1,5 @@
 package pagesTestCasesYasasiiWeb;
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -27,7 +28,7 @@ public void navigateemradt() throws InterruptedException {
 	
 }
 
-//@Test(dataProvider="getData"  , priority=0)
+@Test(dataProvider="getData"  , priority=0)
 public void BirthReg(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException {
 		Thread.sleep(2000);
 		
@@ -53,10 +54,12 @@ public void babynote(String Name,String AadharNumber,String MRNo, String Provide
 		EMRBirthRegistrationYasasiiWeb Schedule1 = new EMRBirthRegistrationYasasiiWeb(driver);
 		
 		Schedule1.babyNote(MRNo1 , DOCuser ,  DOCpassword,URL, Site);
+		Schedule1.immunizationchart();
+		
 		}
 
 @Test(dataProvider="getData" , priority=3)
-public void Babydischarge(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException {
+public void Babydischarge(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(5000);
 		
 		EMRBirthRegistrationYasasiiWeb Schedule1 = new EMRBirthRegistrationYasasiiWeb(driver);
@@ -69,22 +72,22 @@ public void Babydischarge(String Name,String AadharNumber,String MRNo, String Pr
 		Schedule1.pharmacyClearanceBaby(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.ADTapproval(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule1.financialClearance(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
-		Schedule1.physicalDischarge(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword ,DOCuser , DOCpassword,URL);
+		Schedule1.physicalDischarge(MRNo1, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword ,DOCuser , DOCpassword,URL,Site);
 }
 
 @Test(dataProvider="getData" , priority=4)
-public void MOMdischarge(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException {
+public void MOMdischarge(String Name,String AadharNumber,String MRNo, String Provider , String MRNo1, String ADTprovider,String nurseUser, String password , String depUser , String RADuser , String meduser, String AdminUser , String AdminPassword,String DOCuser , String DOCpassword,String URL , String Site) throws InterruptedException, IOException, AWTException {
 		Thread.sleep(5000);
 		
 		EMRBirthRegistrationYasasiiWeb Schedule = new EMRBirthRegistrationYasasiiWeb(driver);
 		
-		Schedule.dischargeRecommendationMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
+		Schedule.dischargeRecommendationMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule.dischargeApprovalMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
 		Schedule.laboratoryclearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
-		Schedule.RadiologyclearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
-		Schedule.MedicalclearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
-		Schedule.pharmacyClearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
-		Schedule.ADTapprovalMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
+		//Schedule.RadiologyclearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
+		//Schedule.MedicalclearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
+		Schedule.pharmacyClearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
+		Schedule.ADTapprovalMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL,Site);
 		Schedule.financialClearanceMOM(MRNo, nurseUser, password, depUser, RADuser, meduser, AdminUser, AdminPassword,URL);
 		Schedule.physicalDischargeMOM(MRNo, nurseUser, password, depUser, RADuser, meduser);
 		

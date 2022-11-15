@@ -74,7 +74,13 @@ public class FO_Billing_AdvanceCollection_TestCaseYW extends TestBaseYasasiiWeb 
 		loginout.action( id,  password, Site);
 		
 ///////request accept		
-		OSReg.requestaccept();
+		OSReg.requestaccept(MRNo);
+		
+		loginout.action( id,  password, Site);
+		
+		OSReg.AvailedServiceCancel(MRNo);
+		
+		
 	
 	}
 	

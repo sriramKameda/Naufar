@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -36,7 +37,7 @@ public class SP5_FO_BillCancel_Refund_TestCaseYW extends TestBaseYasasiiWeb {
 	
 
 	@Test (dataProvider = "getData" , priority=0)
-	public void patreg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ,String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ,String URL, String User , String Password , String site ) throws InterruptedException, IOException {
+	public void patreg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ,String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ,String URL, String User , String Password , String site ) throws InterruptedException, IOException, AWTException {
 		
 		
 		SP5_FO_BillCancel_Refund_YasassiWeb bill=new SP5_FO_BillCancel_Refund_YasassiWeb(driver);

@@ -27,17 +27,29 @@ public class FO_combinationalPAY_Discprice_TestcaseYW extends TestBaseYasasiiWeb
 	Thread.sleep(3000); 
 	}
 	
+	
+	
 	@Test (dataProvider = "getData")
-	public void combinePay(String MRNO , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String URL) throws InterruptedException, IOException {
+	public void PAtreg(String MRNO , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String URL , String NAME , String AGE , String MBLNO) throws InterruptedException, IOException {
+		
+		Thread.sleep(3000); 
+		
+		FO_combinationalPAY_DiscRaise_YasassiWeb  com = new FO_combinationalPAY_DiscRaise_YasassiWeb (driver);
+	    com.PatReg(NAME, AGE, MBLNO);
+		
+		
+	
+	}
+	
+	@Test (dataProvider = "getData")
+	public void combinePay(String MRNO , String PROVIDER ,String ADJAMOUNT , String CARDAMOUNT , String CARDNO , String APPROVENO , String AUTHPERSON , String REMARK1, String REMARK2,String URL , String NAME , String AGE , String MBLNO) throws InterruptedException, IOException {
 		
 		Thread.sleep(3000); 
 		
 		FO_combinationalPAY_DiscRaise_YasassiWeb  com = new FO_combinationalPAY_DiscRaise_YasassiWeb (driver);
 		com.combpay(MRNO, PROVIDER, ADJAMOUNT, CARDAMOUNT, CARDNO, APPROVENO, AUTHPERSON, REMARK1, REMARK2,URL);
 		
-		
-	
-	}
+		}
 	
 	
 	
@@ -46,8 +58,7 @@ public class FO_combinationalPAY_Discprice_TestcaseYW extends TestBaseYasasiiWeb
 	{
 	
 		this.hm.clickLogout();
-		//Thread.sleep(2000);
-		//this.hm.clickLogout();
+	
 	}
 	
 	

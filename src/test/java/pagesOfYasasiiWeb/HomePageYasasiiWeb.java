@@ -26,7 +26,7 @@ public class HomePageYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		public LoginPageYasasiiWeb clickLogout() throws InterruptedException
 		{
 ////////////Loging out script
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			usermenu.click();
 			Thread.sleep(1000);
 			logOut.click();

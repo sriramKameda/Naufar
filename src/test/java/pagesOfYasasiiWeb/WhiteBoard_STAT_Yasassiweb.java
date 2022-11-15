@@ -40,7 +40,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//input[@id='emrtemplateid']")
 	public WebElement template;
 
-	@FindBy(xpath = "//*[@class='btn btn-dark-green active']")
+	@FindBy(xpath = "//button[@aria-label='Ok'][normalize-space()='OK']")
 	public WebElement clickOK ;
 	
 	@FindBy(xpath = "//input[@id='maincategory']")
@@ -141,16 +141,21 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[2]/div[1]/ki-radio-list[1]/label[3]/input[1]")
 	public WebElement others;
 	
+	@FindBy(xpath = "//input[@id='cpoeSearchText']")
+	public WebElement Servicesearch;
 	
-	
+	@FindBy(xpath = "//label[normalize-space()='STAT']")
+	public WebElement Stat1;
 	
 
 	@FindBy(xpath = "//div[contains(text(),'Diagnosis and Plan')]")
 	public WebElement Diagnosisandplan;
 	
+	@FindBy(xpath = "//button[@class='icon-btn btn-dark-green inline min-clear-btm']//i[@class='ki ki-plus']")
+	public WebElement Plus;
 	
-	
-	
+	@FindBy(xpath = "//div[@class='col-md-12 pr0 ta-r']//button[@type='button'][normalize-space()='Add']")
+	public WebElement serviceadd;
 	
 	
 	
@@ -220,22 +225,41 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(800);
 		
 		Thread.sleep(1000);
-		List<WebElement> dynamicElement1=driver.findElements(By.xpath("//button[@class='btn btn-primary sm'][normalize-space()='OK']"));
+		List<WebElement> dynamicElement11=driver.findElements(By.xpath("//button[@class='btn btn-primary sm'][normalize-space()='OK']"));
 		
-		if(dynamicElement1.size() !=0)
+		System.out.println(dynamicElement11.size());
+		
+		
+		if(dynamicElement11.size() !=0)
 		{
+			
 			driver.findElement(By.xpath("//button[@class='btn btn-primary sm'][normalize-space()='OK']")).click();
 		}
-		else {
+		else{
 			System.out.println("sri");
 		}
 		  Thread.sleep(800); 
 		
-		
+			Thread.sleep(1000);
 		
 		cpoeService.click();
 		Thread.sleep(1000);
-		service.click();
+		Servicesearch.clear();
+		Thread.sleep(1000);
+		Servicesearch.sendKeys("Frozen - Liver" , Keys.ENTER);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[normalize-space()='Frozen - Liver']")).click();
+		Thread.sleep(1000);
+		//Stat1.click();
+		Plus.click();
+		Thread.sleep(1000);
+		serviceadd.click();
+		Thread.sleep(1000);
+		
+		
+		
+		
+		//service.click();
 		Thread.sleep(2000);
 		//act.moveToElement(ThreeDot).click().build().perform();
 		Thread.sleep(1000);
@@ -246,7 +270,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		Stat.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='Update']")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		CPOEphar.click();
 		Thread.sleep(1000);
 		medicineSearch.click();
@@ -266,7 +290,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='STAT']")).click();
 		
 	///////Medicine REconciliation
-		/*Thread.sleep(1000);
+	/*	Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[normalize-space()='No Current Medication']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='mb10 btn-type-add ta-r']//button[@type='button'][normalize-space()='Add']")).click();
@@ -275,7 +299,7 @@ public class WhiteBoard_STAT_Yasassiweb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//i[contains(@class,'ki ki-reconciliation')]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='btn btn-dark-green active'][normalize-space()='Yes']")).click();
+		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000); */
 	//////////////////////
 		Thread.sleep(1000);

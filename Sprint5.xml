@@ -6,12 +6,12 @@
       <class name="pagesTestCasesYasasiiWeb.SP5_MISReport_AdmissionDischarge_TestCase"/>
       <class name="pagesTestCasesYasasiiWeb.BlockandFreezeTestCasesYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_Inclinic_TestcaseYW"/>
-      <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.PatientDischarge_TestCasesYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_pathology_biopsy_TestcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.SP5_OrdersetFormulatory_testcaseYW"/>
       <class name="pagesTestCasesYasasiiWeb.FO_PharmacyBilling_TestCaseYW"/>
-
+      <class name="pagesTestCasesYasasiiWeb.SP5_FO_BillCancel_Refund_TestCaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -28,14 +28,21 @@ public class FO_queueDisplayTestCasesYW  extends TestBaseYasasiiWeb{
 		
 	}
 	
-	@Test(dataProvider="getData")
-	public void  queuemaster (String MRNo,String URL)throws InterruptedException, IOException, AWTException {
+	@Test(dataProvider="getData" ,priority=0)
+	public void  queuemaster (String MRNo,String URL, String Queuetype ,String queueName,String ID , String Password, String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO)throws InterruptedException, IOException, AWTException {
 			Thread.sleep(2000);
 			
 			FO_queueDisplayYasassiweb  token = new FO_queueDisplayYasassiweb(driver);
-			token.tokenview(MRNo,URL);
+			token.tokenview(MRNo, URL, Queuetype, queueName, ID, Password, Site, NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR, MRNO);
 			}
 	
+	@Test(dataProvider="getData",priority=1)
+	public void  QueueCall (String MRNo,String URL, String Queuetype ,String queueName,String ID , String Password, String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO)throws InterruptedException, IOException, AWTException {
+			Thread.sleep(2000);
+			
+			FO_queueDisplayYasassiweb  token = new FO_queueDisplayYasassiweb(driver);
+			token.EMR(MRNo, URL, Queuetype, queueName, ID, Password, Site, NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR, MRNO);
+			}
 	@AfterClass
 	public void logout() throws Exception
 	{
@@ -50,7 +57,7 @@ public class FO_queueDisplayTestCasesYW  extends TestBaseYasasiiWeb{
 	@DataProvider
 	public Object[][] getData() throws Exception{
 
-		Object[][] data =readExcel("juniorseniorVerify");
+		Object[][] data =readExcel("EncounterQueue");
 		return data;
 		}
 

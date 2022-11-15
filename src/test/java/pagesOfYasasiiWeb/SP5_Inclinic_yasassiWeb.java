@@ -156,10 +156,11 @@ public class SP5_Inclinic_yasassiWeb extends  PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//div[normalize-space()='Provider Visit']")
 	public WebElement providervisit;
 
+	
 
 
 
-
+	
 
 
 

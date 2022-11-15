@@ -1,6 +1,8 @@
 package pagesOfYasasiiWeb;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,6 +19,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.baseYasasiiWeb.PageFactoryInitYasasiiWeb;
 
@@ -35,8 +39,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	public WebElement Registration;
 	@FindBy(xpath = "//body/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ki-select-control[1]/div[1]/input[1]")
 	public WebElement Title;
-	@FindBy(xpath = "//li[contains(text(),'Miss')]")
-	public WebElement SelectMiss;
+	@FindBy(xpath = "//li[normalize-space()='Miss']")
+	public WebElement SelectMr;
 	@FindBy(xpath = "//input[@id='fo-card-reader-firstname']")
 	public WebElement EnterFirstNME;
 	@FindBy(xpath = "//input[@id='age']")
@@ -257,7 +261,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//li[contains(text(),'ROOM')]")
 	public WebElement Selectcategry;
 	@FindBy(xpath = "//input[@id='bedclass']")
-	public WebElement BEd;
+	public WebElement BEd;//input[@id='bedclass']
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-adt[1]/div[1]/div[1]/div[4]/div[1]/form[1]/div[2]/div[1]/app-adt-beddetails[1]/form[1]/div[1]/div[2]/ul[1]/app-list-item[2]/li[1]")
 	public WebElement SelectBEd;
 	@FindBy(xpath = "//input[@id='bednumber']")
@@ -305,11 +309,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//div[contains(text(),'Child Development Chart')]")
 	public WebElement ChildDevelopmentChart;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/app-childmilestone[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][1]/*[name()='rect'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-childmilestone[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][1]/*[name()='rect'][1]")
 	public WebElement SocialSmile;
 	@FindBy(xpath = "//div[@class='modal-dialog modal-md modal-fixed']//button[@type='button'][normalize-space()='OK']")
 	public WebElement ClickOk2;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/app-childmilestone[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][2]/*[name()='rect'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-childmilestone[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][2]/*[name()='rect'][1]")
 	public WebElement EyesFollow;
 	@FindBy(xpath = "//div[@class='modal-dialog modal-md modal-fixed']//button[@type='button'][normalize-space()='OK']")
 	public WebElement ClickOk3;
@@ -317,15 +321,15 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	@FindBy(xpath = "//div[contains(text(),'Child Language Evaluation Chart')]")
 	public WebElement ChildLangEval;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][1]/*[name()='rect'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[8]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][1]/*[name()='rect'][1]")
 	public WebElement RespondsToBell;
 	@FindBy(xpath = "//div[@class='modal-dialog modal-md modal-fixed']//button[@type='button'][normalize-space()='OK']")
 	public WebElement ClickOk5;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][2]/*[name()='rect'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[8]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][2]/*[name()='rect'][1]")
 	public WebElement RespondsToSmile;
 	@FindBy(xpath = "//div[@class='modal-dialog modal-md modal-fixed']//button[@type='button'][normalize-space()='OK']")
 	public WebElement ClickOk6;
-	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[7]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][7]/*[name()='rect'][1]")
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-emrtemplateloader[1]/div[1]/div[1]/div[2]/div[2]/div[8]/div[1]/app-childlanguageevaluationchart[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]/*[name()='g'][9]/*[name()='g'][1]/*[name()='g'][8]/*[name()='rect'][1]")
 	public WebElement ListensWhenSpoken;
 	@FindBy(xpath = "//div[@class='modal-dialog modal-md modal-fixed']//button[@type='button'][normalize-space()='OK']")
 	public WebElement ClickOk7;
@@ -580,7 +584,46 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//button[normalize-space()='Physical Discharge']")
 	public WebElement pysicalDischarge;
 
+	@FindBy(xpath = "//label[@class='icon cpoeadmin']")
+	public WebElement cpoeAdmin;
+	
+	@FindBy(xpath = "//label[normalize-space()='Immunization']")
+	public WebElement Immunization;
+	
+	@FindBy(xpath = "//div[@class='immunization-table switch-rtl']//div[1]//div[2]//div[1]//div[3]//span[1]//i[1]")
+	public WebElement BCG;
+	
+	@FindBy(xpath = "//div[@class='immunization-table switch-rtl']//div[1]//div[2]//div[1]//div[4]//label[1]//span[1]")
+	public WebElement outsidehosp;
+	
+	@FindBy(xpath = "//div[@class='immunization-table switch-rtl']//div[1]//div[2]//div[1]//div[5]//span[1]//i[1]")
+	public WebElement remarks;
+	
 
+	@FindBy(xpath = "//div[@class='table-row-col']//div[2]//div[3]//span[1]//i[1]")
+	public WebElement OPV0;
+	
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-emr-homescreen[1]/div[2]/div[1]/div[1]/app-cpoe-administration[1]/div[1]/div[2]/app-immunization[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[3]/span[1]/i[1]")
+	public WebElement hepatitis;
+	
+	@FindBy(xpath = "//div[3]//div[7]//span[1]//i[1]")
+	public WebElement delete;
+	
+	@FindBy(xpath = "//button[@id='saveImmun']")
+	public WebElement Saveimmunization;
+	
+	@FindBy(xpath = "//div[@class='immunization-table switch-rtl']//div[1]//div[2]//div[1]//div[7]//span[1]//i[1]")
+	public WebElement log;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 	public void enterFOpatientBirthRegistrationSelectn(String Name,String AadharNumber,String MRNo,String Provider ,String ADTprovider ) throws InterruptedException, IOException {
@@ -595,7 +638,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Registration.click();
 		Thread.sleep(500);
 		Title.click();
-		SelectMiss.click();
+		SelectMr.click();
 		EnterFirstNME.sendKeys(Name);
 		EnterAge.sendKeys("25");
 		EnterMob.sendKeys("122248789");
@@ -676,6 +719,9 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		add.click();
 		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Two Years Registration']")));
+		
 		billSave.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")).click();
@@ -747,9 +793,13 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		userid.sendKeys(DOCuser);
 		password.click();
 		password.sendKeys(DOCpassword);
+		
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+		
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+        driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(5000);
@@ -931,6 +981,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys("kameda321");
 		Thread.sleep(1000);
 		site.click();
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+
+		
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -1009,7 +1064,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		wb.write(fout);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']")).click();
+		Thread.sleep(1000);
 		billing.click();
 		Thread.sleep(2000);
 		encProvider.click();
@@ -1019,6 +1075,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//li[normalize-space()='"+Provider+"']")).click();
 		Thread.sleep(1000);
 		add.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Two Years Registration']")));
 		Thread.sleep(1000);
 		billSave.click();
 		Thread.sleep(1000);
@@ -1030,33 +1088,38 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//////////Admit the baby
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//i[@class='ki ki-patient-bed-fill']")).click();
-
+        
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']")));
+	    driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//button[@aria-label='Close'][normalize-space()='No']")).click();
+	    Thread.sleep(800);
 		EnterProvidername.sendKeys(ADTprovider);
 		Thread.sleep(500);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+ ADTprovider+"')])")).click();
+		Thread.sleep(800);
 		//SelectProvidername.click();
 		prioty.click();
+		Thread.sleep(800);
 		SelectPrirty.click();
 		Thread.sleep(500);
 		{
-			JavascriptExecutor js=(JavascriptExecutor)driver;
+			
 			WebElement element = driver.findElement(By.xpath("//input[@id='bedcategory']"));
 
 			js.executeScript("arguments[0].scrollIntoView(true);", element);
 		}
 		Roomcatgry.click();
+		Thread.sleep(800);
 		Selectcategry.click();
 		Thread.sleep(500);
 		BEd.click();
 		Thread.sleep(800);
-
-		driver.findElement(By.xpath("(//*[contains(text(),'Super Deluxe')])")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-adt[1]/div[1]/div[1]/div[4]/div[1]/form[1]/div[2]/div[1]/app-adt-beddetails[1]/form[1]/div[1]/div[2]/ul[1]/app-list-item[24]/li[1]")).click();
+	//	driver.findElement(By.xpath("(//*[contains(text(),'Super Deluxe')])")).click();
 		//SelectBEd.click();
 		Thread.sleep(1000);
 		BEDno.click();
 		Thread.sleep(5000);
-
-		driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[2]")).click();
+        driver.findElement(By.xpath("(//*[contains(text(),'Emergency NS')])[2]")).click();
 		//SelectBEDno.click();
 		Thread.sleep(3000);
 		SAVE.click();
@@ -1084,6 +1147,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(DOCpassword);
 		Thread.sleep(1000);
 		site.click();
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+
+		
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -1187,11 +1255,51 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(2000);
 
 	}
+	
+	public void immunizationchart() throws InterruptedException {
+		Thread.sleep(1000);
+		cpoeAdmin.click();
+		Thread.sleep(1000);
+		 Immunization.click();
+		 Thread.sleep(1000);
+		 BCG.click();
+		 Thread.sleep(1000);
+		 outsidehosp.click();
+		 Thread.sleep(1000);
+		 remarks.click();
+		 Thread.sleep(1000);
+		 driver.findElement(By.xpath("//textarea[@id='remarks']")).sendKeys("baby born in another hospital");
+		 Thread.sleep(1000);
+		 driver.findElement(By.xpath("//button[normalize-space()='Ok']")).click();
+		 Thread.sleep(1000);
+		 OPV0.click();
+		 Thread.sleep(1000);
+		 hepatitis.click();
+		 Thread.sleep(1000);
+		 delete.click();
+		 Thread.sleep(1000);
+		 driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+		 Thread.sleep(1000);
+		 Saveimmunization.click();
+		 Thread.sleep(2000);
+		 act.moveToElement(log).build().perform();
+		 Thread.sleep(2500);
+		 }
+	
+	
+	
+	
 
-	public void  dischargeRecommendationBaby(String MRNo1 , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL, String Site) throws InterruptedException {
+	public void  dischargeRecommendationBaby(String MRNo1 , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL, String Site) throws InterruptedException, AWTException {
 
 
 		driver.navigate().refresh();
+		Robot r=new Robot(); 
+		r.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(800);
+		r.keyRelease(KeyEvent.VK_ENTER);
+			
+		
 		Thread.sleep(3000);
 		Hamberger.click();
 		Thread.sleep(1000);
@@ -1253,6 +1361,9 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password); 
 		Thread.sleep(1000);
 		site.click();
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+     	Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -1264,8 +1375,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		///////////////dischargeApproval
 
 
-		//driver.navigate().refresh();
-		Thread.sleep(1000);
+	
+
+
+	///	driver.navigate().refresh();
+		Thread.sleep(2000);
 		Hamberger.click();
 		Thread.sleep(1000);
 		EMR.click();
@@ -1275,16 +1389,16 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
 		Thread.sleep(1000);
 		SearchIcon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-		Thread.sleep(1000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
+		Thread.sleep(2000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+	   js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
 		Thread.sleep(3000);
 		//act.moveToElement(element).click().build().perform();
 		Thread.sleep(1000);
@@ -1293,8 +1407,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1000);
 		act.moveToElement(REadyForDischarge).click().build().perform();
-		Thread.sleep(1000);
-
+		Thread.sleep(2000);
+		
 		verifiedBy.click();
 		Thread.sleep(1000);
 		verifiedBy.sendKeys(nurseUser);
@@ -1305,6 +1419,47 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
+		
+	////////ROLLBACK	
+		
+	/*    js.executeScript("arguments[0].scrollIntoView();", RollBack);
+		Thread.sleep(3000);
+		act.moveToElement(RollBack).click().build().perform();
+		Thread.sleep(2000);
+		verifiedBy.click();
+		Thread.sleep(1000);
+		verifiedBy.sendKeys(nurseUser);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+		Thread.sleep(1000);
+		verifyPassword.click();
+		verifyPassword.sendKeys(Password);
+		Thread.sleep(1000);
+		verifySave.click();
+		Thread.sleep(2000);
+		
+		 js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
+		Thread.sleep(3000);
+		//act.moveToElement(element).click().build().perform();
+		Thread.sleep(1000);
+		//element.click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);
+		act.moveToElement(REadyForDischarge).click().build().perform();
+		Thread.sleep(2000);
+		
+		verifiedBy.click();
+		Thread.sleep(1000);
+		verifiedBy.sendKeys(nurseUser);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+		Thread.sleep(1000);
+		verifyPassword.click();
+		verifyPassword.sendKeys(Password);
+		Thread.sleep(1000);
+		verifySave.click();
+		Thread.sleep(2000);  */
 
 
 		//openNewTab
@@ -1346,8 +1501,10 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(1000);
 		WhiteBoard.click(); */
+	
+		
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
 		Thread.sleep(1000);
@@ -1355,8 +1512,8 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView();", Depclearance);
 		Thread.sleep(3000);
 		act.moveToElement(Depclearance).click().build().perform();
 		//Depclearance.click();
@@ -1378,7 +1535,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
-
+		Thread.sleep(3000);
 
 		//openNewTab
 
@@ -1552,7 +1709,10 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(1000);   */
 		Thread.sleep(1000);
-		NameSearch.click();
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+		Thread.sleep(1000);
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
 		Thread.sleep(1000);
@@ -1560,13 +1720,13 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(1000);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",  pharmacyClearance);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView();",  pharmacyClearance);
 		Thread.sleep(3000);
 		act.moveToElement( pharmacyClearance).click().build().perform();
 
 		Thread.sleep(1000);
-
+		
 		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
@@ -1578,14 +1738,14 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
-
+		
 		//openNewTab
 
-	/*	Thread.sleep(3000);
+		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(9));
-		driver.switchTo().window(tabs.get(9));
+		driver.switchTo().window(tabs.get(5));
+		driver.switchTo().window(tabs.get(5));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1597,10 +1757,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(AdminPassword);
 		Thread.sleep(1000);
 		site.click();
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);  */
+		Thread.sleep(5000);  
 
 	}
 
@@ -1609,21 +1770,21 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 
 		///////////////////////////////ADT aPProval
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		FOSearchField.click();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		FOSearchField.sendKeys(MRNo1);
+		FOSearchField.sendKeys( MRNo1);
 		Thread.sleep(1000);
 		FOSearchField.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo1+"')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'"+ MRNo1+"')])[1]")).click();
 		Thread.sleep(1000);
 		ADT.click();
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", dischargeStatus);
-
-
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView();", dischargeStatus);
+		
+		
 		Thread.sleep(2000);
 		dischargeStatus.click();//input[@id='dischargestatus']
 		Thread.sleep(1000);
@@ -1633,16 +1794,16 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Discharged Home']")).click();
 		Thread.sleep(1000);
-		ADTSave.click();
-		Thread.sleep(1000);
+		 ADTSave.click();
+		 Thread.sleep(1000);
 
 		//openNewTab
 
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(5));
-		driver.switchTo().window(tabs.get(5));//7
+		driver.switchTo().window(tabs.get(6));
+		driver.switchTo().window(tabs.get(6));//7
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1654,6 +1815,9 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
+		
+		
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
@@ -1677,7 +1841,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
 		Thread.sleep(1000);
@@ -1685,13 +1849,13 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(1000);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", FinancialClearance);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView();", FinancialClearance);
 		Thread.sleep(3000);
 		act.moveToElement( FinancialClearance).click().build().perform();
 
 		Thread.sleep(1000);
-
+		
 		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
@@ -1703,10 +1867,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
+		
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(6));
@@ -1724,12 +1889,12 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		site.click();
 		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();   */
 		Thread.sleep(5000);
 
 	}
 
-	public void  physicalDischarge(String MRNo1 , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String DOCuser,  String  DOCpassword,String URL) throws InterruptedException
+	public void  physicalDischarge(String MRNo1 , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String DOCuser,  String  DOCpassword,String URL,String Site) throws InterruptedException
 
 	{
 
@@ -1746,29 +1911,31 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 
 		//driver.navigate().refresh(); */
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo1);
 		Thread.sleep(1000);
 		SearchIcon.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-
+		driver.findElement(By.xpath("//th[normalize-space()='Incharge Provider']")).click();
+		
 		//driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(1000);
-		JavascriptExecutor js= (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", pysicalDischarge);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollIntoView();", pysicalDischarge);
 		Thread.sleep(3000);
 		act.moveToElement( pysicalDischarge).click().build().perform();
 
 		Thread.sleep(1000);
-
+		
 		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
 		verifiedBy.sendKeys(nurseUser);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
 		Thread.sleep(1000);
 		verifyPassword.click();
@@ -1795,7 +1962,9 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(5000);
@@ -1804,10 +1973,20 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 
 	}
+	
+	
 	/////////////////////////////discharge mom
 
-	public void dischargeRecommendationMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
+	public void dischargeRecommendationMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL ,String Site) throws InterruptedException, AWTException {
 
+		driver.navigate().refresh();
+		Robot r=new Robot(); 
+		r.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(800);
+		r.keyRelease(KeyEvent.VK_ENTER);
+			
+		
+		Thread.sleep(3000);
 		Hamberger.click();
 		Thread.sleep(1000);
 		EMRhomescreen.click();
@@ -1820,8 +1999,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
-	//	UParrow.click();
-		Thread.sleep(1000);
+	//	UpArrow.click();
 	//	Lock.click();
 		Thread.sleep(1000);
 		DoctorNote.click();
@@ -1853,13 +2031,11 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//openNewTab
 
-
-
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(13));
-		driver.switchTo().window(tabs.get(13));
+		driver.switchTo().window(tabs.get(8));
+		driver.switchTo().window(tabs.get(8));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1871,10 +2047,14 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password); 
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+     	Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(5000);
+
 	}
 
 	public void dischargeApprovalMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
@@ -1883,8 +2063,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		///////////////dischargeApproval
 
 
-		driver.navigate().refresh();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		Hamberger.click();
 		Thread.sleep(1000);
 		EMR.click();
@@ -1894,16 +2073,16 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo);
 		Thread.sleep(1000);
 		SearchIcon.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-		Thread.sleep(1000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
+		Thread.sleep(2000);
+		JavascriptExecutor js= (JavascriptExecutor) driver;
+	   js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
 		Thread.sleep(3000);
 		//act.moveToElement(element).click().build().perform();
 		Thread.sleep(1000);
@@ -1912,27 +2091,69 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		//driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
 		Thread.sleep(1000);
 		act.moveToElement(REadyForDischarge).click().build().perform();
-		Thread.sleep(1000);
-
+		Thread.sleep(2000);
+		
 		verifiedBy.click();
 		Thread.sleep(1000);
 		verifiedBy.sendKeys(nurseUser);
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
 		Thread.sleep(1000);
 		verifyPassword.click();
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
+		Thread.sleep(2000);
+		
+	////////ROLLBACK	
+		
+	/*    js.executeScript("arguments[0].scrollIntoView();", RollBack);
+		Thread.sleep(3000);
+		act.moveToElement(RollBack).click().build().perform();
+		Thread.sleep(2000);
+		verifiedBy.click();
+		Thread.sleep(1000);
+		verifiedBy.sendKeys(nurseUser);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+		Thread.sleep(1000);
+		verifyPassword.click();
+		verifyPassword.sendKeys(Password);
+		Thread.sleep(1000);
+		verifySave.click();
+		Thread.sleep(2000);
+		
+		 js.executeScript("arguments[0].scrollIntoView();", REadyForDischarge);
+		Thread.sleep(3000);
+		//act.moveToElement(element).click().build().perform();
+		Thread.sleep(1000);
+		//element.click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+		Thread.sleep(1000);
+		act.moveToElement(REadyForDischarge).click().build().perform();
+		Thread.sleep(2000);
+		
+		verifiedBy.click();
+		Thread.sleep(1000);
+		verifiedBy.sendKeys(nurseUser);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+		Thread.sleep(1000);
+		verifyPassword.click();
+		verifyPassword.sendKeys(Password);
+		Thread.sleep(1000);
+		verifySave.click();
+		Thread.sleep(2000);  */
 
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(14));
-		driver.switchTo().window(tabs.get(14));
+		driver.switchTo().window(tabs.get(5));
+		driver.switchTo().window(tabs.get(5));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -1944,10 +2165,10 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);   */
 
 	}
 
@@ -1955,8 +2176,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 
 		//////////////////////////////////laboratory clearance
-
-		Hamberger.click();
+		/*	Hamberger.click();
 		Thread.sleep(1000);
 		EmrIcon.click();
 		Thread.sleep(1000);
@@ -1964,9 +2184,13 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
 		Thread.sleep(1000);
-		WhiteBoard.click();
+		WhiteBoard.click(); */
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+		
+		
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo);
 		Thread.sleep(1000);
@@ -1975,13 +2199,17 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-
-		js.executeScript("arguments[0].scrollIntoView();", Depclearance);
+	    js.executeScript("arguments[0].scrollIntoView();", Depclearance);
 		Thread.sleep(3000);
 		act.moveToElement(Depclearance).click().build().perform();
 		//Depclearance.click();
 		Thread.sleep(1000);
 		laboratoryCheckbox.click();
+		Thread.sleep(1000);
+		radiologyCheckbox.click();
+		Thread.sleep(1000);
+		medicalclrnceCheckbox.click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
@@ -1993,15 +2221,15 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
-
+		Thread.sleep(3000);
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(15));
-		driver.switchTo().window(tabs.get(15));
+		driver.switchTo().window(tabs.get(6));
+		driver.switchTo().window(tabs.get(6));
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -2013,10 +2241,10 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);*/
 
 	}
 	public void RadiologyclearanceMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
@@ -2155,91 +2383,98 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 	}
 
-	public void pharmacyClearanceMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
+	public void pharmacyClearanceMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL,String Site) throws InterruptedException {
 
 
 		//////////////////////////////////pharmacy clearance
 
 		Thread.sleep(1000);
-		Hamberger.click();
-		Thread.sleep(1000);
-		EMR.click();
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
-		Thread.sleep(2000);
-		WhiteBoard.click();
-		Thread.sleep(1000);
-		Thread.sleep(1000);
-		NameSearch.click();
-		Thread.sleep(1000);
-		NameSearch.sendKeys(MRNo);
-		Thread.sleep(1000);
-		SearchIcon.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-		Thread.sleep(1000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();",  pharmacyClearance);
-		Thread.sleep(3000);
-		act.moveToElement( pharmacyClearance).click().build().perform();
+		/*	Hamberger.click();
+			Thread.sleep(1000);
+			EMR.click();
+			Thread.sleep(1000);
+			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
+			Thread.sleep(2000);
+			WhiteBoard.click();
+			Thread.sleep(1000);   */
+			Thread.sleep(1000);
+			WebDriverWait wait = new WebDriverWait(driver,30);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+			Thread.sleep(1000);
+			NameSearch.clear();
+			Thread.sleep(1000);
+			NameSearch.sendKeys(MRNo);
+			Thread.sleep(1000);
+			SearchIcon.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
+			Thread.sleep(1000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("arguments[0].scrollIntoView();",  pharmacyClearance);
+			Thread.sleep(3000);
+			act.moveToElement( pharmacyClearance).click().build().perform();
 
-		Thread.sleep(1000);
-		verifiedBy.click();
-		Thread.sleep(1000);
-		verifiedBy.sendKeys(nurseUser);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
-		Thread.sleep(1000);
-		verifyPassword.click();
-		verifyPassword.sendKeys(Password);
-		Thread.sleep(1000);
-		verifySave.click();
+			Thread.sleep(1000);
+			
+			Thread.sleep(1000);
+			verifiedBy.click();
+			Thread.sleep(1000);
+			verifiedBy.sendKeys(nurseUser);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+			Thread.sleep(1000);
+			verifyPassword.click();
+			verifyPassword.sendKeys(Password);
+			Thread.sleep(1000);
+			verifySave.click();
+			
+			//openNewTab
 
-		//openNewTab
+			Thread.sleep(3000);
+			((JavascriptExecutor)driver).executeScript("window.open()");
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(tabs.get(9));
+			driver.switchTo().window(tabs.get(9));
+			Thread.sleep(5000);
+			driver.get(URL);
+			Thread.sleep(3000);
 
-		Thread.sleep(3000);
-		((JavascriptExecutor)driver).executeScript("window.open()");
-		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(18));
-		driver.switchTo().window(tabs.get(18));
-		Thread.sleep(5000);
-		driver.get(URL);
-		Thread.sleep(3000);
+			//login
+			userid.click();
+			userid.sendKeys(AdminUser);
+			password.click();
+			password.sendKeys(AdminPassword);
+			Thread.sleep(1000);
+			site.click();
+			js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+			driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+			Thread.sleep(5000);  
 
-		//login
-		userid.click();
-		userid.sendKeys(AdminUser);
-		password.click();
-		password.sendKeys(AdminPassword);
-		Thread.sleep(1000);
-		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
-		Thread.sleep(5000);
 
 
 	}
 
-	public void ADTapprovalMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
+	public void ADTapprovalMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL , String Site) throws InterruptedException {
 
 
 		///////////////////////////////ADT aPProval
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		FOSearchField.click();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		FOSearchField.sendKeys(MRNo);
+		FOSearchField.sendKeys( MRNo);
 		Thread.sleep(1000);
 		FOSearchField.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
+		driver.findElement(By.xpath("(//*[contains(text(),'"+ MRNo+"')])[1]")).click();
 		Thread.sleep(1000);
 		ADT.click();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", dischargeStatus);
-
-
+	    js.executeScript("arguments[0].scrollIntoView();", dischargeStatus);
+		
+		
 		Thread.sleep(2000);
 		dischargeStatus.click();//input[@id='dischargestatus']
 		Thread.sleep(1000);
@@ -2249,16 +2484,16 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Discharged Home']")).click();
 		Thread.sleep(1000);
-		ADTSave.click();
-		Thread.sleep(1000);
+		 ADTSave.click();
+		 Thread.sleep(1000);
 
 		//openNewTab
 
 		Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(19));
-		driver.switchTo().window(tabs.get(19));//7
+		driver.switchTo().window(tabs.get(10));
+		driver.switchTo().window(tabs.get(10));//7
 		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
@@ -2270,10 +2505,14 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+		
+		
+		js.executeScript("arguments[0].scrollIntoView();",driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")) );
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
 		Thread.sleep(5000);
+
 	}
 
 	public void financialClearanceMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser , String AdminUser ,String  AdminPassword,String URL) throws InterruptedException {
@@ -2282,6 +2521,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		///////////////////////////////////////////financial clearance 
 
+
 		Thread.sleep(1000);
 		Hamberger.click();
 		Thread.sleep(1000);
@@ -2292,7 +2532,7 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WhiteBoard.click();
 		Thread.sleep(1000);
 		Thread.sleep(1000);
-		NameSearch.click();
+		NameSearch.clear();
 		Thread.sleep(1000);
 		NameSearch.sendKeys(MRNo);
 		Thread.sleep(1000);
@@ -2301,12 +2541,12 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
 		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", FinancialClearance);
+	    js.executeScript("arguments[0].scrollIntoView();", FinancialClearance);
 		Thread.sleep(3000);
 		act.moveToElement( FinancialClearance).click().build().perform();
 
 		Thread.sleep(1000);
-
+		
 		Thread.sleep(1000);
 		verifiedBy.click();
 		Thread.sleep(1000);
@@ -2318,15 +2558,16 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		verifyPassword.sendKeys(Password);
 		Thread.sleep(1000);
 		verifySave.click();
+		
 
 		//openNewTab
 
-		Thread.sleep(3000);
+	/*	Thread.sleep(3000);
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(20));
-		driver.switchTo().window(tabs.get(20));
-		Thread.sleep(2000);
+		driver.switchTo().window(tabs.get(6));
+		driver.switchTo().window(tabs.get(6));
+		Thread.sleep(5000);
 		driver.get(URL);
 		Thread.sleep(3000);
 
@@ -2337,11 +2578,10 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		password.sendKeys(Password);
 		Thread.sleep(1000);
 		site.click();
-		driver.findElement(By.xpath("//li[normalize-space()='KIMSHEALTH TVM']")).click();
+		driver.findElement(By.xpath("//li[normalize-space()='"+Site+"']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();
+		driver.findElement(By.xpath("//button[@id='login_spinner']")).click();   */
 		Thread.sleep(5000);
-
 
 	}
 	public void physicalDischargeMOM(String MRNo , String nurseUser , String  Password,String depUser , String RADuser, String meduser ) throws InterruptedException {
@@ -2349,46 +2589,53 @@ public class EMRBirthRegistrationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		//////////////////////////physical Discharge
 
-		Thread.sleep(1000);
-		Hamberger.click();
-		Thread.sleep(1000);
-		EMR.click();
-		Thread.sleep(1000);
-		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
-		Thread.sleep(2000);
-		WhiteBoard.click();
-		Thread.sleep(1000);
 
-		//driver.navigate().refresh();
-		Thread.sleep(1000);
-		NameSearch.click();
-		Thread.sleep(1000);
-		NameSearch.sendKeys(MRNo);
-		Thread.sleep(1000);
-		SearchIcon.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
+		/*	Thread.sleep(1000);
+			Hamberger.click();
+			Thread.sleep(1000);
+			EMR.click();
+			Thread.sleep(1000);
+			driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL , Keys.END);
+			Thread.sleep(2000);
+			WhiteBoard.click();
+			Thread.sleep(1000);
 
-		//driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
-		Thread.sleep(1000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", pysicalDischarge);
-		Thread.sleep(3000);
-		act.moveToElement( pysicalDischarge).click().build().perform();
+			//driver.navigate().refresh(); */
+			WebDriverWait wait = new WebDriverWait(driver,30);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-whiteboard[1]/div[1]/div[1]/lib-whiteboard-header[1]/div[1]/div[1]/div[7]/div[1]/ki-input-control[1]/div[1]/input[1]")));
+			Thread.sleep(1000);
+			NameSearch.clear();
+			Thread.sleep(1000);
+			NameSearch.sendKeys(MRNo);
+			Thread.sleep(1000);
+			SearchIcon.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//th[normalize-space()='Incharge Provider']")).click();
+			
+			//driver.findElement(By.xpath("//th[normalize-space()='MRNo']")).click();
+			Thread.sleep(1000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("arguments[0].scrollIntoView();", pysicalDischarge);
+			Thread.sleep(3000);
+			act.moveToElement( pysicalDischarge).click().build().perform();
 
-		Thread.sleep(1000);
-
-		Thread.sleep(1000);
-		verifiedBy.click();
-		Thread.sleep(1000);
-		verifiedBy.sendKeys(nurseUser);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
-		Thread.sleep(1000);
-		verifyPassword.click();
-		verifyPassword.sendKeys(Password);
-		Thread.sleep(1000);
-		verifySave.click();
+			Thread.sleep(1000);
+			
+			Thread.sleep(1000);
+			verifiedBy.click();
+			Thread.sleep(1000);
+			verifiedBy.sendKeys(nurseUser);
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//*[contains(text(),'"+nurseUser+"')])")).click();
+			Thread.sleep(1000);
+			verifyPassword.click();
+			Thread.sleep(1000);
+			verifyPassword.sendKeys(Password);
+			Thread.sleep(1000);
+			verifySave.click();
+			Thread.sleep(2000);
+			SearchIcon.click();
+			Thread.sleep(2000);
 	}
 
 

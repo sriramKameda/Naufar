@@ -94,6 +94,14 @@ public class MastersResouceMasterYasassiiWeb extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//input[@id='roomproperty']")
 	public WebElement Roomproperty;
 	
+	@FindBy(xpath = "//i[contains(@class,'ki ki-plus')]")
+	public WebElement bedAdd;
+	
+	@FindBy(xpath = "//button[@id='resourcemastersave']")
+	public WebElement bedSave;
+	
+	
+	
 	
 	//main[contains(@class,'page-body')]//li[1]//a[1]
 	
@@ -129,7 +137,7 @@ public class MastersResouceMasterYasassiiWeb extends PageFactoryInitYasasiiWeb {
 	
 }
 	
-	public void ResourceMasterBed(String BlockName,String FloorName,String RoomName,String BedName) throws InterruptedException{
+	public void ResourceMasterBed(String BlockName,String FloorName,String RoomName,String BedName1,String BedName2,String BedName3,String BedName4,String BedName5,String BedName6,String BedName7,String BedName8) throws InterruptedException{
 		
 		Thread.sleep(500);
 ////////////////create the block		
@@ -264,7 +272,10 @@ public class MastersResouceMasterYasassiiWeb extends PageFactoryInitYasasiiWeb {
 		driver.findElement(By.xpath("//input[@id='roomid']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-resourcemaster[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/ul[1]/app-list-item[1]/li[1]")).click();
-		bedname.sendKeys(BedName);
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName1);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='bedtype']")).click();
 		Thread.sleep(1000);
@@ -274,9 +285,56 @@ public class MastersResouceMasterYasassiiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='Emergency NS']")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//i[contains(@class,'ki ki-plus')]")).click();
+		bedAdd.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@id='resourcemastersave']")).click();		
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName2);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName3);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName4);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName5);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName6);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName7);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedname.click();
+		Thread.sleep(1000);
+		bedname.sendKeys(BedName8);
+		Thread.sleep(1000);
+		bedAdd.click();
+		Thread.sleep(1000);
+		bedSave.click();
+		
+			
+			
+			
+			
 	}
 		
 

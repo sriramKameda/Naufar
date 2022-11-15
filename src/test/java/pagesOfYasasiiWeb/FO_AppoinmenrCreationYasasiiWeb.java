@@ -102,6 +102,34 @@ public class FO_AppoinmenrCreationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 	@FindBy(xpath = "//span[normalize-space()='Set']")
 	public WebElement Set;
 
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/lib-appointment-modal[1]/div[2]/div[3]/div[1]/div[1]/ki-select-control[1]/div[1]/input[1]")
+	public WebElement Reporting;
+
+	@FindBy(xpath = "//div[@title='Status Update/Group View/Log View']//i[@class='ki ki-info-circle-fill']")
+	public WebElement Infolog;
+
+    @FindBy(xpath = "//input[@id='status']")
+	public WebElement Status;
+
+    @FindBy(xpath = "//textarea[@id='remarks']")
+	public WebElement Remarks;
+
+    @FindBy(xpath = "//span[normalize-space()='Log']")
+	public WebElement log;
+  
+    @FindBy(xpath = "(//label[@class='app-info-icons']//i[@class='ki ki-info-circle-fill'])[1]")
+   	public WebElement Appinfo;
+     
+    @FindBy(xpath = "//label[@class='check-container m0']//span[@class='checkmark']")
+   	public WebElement  FreeSlotuncheck;
+
+
+
+  
+
+
+
+
 	public void Appoinment(String MRNo,String Name,String doctor) throws InterruptedException, IOException, Exception {
 		//////////////Create an appoinment from FO screen	
 		Thread.sleep(2000);
@@ -120,10 +148,8 @@ public class FO_AppoinmenrCreationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		appselection.click();
 		Thread.sleep(5000);
 		List<WebElement> li=new ArrayList<WebElement>();
-		li=driver.findElements(By.xpath("//tbody[1]/tr[2]/td[4]/div[1]"));
+		li=driver.findElements(By.xpath("//tbody/tr[@class='ng-star-inserted']/td[4]/div[1]/span[1]"));
 
-
-		//td[@class='slot-list ng-star-inserted']/div/span[1]
 
 		for(WebElement element:li){
 			if(Integer.parseInt(element.getText())>0){
@@ -138,8 +164,8 @@ public class FO_AppoinmenrCreationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 
 		List<WebElement> li2=new ArrayList<WebElement>(); 
 
-		WebElement plusDiv=driver.findElement(By.xpath("//body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/lib-scheduler[1]/form[1]/div[1]/div[2]/lib-schedule-view[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]/div[2]"));
-		WebElement appointmentPlus=driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div[2]/label[1]/i[1]"));
+		WebElement plusDiv=driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//div[@class='appointment-info']"));
+		WebElement appointmentPlus=driver.findElement(By.xpath("//tr[@class='row-0-0 ng-star-inserted']//i[@class='ki ki-plus']"));
 		act.moveToElement(plusDiv).build().perform();
 		Thread.sleep(5000);
 		act.moveToElement(appointmentPlus).click().build().perform();
@@ -188,24 +214,52 @@ public class FO_AppoinmenrCreationYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		Thread.sleep(1000);
 		clickEdit.click();
 		Thread.sleep(1000);
-		Teleconsultation.click();
+		Reporting.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Referral']")).click();
+		Thread.sleep(1000);
+		Reporting.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Consultation']")).click();
+		Thread.sleep(1000);
+        //Teleconsultation.click();
 		update.click();
+		Thread.sleep(1000);
 	}
 
-	public void encounterCheckIn(String MRNo) throws InterruptedException, IOException {
+	public void encounterCheckIn(String MRNo , String doctor) throws InterruptedException, IOException {
 		//////////////Delete the apppoinment    	
-		Thread.sleep(3000);
+	
+	
+        Infolog.click();
+        Thread.sleep(1000);
+        Status.click();
+        Thread.sleep(1000);
+    	driver.findElement(By.xpath("//li[normalize-space()='No Show']")).click();
+    	Thread.sleep(1000);
+    	Remarks.click();
+    	Thread.sleep(1000);
+    	Remarks.sendKeys("not consulted before againt app");
+    	Thread.sleep(2000);
+    //	driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+    	Thread.sleep(1000);
+    	log.click();
+    	Thread.sleep(1000);
+    	driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+    	Thread.sleep(1000);
+		
+		
+		
+		
+    	Thread.sleep(3000);
 		EnterMRNo.clear();
 		Thread.sleep(1000);
 		EnterMRNo.sendKeys(MRNo);
 		Thread.sleep(1000);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNo+"')])[1]")).click();
-
-		//SelectthePatient.click();
-		//		Thread.sleep(5000);
-		//		driver.findElement(By.xpath("//*[text()[contains(.,'Token Details')]]")).click();
-		Thread.sleep(2000);
+        Thread.sleep(2000);
+		
 		DeleteAppoinment.click();
 		Thread.sleep(500);
 		Reason.click();

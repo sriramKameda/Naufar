@@ -29,7 +29,7 @@ public class SP5_pathology_biopsy_TestcaseYW extends TestBaseYasasiiWeb  {
 	
 
 	@Test (dataProvider = "getData")
-	public void Pathology(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site) throws InterruptedException, IOException {
+	public void Pathology(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String SERVICE1) throws InterruptedException, IOException {
 		
 		
 		SP5_pathology_biopsy_YasassiWeb b22 =new SP5_pathology_biopsy_YasassiWeb(driver);
@@ -41,7 +41,7 @@ public class SP5_pathology_biopsy_TestcaseYW extends TestBaseYasasiiWeb  {
 		}
 	
 	@Test (dataProvider = "getData")
-	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site) throws InterruptedException, IOException {
+	public void inestigation(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO ,String PROVIDER ,String SERVICE,String URL, String User , String Password , String site,String SERVICE1) throws InterruptedException, IOException {
 		
 		
 		SP5_pathology_biopsy_YasassiWeb b22 =new SP5_pathology_biopsy_YasassiWeb(driver);

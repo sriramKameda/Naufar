@@ -1,13 +1,9 @@
 package pagesOfYasasiiWeb;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -50,7 +46,7 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//div[@class='modal-body']//button[@type='button'][normalize-space()='OK']")
 	public WebElement EncounterSaveOK;
 
-	@FindBy(xpath = "//div[@class='col-md-2 col-sm-6 tail-icon-group']//i[@class='ki ki-info-circle-fill']")
+	@FindBy(xpath = "//i[@class='ki ki-info-circle-fill ng-star-inserted']")
 	public WebElement EpisodeIcon;
 	
 	@FindBy(xpath = "//li[@class='nav-item ng-star-inserted']//span[contains(text(),'Encounter')]")
@@ -81,9 +77,60 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 	@FindBy(xpath = "//label[@class='check-container zero-bottom']//span[@class='checkmark']")
 	public WebElement closedEnc;
 	
+	@FindBy(xpath = "//span[normalize-space()='Service']")
+	public WebElement Service;
 	
+	@FindBy(xpath = "//span[@class='btn btn-link ng-star-inserted']")
+	public WebElement Addnew;
 	
+	@FindBy(xpath = "//input[@id='serviceidBilling']")
+	public WebElement servName;
 	
+	@FindBy(xpath = "//label[@class='icon-btn btn-dark-green inline']")
+	public WebElement AddService;
+	
+
+	@FindBy(xpath = "//i[@class='ki ki-save']")
+	public WebElement Save;
+	
+	@FindBy(xpath = "//ki-textarea-control[@placeholder='Reason']//textarea[@id='undefined']")
+	public WebElement Reason;
+	
+	  @FindBy(xpath = "//input[@id='status']")
+		public WebElement Status;
+
+	    @FindBy(xpath = "//textarea[@id='remarks']")
+		public WebElement Remarks;
+
+	    @FindBy(xpath = "//span[normalize-space()='Log']")
+		public WebElement log;
+	  
+	    @FindBy(xpath = "(//label[@class='app-info-icons']//i[@class='ki ki-info-circle-fill'])[1]")
+	   	public WebElement Appinfo;
+	     
+	    @FindBy(xpath = "//label[@class='check-container m0']//span[@class='checkmark']")
+	   	public WebElement  FreeSlotuncheck;
+	
+	    @FindBy(xpath= "//input[@placeholder='Search Resource..']")
+		WebElement docsearch;
+
+		@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/lib-scheduler[1]/form[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/span[1]")
+		public WebElement appselection;
+	
+		@FindBy(xpath= "//div[contains(text(),'Appointment')]")
+		public WebElement patientappointment;
+	
+		@FindBy(xpath= "//button[normalize-space()='Update']")
+		public WebElement Update;
+	
+		@FindBy(xpath= "//span[normalize-space()='Status']")
+		public WebElement StatusView;
+	
+		@FindBy(xpath= "//i[@title='Delete']")
+		public WebElement delete;
+	
+		
+		
 	
 	
 	
@@ -138,7 +185,7 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 		Encounter.click();
 		Thread.sleep(5000);
 		Close.click();
-	
+		Thread.sleep(1000);
 		
 		
 		
@@ -146,23 +193,24 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 
 	
 	public void  opencounter(String PROVIDER) throws InterruptedException {
-		
-		SubMode.click();
-		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
-		Thread.sleep(1000);
-     	ENCprvdrName.click();
-		Thread.sleep(1000);
-		ENCprvdrName.sendKeys(PROVIDER);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//*[contains(text(),'"+PROVIDER+"')])")).click();
-		Thread.sleep(1000);
-		EncounterAdd.click();
-		//driver.findElement(By.xpath("//li[normalize-space()='"+ PROVIDER +"']")).click();
-		Thread.sleep(1000);
-		EncounterSave.click();
-		Thread.sleep(2000);
-		EncounterSaveOK.click();
-		Thread.sleep(2000);
+//		Thread.sleep(1000);
+//		SubMode.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//li[normalize-space()='OP']")).click();
+//		Thread.sleep(1000);
+//     	ENCprvdrName.click();
+//		Thread.sleep(1000);
+//		ENCprvdrName.sendKeys(PROVIDER);
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("(//*[contains(text(),'"+PROVIDER+"')])")).click();
+//		Thread.sleep(1000);
+//		EncounterAdd.click();
+//		//driver.findElement(By.xpath("//li[normalize-space()='"+ PROVIDER +"']")).click();
+//		Thread.sleep(1000);
+//		EncounterSave.click();
+//		Thread.sleep(2000);
+//		EncounterSaveOK.click();
+//		Thread.sleep(2000);
 		EpisodeIcon.click();
 		Thread.sleep(1000);
 		episode.click();
@@ -179,30 +227,156 @@ public class FO_EncounterTypes_YasassiWeb extends PageFactoryInitYasasiiWeb {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
+		Reason.click();
+		Thread.sleep(1000);
+		Reason.sendKeys("ok");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@class='btn btn-primary active sm mr0 mt0 mb0']")).click();
+		Thread.sleep(1000);
 		
-		encCancel.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
 		
-		episode.click();
-		Thread.sleep(1000);
-		epiCancel.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
-		Thread.sleep(1000);
-		closedEpi.click();
-		Thread.sleep(2000);
-		Encounter.click();
-		Thread.sleep(2000);
-		closedEnc.click();
-		Thread.sleep(2000);
-		Close.click();
-		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//button[@class='btn btn-dark-green btn-primary sm mr0 mb0 mt0 ng-star-inserted']")).click();
+//		encCancel.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//		Thread.sleep(1000);
+//		
+//		episode.click();
+//		Thread.sleep(1000);
+//		epiCancel.click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
+//		Thread.sleep(1000);
+//		closedEpi.click();
+//		Thread.sleep(2000);
+//		Encounter.click();
+//		Thread.sleep(2000);
+//		closedEnc.click();
+//		Thread.sleep(2000);
+//		Close.click();
+//		Thread.sleep(1000);
 		
 		
 		
 	}
 
+	public void closedEncBilling(String PROVIDER) throws InterruptedException {
+		Thread.sleep(2000);
+		Service.click();
+		Thread.sleep(1000);
+		EpisodeIcon.click();
+		Thread.sleep(1000);
+		closedEnc.click();
+		Thread.sleep(1000);
+		//driver.findElement(By.xpath("//label[@class='check-container zero-bottom']//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@class='radio-container ng-star-inserted']//span[@class='checkmark']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@class='btn btn-dark-green btn-primary sm mr0 mb0 mt0 ng-star-inserted']")).click();
+		Thread.sleep(1000);
+		Addnew.click();
+		Thread.sleep(1000);
+		servName.click();
+		Thread.sleep(1000);
+		servName.sendKeys("Sodium");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Sodium (ISE Indirect)']")).click();
+		Thread.sleep(1000);
+		AddService.click();
+		Thread.sleep(1000);
+		Save.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='dialog-content Success']//i[@class='ki ki-check']")).click();
+		Thread.sleep(1000);
+		
+		
+		
+		Thread.sleep(1000);
+		patientappointment.click();
+		Thread.sleep(1000);
+		docsearch.sendKeys(PROVIDER);
+		Thread.sleep(2500);
+		appselection.click();
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath("//tbody/tr[@class='ng-star-inserted']/td[4]/div[1]/span[1]")).click();
+        Thread.sleep(1000);
+        FreeSlotuncheck.click();
+        Thread.sleep(1000);
+        Appinfo.click();
+		
+        Thread.sleep(1000);
+        
+        List<WebElement> dynamicElement=driver.findElements(By.xpath("//i[@title='Edit']"));
+    	
+    	System.out.println(dynamicElement.size());
+    	if(dynamicElement.size() !=0)
+    	{
+    		Thread.sleep(1000);
+    		driver.findElement(By.xpath("//i[@title='Edit']")).click();
+    		Thread.sleep(1000);
+    		Remarks.clear();
+    		Thread.sleep(1000);
+        	Remarks.sendKeys("modified remark");
+        	Thread.sleep(1000);
+        	Update.click();
+        	Thread.sleep(1000);
+        	log.click();
+        	Thread.sleep(2000);
+        	StatusView.click();
+        	Thread.sleep(1000);
+        	delete.click();
+        	Thread.sleep(1000);
+        	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+        	Thread.sleep(1000);
+        	driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+        	Thread.sleep(1000);
+        	
+        	
+    	}
+        
+    	else { 
+        
+        Status.click();
+        Thread.sleep(1000);
+    	driver.findElement(By.xpath("//li[normalize-space()='No Show']")).click();
+    	Thread.sleep(1000);
+    	Remarks.click();
+    	Thread.sleep(1000);
+    	Remarks.sendKeys("not consulted before againt app");
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath("//button[normalize-space()='Save']")).click();
+    	Thread.sleep(1000);
+    	log.click();
+    	Thread.sleep(2000);
+    	StatusView.click();
+    	Thread.sleep(1000);
+    	delete.click();
+    	Thread.sleep(1000);
+    	driver.findElement(By.xpath("//div[@class='modal ki-dialog fade in show']//i[@class='ki ki-check']")).click();
+    	Thread.sleep(1000);
+    	driver.findElement(By.xpath("//button[normalize-space()='Close']")).click();
+    	Thread.sleep(1000);
+    	
+		
+		
+    	}
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 }

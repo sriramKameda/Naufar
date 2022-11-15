@@ -1,5 +1,8 @@
 package pagesOfYasasiiWeb;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -135,7 +138,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	@FindBy(xpath = "//i[@class='ki ki-wallet icon-btn-billing btn-dark-green inline']")
 	public WebElement Wallet;
 
-	@FindBy(xpath = "//span[@class='checkmark']")
+	@FindBy(xpath = "/html[1]/body[1]/modal-container[1]/div[1]/div[1]/app-payment-types[1]/form[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
 	public WebElement AdvCheck;
 
 	@FindBy(xpath = "//input[@id='withdrawalamount0']")
@@ -230,16 +233,106 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 	@FindBy(xpath = "//input[@id='searchtext']")
 	public WebElement EnterMRNo;
-	
+
 	@FindBy(xpath = "//span[@class='search-icon']//i[@class='ki ki-search']")
 	public WebElement SearchButton;
 
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
 	public WebElement patientSearch;
+
+	@FindBy(xpath = "//input[@id='status']")
+	public WebElement Status;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[4]/ki-input-control[1]/div[1]/input[1]")
+	public WebElement MrnoSearch;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/div[1]/div[1]/div[1]/div[9]/label[1]/button[1]")
+	public WebElement SearchIcon1;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/span[1]/i[1]")
+	public WebElement CancelReq;
+
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement firstcheckbox;
+
+	@FindBy(xpath = "//button[normalize-space()='Approve']")
+	public WebElement SaVe;
+
+	@FindBy(xpath = "//button[normalize-space()='OK']")
+	public WebElement  yes;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[8]/span[1]/i[1]")
+	public WebElement RemarksIcon;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement  checkbox;
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
+	public WebElement RemarksIcon1;
+
+
+	@FindBy(xpath = "//textarea[@id='undefined']")
+	public WebElement Remarks1;
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")
+	public WebElement  checkbox1;
+
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/lib-request-approval[1]/div[1]/form[1]/tabset[1]/div[1]/div[1]/tab[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[6]/span[1]/i[1]")
+	public WebElement RemarksIcon2;
+
+	@FindBy(xpath = "//input[@id='issuedPlace']")
+	public WebElement IssuedPlace;
+
+	@FindBy(xpath = "//ki-calendar[@formcontrolname='issuedDate']//input[@type='text']")
+	public WebElement IssuedDate;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[1]/button[1]/span[1]/*[name()='svg'][1]/*[name()='path'][1]")
+	public WebElement BackArrow;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[2]/owl-date-time-month-view[1]/table[1]/tbody[1]/tr[3]/td[1]/span[1]")
+	public WebElement Date;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[3]/div[1]/div[2]/div[1]/app-document-verification[1]/form[1]/div[1]/div[1]/div[3]/div[2]/ki-calendar[1]/div[1]/input[1]")
+	public WebElement validFrom;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[1]/button[1]/span[1]/*[name()='svg'][1]/*[name()='path'][1]")
+	public WebElement BackArrow1;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[2]/owl-date-time-month-view[1]/table[1]/tbody[1]/tr[3]/td[2]/span[1]")
+	public WebElement Date1;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[3]/div[1]/div[2]/div[1]/app-document-verification[1]/form[1]/div[1]/div[1]/div[4]/div[1]/ki-calendar[1]/div[1]/input[1]")
+	public WebElement validTo;
+
+	@FindBy(xpath = "//button[@aria-label='Next month']//span[@class='owl-dt-control-content owl-dt-control-button-content']//*[name()='svg']")
+	public WebElement FrontArrow;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/owl-date-time-container[1]/div[2]/owl-date-time-calendar[1]/div[2]/owl-date-time-month-view[1]/table[1]/tbody[1]/tr[3]/td[7]/span[1]")
+	public WebElement Date2;
+
+	@FindBy(xpath = "//i[@class='ki ki-info-circle-fill']")
+	public WebElement DocInfo;
+
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-frontoffice-patientregistration[1]/div[1]/form[1]/div[1]/div[2]/accordion[1]/accordion-group[1]/div[1]/div[2]/div[1]/div[2]/div[2]/lib-hismultiselect[1]/div[1]/div[1]/button[1]")
+	public WebElement Category;
+	
+	@FindBy(xpath = "//label[@title='Add Registration']//i[@class='ki ki-doctor-fill']")
+	public WebElement regAdd;
+	
+	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/app-layout[1]/main[1]/app-fo-landing[1]/div[2]/app-patient-view[1]/form[1]/div[2]/app-billing-overview[1]/div[1]/div[2]/app-encounter-billing[1]/tabset[1]/div[1]/tab[1]/div[1]/div[1]/app-billing-details[1]/form[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[2]/ki-select-control[1]/div[1]/input[1]")
+	public WebElement Servicename;
 	
 	
-	
-	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ) throws InterruptedException, IOException {
+
+
+
+
+	public void patReg(String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR ) throws InterruptedException, IOException, AWTException {
 
 
 		Thread.sleep(2000);
@@ -265,6 +358,10 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li[normalize-space()='KIMS']")).click();
 		Thread.sleep(1000);
+		Category.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@title='Staff']")).click();
+		Thread.sleep(1000);
 		ContactInformation.click();
 		Thread.sleep(1000);
 		address.click();
@@ -277,12 +374,60 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 			aadharNo.sendKeys( Keys.BACK_SPACE);
 		}
 		//aadharNo.click();
+		Thread.sleep(1000);
 		aadharNo.sendKeys(Keys.HOME + AADHAAR);
 		Thread.sleep(1000);
-		docAdd.click();
+		Thread.sleep(1000);
+		IssuedPlace.click();
+		Thread.sleep(1000);
+		IssuedPlace.sendKeys("Coimbatore");
+		Thread.sleep(1000);
+		IssuedDate.click();
 		Thread.sleep(1000);
 
+		for (int i = 0; i <10; i++) {
+
+			Robot r=new Robot();
+			r.keyPress(KeyEvent.VK_LEFT);
+			Thread.sleep(800);
+			r.keyRelease(KeyEvent.VK_LEFT);
+					Thread.sleep(100);
+		}
+		
 		Thread.sleep(1000);
+		Date.click();
+		validFrom.click();
+		for (int i = 0; i <8; i++) 
+		{
+
+			Robot r=new Robot();
+			r.keyPress(KeyEvent.VK_LEFT);
+			Thread.sleep(800);
+			r.keyRelease(KeyEvent.VK_LEFT);
+	    	Thread.sleep(100);
+					
+					
+					
+					
+					
+		}
+
+		Date1.click();
+		validTo.click();
+		for (int i = 0; i <10; i++) {
+			Robot r=new Robot();
+			r.keyPress(KeyEvent.VK_LEFT);
+			Thread.sleep(800);
+			r.keyRelease(KeyEvent.VK_LEFT);
+					Thread.sleep(100);
+
+		}
+
+		Date2.click();
+		docAdd.click();
+		Thread.sleep(1000);
+		act.moveToElement(DocInfo).build().perform();
+		Thread.sleep(2500);
 
 		List<WebElement> dynamicElement=driver.findElements(By.xpath("//*[@class='required ng-star-inserted']"));
 
@@ -302,18 +447,18 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		OKhowDidYouKnow.click();
 		Thread.sleep(1000);
 		RegSave.click();
-        Thread.sleep(3000);
+		Thread.sleep(3000);
 		SaveSuccess.click();
 		String mrno= driver.findElement(By.xpath("//span[@class='pat-mrno']")).getText();
 		System.out.println(mrno);
 		Thread.sleep(2000);
-//		String word[]=mrno.split("[ :] ");
-//		System.out.println("number of words: "+word.length);
-//		for(int i=0;i<word.length;i++)
-//		{
-//			System.out.println("word["+i+"]="+word[i]);
-//		}
-//		System.out.println(word[1]);
+		//		String word[]=mrno.split("[ :] ");
+		//		System.out.println("number of words: "+word.length);
+		//		for(int i=0;i<word.length;i++)
+		//		{
+		//			System.out.println("word["+i+"]="+word[i]);
+		//		}
+		//		System.out.println(word[1]);
 
 		File src=new File("C:\\Users\\sriram\\eclipse-workspace\\HHCYasasiiWeb24090\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls");
 		FileInputStream fis=new FileInputStream(src);
@@ -324,7 +469,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		FOFullRegTest.getRow(i).createCell(6).setCellValue(mrno);	
 		FileOutputStream fout=new FileOutputStream(src);	
 		wb.write(fout);
-		
+
 		Thread.sleep(2000);
 
 
@@ -335,40 +480,55 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 	public void BillCancelReq(String MRNO , String PROVIDER ,String SERVICE1, String AMOUNT ,String SERVICE2 ) throws InterruptedException
 
 	{
-		//////Encounter
-//		Hamberger.click();
-//		Thread.sleep(1000);
-//      	EnterMRNo.clear();
-//		Thread.sleep(100);
-//	//	EnterMRNo.click();
-//		Thread.sleep(800); 
-//		EnterMRNo.sendKeys(MRNO);
-//		Thread.sleep(2000);
-//		SearchButton.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
-//		//PatientSelect.click();
-//
-//		encounter.click();
+//		////Encounter
+//				Hamberger.click();
+//				Thread.sleep(1000);
+//		      	EnterMRNo.clear();
+//				Thread.sleep(100);
+//			//	EnterMRNo.click();
+//				Thread.sleep(800); 
+//				EnterMRNo.sendKeys(MRNO);
+//				Thread.sleep(2000);
+//				SearchButton.click();
+//				Thread.sleep(2000);
+//				driver.findElement(By.xpath("(//*[contains(text(),'"+MRNO+"')])[1]")).click();
+//				//PatientSelect.click();
+//	          	encounter.click();
+				
 		Thread.sleep(1000);
 		clear.click();
 		Thread.sleep(1000);
+		regAdd.click();
+		Thread.sleep(1000);
+		EncounterSave.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@class='dialog-content Success']//button[@type='button'][normalize-space()='OK']")).click();
+		Thread.sleep(3000);
 		providerName.click();
 		Thread.sleep(1000);
 		providerName.sendKeys(PROVIDER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[contains(text(),'"+PROVIDER+"')]")).click();
+        Thread.sleep(1000);
+		EncounterAdd.click();
+		Thread.sleep(1000);
+		EncounterSave.click();
+		Thread.sleep(1000);
+		SAvesuccess.click();
+		Thread.sleep(3000);
 
+////////followup bill
+		
+		Servicename.click();
+		Thread.sleep(2500);
+		driver.findElement(By.xpath("//li[normalize-space()='Follow-up Consultation']")).click();
 		Thread.sleep(1000);
 		EncounterAdd.click();
 		Thread.sleep(1000);
 		EncounterSave.click();
 		Thread.sleep(1000);
 		SAvesuccess.click();
-
-
-
-
+		Thread.sleep(3000);
 		//ServiceAdd
 		/*	driver.findElement(By.xpath("//div[contains(text(),'Patient Info')]")).click();
 		Thread.sleep(2000);
@@ -424,7 +584,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int i = k-1;
 		System.out.println(i);
 		Thread.sleep(3000);
-		
+
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
@@ -467,7 +627,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		driver.findElement(By.xpath("//i[@class='ki ki-user-referral']")).click();
 		AvailedService.click();
 		Thread.sleep(3000);
-		
+
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td[1]/label[2]/i[1]")));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//tbody/tr["+i+"]/td[1]/label[3]/span[1]/ki-checkbox-control[1]/label[1]/label[1]/span[1]")).click();
@@ -495,8 +655,13 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(1));
-		driver.switchTo().window(tabs.get(1));
+		int l =driver.getWindowHandles().size();
+		Thread.sleep(1000);
+		System.out.println("window handles no."+ l);
+		int k=l-1;
+		System.out.println("window handles no."+ k);
+		driver.switchTo().window(tabs.get(k));
+		driver.switchTo().window(tabs.get(k));
 		Thread.sleep(3000);
 		driver.get(URL);
 
@@ -561,14 +726,52 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();	
 		Thread.sleep(1000);
-		//driver.switchTo().window(tabs.get(0));
-		int n =driver.getWindowHandles().size();
+
+		///////Approve Cancel
+
 		Thread.sleep(1000);
-		System.out.println("window handles no."+ n);
-		int m= n-2;
+		Status.click();
 		Thread.sleep(1000);
-		System.out.println("go to window no."+ m);
-		Thread.sleep(2000);
+		driver.findElement(By.xpath("//li[normalize-space()='Approved']")).click();
+		Thread.sleep(1000);
+		MrnoSearch.clear();
+		Thread.sleep(1000);
+		MrnoSearch.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		SearchIcon1.click();
+		Thread.sleep(1000);
+		checkbox1.click();
+		Thread.sleep(1000);
+		CancelReq.click();
+		Thread.sleep(1000);
+		yes.click();
+		Thread.sleep(3000);
+
+		Thread.sleep(3000);
+		Status.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//li[normalize-space()='Requested']")).click();
+		Thread.sleep(1000);
+		MrnoSearch.clear();
+		Thread.sleep(1000);
+		MrnoSearch.sendKeys(MRNO , Keys.ENTER);
+		Thread.sleep(1000);
+		SearchIcon.click();
+		Thread.sleep(1000);
+		checkbox1.click();
+		Thread.sleep(1000);
+		RemarksIcon2.click();
+		Thread.sleep(800);
+		Remarks1.click();
+		Thread.sleep(1000);
+		Remarks1.sendKeys("ok");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@class='btn btn-primary sm active']//i[@class='ki ki-check']")).click();
+		Thread.sleep(800);
+		SaVe.click();
+		Thread.sleep(1000);
+		yes.click();
+		Thread.sleep(800);
 
 		/////////////////////////////
 
@@ -587,9 +790,9 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		int b= y/4;
 		System.out.println("b="+ b);
 		Thread.sleep(1000);
-		
-		
-		
+
+
+
 		Thread.sleep(1000);
 		patientSearch.clear();
 		Thread.sleep(1000);
@@ -613,6 +816,16 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")).click();
 		Thread.sleep(1000);
+
+
+
+		int n =driver.getWindowHandles().size();
+		Thread.sleep(1000);
+		System.out.println("CURRENT NO.OF WINDOWS"+ n);
+		int m= n-2;
+		Thread.sleep(1000);
+		System.out.println("go to window no."+ m);
+		Thread.sleep(2000);
 		driver.switchTo().window(tabs.get(m));
 		Thread.sleep(3000);
 
@@ -620,6 +833,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 
 	public void checkRestored(String PROVIDER) throws InterruptedException {
 
+		
+		
+		
+		driver.findElement(By.xpath("//i[@id='refresh']")).click();
+		Thread.sleep(2000);
 		encounter.click();
 		Thread.sleep(1000);
 		clear.click();
@@ -647,7 +865,7 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		//driver.findElement(By.xpath("//div[@class='dialog-content Error']//button[@type='button'][normalize-space()='OK']")).click();
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		AdvCheck.click();
 		Thread.sleep(1000);
 		withdraw.click();
@@ -662,6 +880,11 @@ public class SP5_FO_BillCancel_Refund_YasassiWeb extends PageFactoryInitYasasiiW
 		Thread.sleep(1000);
 		SAvesuccess.click();
 		Thread.sleep(1000);
+		
+		
+		
+		
+		
 
 	}
 

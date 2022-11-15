@@ -1,7 +1,5 @@
 package pagesTestCasesYasasiiWeb;
 
-import java.io.IOException;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -9,7 +7,6 @@ import org.testng.annotations.Test;
 
 import com.baseYasasiiWeb.TestBaseYasasiiWeb;
 
-import pagesOfYasasiiWeb.EMR_ERBedAllocation;
 import pagesOfYasasiiWeb.FO_AppoinmenrCreationYasasiiWeb;
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
@@ -36,7 +33,7 @@ public void FOAppoinment(String MRNo,String Name,String doctor,String sitename,S
 		
 		FO_AppoinmenrCreationYasasiiWeb Schedule1 = new FO_AppoinmenrCreationYasasiiWeb(driver);
 		Schedule1.Appoinment(MRNo,Name,doctor);
-		Schedule1.encounterCheckIn(MRNo);
+		Schedule1.encounterCheckIn(MRNo, doctor1);
 	//	Schedule1.othersite(sitename,doctor1);
 		}
 

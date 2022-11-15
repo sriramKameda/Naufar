@@ -1,5 +1,6 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
@@ -33,21 +34,32 @@ public class FO_PharmacyBilling_TestCaseYW  extends TestBaseYasasiiWeb {
 
 	
 
-	@Test (dataProvider = "getData")
-	public void pharmacy(String MRNo , String PROVIDER , String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site) throws InterruptedException, IOException {
+	@Test (dataProvider = "getData",priority=0)
+	public void pharmacy( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER) throws InterruptedException, IOException {
 		
-		FO_EncounterCreationScreenYasasiiWeb enc = new FO_EncounterCreationScreenYasasiiWeb(driver);
-		//enc.takingEncounter( MRNo, doctor);
-		
-		LogingOutAndLogingIn_YasasiiWeb login= new LogingOutAndLogingIn_YasasiiWeb(driver);
-		//login.action( id,  password, Site);
-				
+	
 				
 		FO_PharmacyBilling_YasassiWeb  bill = new   FO_PharmacyBilling_YasassiWeb (driver);
-		 bill.pharmacybill(MRNo, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword , Site);
+		
+		bill.patReg(NAME, AGE, MBLNO, ORGANISATION, ADDRESS, AADHAAR, MRNO, PROVIDER);
 		
 	}
 	
+	
+	
+	
+	
+	@Test (dataProvider = "getData" , priority=1)
+	public void pharmacy1( String CHEIFCOMPLAINT , String MEDICINE,String doctor,String id, String docpassword,String Site,String NAME , String AGE , String MBLNO , String ORGANISATION , String ADDRESS , String AADHAAR,String MRNO , String PROVIDER) throws InterruptedException, IOException, AWTException {
+		
+	
+				
+		FO_PharmacyBilling_YasassiWeb  bill = new   FO_PharmacyBilling_YasassiWeb (driver);
+		
+		
+		 bill.pharmacybill(MRNO, PROVIDER, CHEIFCOMPLAINT, MEDICINE,id,docpassword , Site);
+		
+	}
 	@AfterClass
 	public void logout() throws Exception
 	{
