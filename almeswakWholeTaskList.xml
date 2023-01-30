@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" verbose="5" name="Test">
+    <classes>
+   
+
+       <!--<class name="pagesTestCasesYasasiiWeb.Almeswak_MergedPatient_TestcaseYW"/>  
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_FO_ClosedEncounter_TestcaseYW"/>    
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_AdjustmentRefund_TestCaseYW"/>
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_FullPatientRegistration_TestCaseYW"/>
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_BillCancelandRefund_TestCaseYW"/>  
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_AdvanceFlow_TestcaseYW"/> 
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_EMR_Dermotology_TestcaseYW"/>
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_Nursenote_consentForm_TestCaseYW"/>     -->
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_InstallmentPayment_TestcaseYW"/>  
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_outsider_patientFlow_TestCaseYW"/>  
+       <class name="pagesTestCasesYasasiiWeb.Almeswak_Appointment_master_blockAndfreeze_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_EMR_BlockAndFreeze_appointment_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_BlockandFreeze_TestcaseYW"/>   
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_EMR_DentalAssesement_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_Service_priceByUser_testcaseYW"/>   
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_AppointmentCheckin_TestCaseYW"/> 
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_UserCreation_TestCaseYW"/> 
+
+   </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

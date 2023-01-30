@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW">
-        <methods>
-          <include name="MOMdischarge"/>
-          <include name="setup"/>
-          <include name="BirthReg"/>
-          <include name="teardown"/>
-          <include name="navigateemradt"/>
-          <include name="extentReportEnd"/>
-          <include name="getResult"/>
-          <include name="Doctornote"/>
-          <include name="startTest"/>
-          <include name="babynote"/>
-          <include name="logout"/>
-          <include name="Babydischarge"/>
-          <include name="getTestMethodProperties"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMRBirthRegistrationTestCasesYW -->
-      <class name="pagesTestCasesYasasiiWeb.EMR_TwoBabyRegistration_TestCaswYW">
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_InstallmentPayment_TestcaseYW">
         <methods>
           <include name="setup"/>
+          <include name="startTest"/>
+          <include name="logout"/>
           <include name="teardown"/>
-          <include name="navigateemradt"/>
+          <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
-          <include name="Doctornote"/>
-          <include name="logout"/>
-          <include name="babynote"/>
-          <include name="startTest"/>
-          <include name="getTestMethodProperties"/>
-          <include name="BirthReg"/>
-          <include name="Babydischarge2"/>
-          <include name="MOMdischarge"/>
-          <include name="Babydischarge1"/>
-        </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.EMR_TwoBabyRegistration_TestCaswYW -->
-      <class name="pagesTestCasesYasasiiWeb.PatientDischarge_TestCasesYW">
-        <methods>
-          <include name="patientdischarge1" invocation-numbers="0"/>
+          <include name="AppointmentCheckin" invocation-numbers="0"/>
           <include name="navigateFOPage"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_InstallmentPayment_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_EMR_DentalAssesement_TestcaseYW">
+        <methods>
+          <include name="dentalAsssement1" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="logout"/>
+          <include name="startTest"/>
+          <include name="navigateFOPage"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_EMR_DentalAssesement_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_UserCreation_TestCaseYW">
+        <methods>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="navigateFOPage"/>
+          <include name="getResult"/>
+          <include name="logout"/>
+          <include name="userCreation" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_UserCreation_TestCaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_Appointment_master_blockAndfreeze_TestcaseYW">
+        <methods>
+          <include name="AppointmentCheckin"/>
+          <include name="logout"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="navigateFOPage"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_Appointment_master_blockAndfreeze_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_Service_priceByUser_testcaseYW">
+        <methods>
+          <include name="patreg" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="logout"/>
+          <include name="navigateFOPage"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_Service_priceByUser_testcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_EMR_BlockAndFreeze_appointment_TestcaseYW">
+        <methods>
           <include name="setup"/>
           <include name="logout"/>
           <include name="startTest"/>
@@ -49,8 +77,23 @@
           <include name="getTestMethodProperties"/>
           <include name="extentReportEnd"/>
           <include name="getResult"/>
+          <include name="navigateFOPage"/>
+          <include name="Emr" invocation-numbers="0"/>
         </methods>
-      </class> <!-- pagesTestCasesYasasiiWeb.PatientDischarge_TestCasesYW -->
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_EMR_BlockAndFreeze_appointment_TestcaseYW -->
+      <class name="pagesTestCasesYasasiiWeb.Almeswak_AppointmentCheckin_TestCaseYW">
+        <methods>
+          <include name="AppointmentCheckin" invocation-numbers="0"/>
+          <include name="logout"/>
+          <include name="setup"/>
+          <include name="startTest"/>
+          <include name="teardown"/>
+          <include name="getTestMethodProperties"/>
+          <include name="navigateFOPage"/>
+          <include name="extentReportEnd"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- pagesTestCasesYasasiiWeb.Almeswak_AppointmentCheckin_TestCaseYW -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

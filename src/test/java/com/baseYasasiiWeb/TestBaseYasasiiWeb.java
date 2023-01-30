@@ -48,7 +48,7 @@ public class TestBaseYasasiiWeb {
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
 	public static org.apache.logging.log4j.Logger log=org.apache.logging.log4j.LogManager.getLogger(TestBaseYasasiiWeb.class);
-	protected static String filepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\24090testData.xls";
+	protected static String filepath=System.getProperty("user.dir")+"\\src\\test\\resources\\excelYasasiiWeb\\almeswaksheet.xls";
 	public static WebDriverWait wait;
 	public static ExtentReports rep; 
 	public static ExtentTest test; //C:\Users\sriram\eclipse-workspace\HHCYasasiiWeb24090\src\test\resources\excelYasasiiWeb\24090testData.xls
