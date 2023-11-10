@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+ <!--  -->    <class name="pagesTestCasesYasasiiWeb.Naufar_AppointmentCheckin_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_AppointmentFuture_Testcase"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_EMRhidenote_TeatcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_AdjustmentRefund_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_GroupTheraphy_Testcase"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_EMRBlockandFreeze_TestcasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_Inventory_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_InstructionOrder_TestcasesYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_interimIncoice_IP_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_CpoePendingOrder_Billing_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_BlockandFreeze_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_FinalBilling_OP_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_Appointment_master_blockAndfreeze_TestcaseYW"/>      
+      <class name="pagesTestCasesYasasiiWeb.Naufar_AppointmentView_inEMR_TestcaseYW"/>
+      <class name="pagesTestCasesYasasiiWeb.Naufar_Diagnosis_initialMedical_testcaseYW"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -21,6 +21,7 @@ public class HomePageYasasiiWeb extends PageFactoryInitYasasiiWeb{
 		WebElement logOut;
 		
 		@FindBy(xpath="//ki-dialog-common//button[@aria-label='Ok'][normalize-space()='Yes']")
+		
 		WebElement Okbutton;
 		 
 		public LoginPageYasasiiWeb clickLogout() throws InterruptedException

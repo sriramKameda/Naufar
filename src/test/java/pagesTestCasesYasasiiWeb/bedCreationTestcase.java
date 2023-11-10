@@ -1,17 +1,17 @@
 package pagesTestCasesYasasiiWeb;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.baseYasasiiWeb.TestBaseYasasiiWeb;
 
 import pagesOfYasasiiWeb.HomePageYasasiiWeb;
 import pagesOfYasasiiWeb.LoginPageYasasiiWeb;
-import pagesOfYasasiiWeb.MastersServiceYasasiiWeb;
 import pagesOfYasasiiWeb.bedCreation;
 
 public class bedCreationTestcase extends TestBaseYasasiiWeb {
@@ -25,11 +25,15 @@ public class bedCreationTestcase extends TestBaseYasasiiWeb {
 	public void navigateMasterServicePage() throws InterruptedException {
 		
 	this.login =new LoginPageYasasiiWeb(driver) ;
-	this.hm = login.enterloginDetails("admin", "kameda321", "Kameda Medical Center");
+	this.hm = login.enterloginDetails("admin", "KAmeda123$", "Naufar Center");
 	Thread.sleep(3000);
 		
 	
 	}
+	
+	
+	
+	
 	@Test//(dataProvider="getData")
 	public void bedCreation()throws InterruptedException, IOException {
 		
@@ -43,6 +47,14 @@ public class bedCreationTestcase extends TestBaseYasasiiWeb {
 	@AfterClass
 	public void logout() throws Exception
 	{
+		Robot t=new Robot();
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		Thread.sleep(400);
+		t.keyPress(KeyEvent.VK_ESCAPE);
+		t.keyRelease(KeyEvent.VK_ESCAPE);
+		
+		
 		this.hm.clickLogout();
 	}
 
